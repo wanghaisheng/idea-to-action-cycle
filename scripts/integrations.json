@@ -1,0 +1,221 @@
+{
+  "categories": {
+    "accessibility": {
+      "keywords": ["a11y", "accessibility"]
+    },
+    "adapters": {
+      "keywords": ["astro-adapter"]
+    },
+    "analytics": {
+      "keywords": ["analytics"]
+    },
+    "css+ui": {
+      "keywords": ["css", "ui", "icon", "icons", "renderer"]
+    },
+    "frameworks": {
+      "keywords": ["renderer"]
+    },
+    "performance+seo": {
+      "keywords": ["seo", "performance", "perf", "optimization"]
+    }
+  },
+  "featured": [
+    "@astrojs/tailwind",
+    "astro-imagetools",
+    "@astrojs/partytown",
+    "astro-compress",
+    "@storyblok/astro",
+    "astro-icon",
+    "astro-eleventy-img",
+    "@astrojs/sitemap",
+    "astro-robots-txt",
+    "astro-seo",
+    "astro-xelement",
+    "@astrojs/image",
+    "astro-spa",
+    "astro-katex",
+    "@astrojs/mdx",
+    "accessible-astro-components",
+    "astro-i18next",
+    "@astropub/icons",
+    "astro-json-element"
+  ],
+  "allowlist": [],
+  "blocklist": [
+    "@astrojs/turbolinks",
+    "@astrojs/og",
+    "astro-zdog",
+    "@astrojs/internal-helpers",
+    "simple-astro-seo"
+  ],
+  "overrides": {
+    "@astrojs/alpinejs": {
+      "image": "/assets/integrations/alpinejs.svg"
+    },
+    "@astrojs/deno": {
+      "image": "/assets/integrations/deno.svg"
+    },
+    "@astrojs/image": {
+      "image": "/assets/integrations/image.svg"
+    },
+    "@astrojs/lit": {
+      "image": "/assets/integrations/lit.svg"
+    },
+    "@astrojs/mdx": {
+      "image": "/assets/integrations/mdx.svg"
+    },
+    "@astrojs/netlify": {
+      "image": "/assets/integrations/netlify.svg"
+    },
+    "@astrojs/node": {
+      "image": "/assets/integrations/node.svg"
+    },
+    "@astrojs/partytown": {
+      "image": "/assets/integrations/partytown.svg"
+    },
+    "@astrojs/preact": {
+      "image": "/assets/integrations/preact.svg"
+    },
+    "@astrojs/react": {
+      "image": "/assets/integrations/react.svg"
+    },
+    "@astrojs/sitemap": {
+      "image": "/assets/integrations/sitemap.svg"
+    },
+    "@astrojs/solid-js": {
+      "image": "/assets/integrations/solid.svg"
+    },
+    "@astrojs/starlight": {
+      "image": "/assets/integrations/starlight.svg"
+    },
+    "@astrojs/svelte": {
+      "image": "/assets/integrations/svelte.svg"
+    },
+    "@astrojs/tailwind": {
+      "image": "/assets/integrations/tailwind.svg"
+    },
+    "@astrojs/turbolinks": {
+      "image": "/assets/integrations/turbolinks.svg"
+    },
+    "@astrojs/vercel": {
+      "image": "/assets/integrations/vercel.svg"
+    },
+    "@astrojs/vue": {
+      "image": "/assets/integrations/vue.svg"
+    },
+    "astro-div": {
+      "description": "It's only a <div />"
+    },
+    "astro-i18n": {
+      "image": "/assets/integrations/astro-i18n.svg"
+    },
+    "astro-integration-elm": {
+      "image": "/assets/integrations/astro-integration-elm.svg"
+    },
+    "@chisel-ui/astro": {
+      "description": "A collection of layout primitives used as building blocks for common layout patterns.",
+      "image": "/assets/integrations/chisel-ui.svg",
+      "homepageUrl": "https://chisel-ui.dev"
+    },
+    "@igor.dvlpr/astro-post-excerpt": {
+      "image": "/assets/integrations/astro-post-excerpt.png"
+    },
+    "@storyblok/astro": {
+      "image": "/assets/integrations/storyblok.svg"
+    },
+    "@stylify/astro": {
+      "image": "/assets/integrations/stylify.svg"
+    },
+    "astro-github-stats": {
+      "description": "Embed GitHub stats on your Astro page ✨",
+      "image": "/assets/integrations/astro-github-stats.png"
+    },
+    "astro-icon": {
+      "image": "/assets/integrations/astro-icon.svg"
+    },
+    "hello-astro": {
+      "image": "/assets/integrations/hello-astro.png"
+    },
+    "@sarissa/pagination": {
+      "description": "Add page number buttons for pagination. Automaticly add and disable numbers as current page number.",
+      "url": "https://github.com/iozcelik/SarissaPagination"
+    },
+    "accessible-astro-components": {
+      "description": "A set of Accessible, easy to use, Front-end UI Components for Astro.",
+      "url": "https://components.accessible-astro.dev/",
+      "image": "/assets/integrations/accessible-astro-components.png"
+    },
+    "@m4rrc0/astro-fetch-ahead": {
+      "repoUrl": "https://github.com/m4rrc0/poko-notion"
+    },
+    "astroid": {
+      "image": "/assets/integrations/astroid.png",
+      "url": "https://github.com/xisli/astroid"
+    },
+    "astro-uno": {
+      "image": "/assets/integrations/astro-uno.svg"
+    },
+    "@lagon/astro": {
+      "image": "/assets/integrations/lagon-astro.png"
+    },
+    "astro-navbar": {
+      "description": "A fully accessible responsive headless navigation bar for Astro. It supports mobile responsive toggle and dropdowns."
+    },
+    "astro-color-scheme": {
+      "description": "A fully headless dark mode theme toggle for Astro. it has built in support for both Dark & light mode along with the default System Auto mode."
+    },
+    "astro-bootstrap": {
+      "image": "/assets/integrations/astro-bootstrap.png"
+    },
+    "astro-breadcrumbs": {
+      "image": "/assets/integrations/astro-breadcrumbs.svg"
+    },
+    "astro-mithril": {
+      "image": "/assets/integrations/astro-mithril.svg"
+    },
+    "astro-windi": {
+      "image": "/assets/integrations/astro-windi.svg"
+    },
+    "astro-seo": {
+      "image": "/assets/integrations/astro-seo.png"
+    },
+    "astro-fuse": {
+      "image": "/assets/integrations/astro-fuse.png"
+    },
+    "astro-mdx-code-blocks": {
+      "image": "/assets/integrations/astro-mdx-code-blocks.png"
+    },
+    "@jasikpark/astro-svg-loader": {
+      "description": "This package allows you to import SVGs as Astro components, using ultrahtml and Vite's support for raw imports to do the trick."
+    },
+    "@lloydjatkinson/astro-snipcart-design-system": {
+      "description": "This is an unofficial template meant to ease the development of components for Astro that are intended for distribution."
+    },
+    "@lloydjatkinson/astro-snipcart": {
+      "description": "This is an unofficial template meant to ease the development of components for Astro that are intended for distribution."
+    },
+    "@rebelchris/astro-static-tweet": {
+      "description": "This is a open source Astro component that allows you to embed a Tweet as static HTML in your Astro site."
+    },
+    "@rshackleton/astro-portabletext": {
+      "description": "Render Portable Text block content with Astro components."
+    },
+    "astro-dev-only-routes": {
+      "description": "Make some routes only available in dev mode."
+    },
+    "astro-default-prerender": {
+      "description": "Prerender all your Astro pages by default."
+    },
+    "@tigrisdata/astro": {
+      "description": "Access NoSQL data from your Astro site.",
+      "homepageUrl": "https://github.com/tigrisdata/tigris-astro#readme",
+      "image": "/assets/integrations/tigris.svg"
+    },
+    "astro-internalise-css": {
+      "image": "/assets/integrations/astro-internalise-css.svg"
+    },
+    "astro-critters-slim": {
+      "image": "/assets/integrations/astro-critters-slim.webp"
+    }
+  }
+}
