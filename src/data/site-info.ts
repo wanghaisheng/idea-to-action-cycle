@@ -19,10 +19,10 @@ export type SiteInfo = {
 }
 
 const siteInfo: SiteInfo = {
-	name: "Astro",
-	title: "Build the web you want",
+	name: "shopconna",
+	title: "May curiosity be with you",
 	description:
-		"Astro is an all-in-one framework for building fast websites faster. Grab content from anywhere, deploy everywhere, and show the web what you've got.",
+		"shopconna is a nickname of wanghaisheng that shows him passion about daily task automation and other problem solving coding practices.",
 	image: {
 		src: "/og/social.jpg",
 		alt: "Build the web you want",
@@ -30,9 +30,9 @@ const siteInfo: SiteInfo = {
 	socialLinks: [
 		{
 			platform: "github",
-			href: "https://github.com/withastro/astro",
-			me: "https://github.com/withastro/",
-			text: "Go to Astro's GitHub repo",
+			href: "https://github.com/wanghaisheng/idea-to-action-cycle/",
+			me: "https://github.com/wanghaisheng/",
+			text: "Go to wanghaisheng's GitHub repo",
 			icon: "social/github",
 		},
 		{
