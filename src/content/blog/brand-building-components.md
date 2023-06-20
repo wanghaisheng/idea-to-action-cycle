@@ -1,3 +1,12 @@
+---
+title: "chatgpt generated slogan for our brand monitoring tools"
+description: "The Astro Community Awards for 2022 have been announced! These awards recognize the Astro community members who went above and beyond the past year. Read more to find out who was recognized!"
+publishDate: "June 20, 2023"
+authors:
+  - fuzzy
+socialImage: "/src/content/blog/_images/community-awards/social-min.webp"
+lang: "en"
+---
 Brand building consists of various components that work together to shape and establish a strong brand identity and reputation. These components include:
 
     Brand Strategy: Brand strategy defines the long-term vision, goals, and positioning of your brand. It encompasses elements such as target audience identification, brand purpose, brand values, and differentiation strategies. A well-defined brand strategy serves as a foundation for all brand-building activities.

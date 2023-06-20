@@ -1,3 +1,13 @@
+---
+title: "chatgpt generated slogan for our brand monitoring tools"
+description: "The Astro Community Awards for 2022 have been announced! These awards recognize the Astro community members who went above and beyond the past year. Read more to find out who was recognized!"
+publishDate: "June 20, 2023"
+authors:
+  - fuzzy
+socialImage: "/src/content/blog/_images/community-awards/social-min.webp"
+lang: "en"
+---
+
 what is the main task and metric if you want to brand monitor for brand building
 ChatGPT
 
