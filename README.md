@@ -8,6 +8,11 @@ https://github.com/wanghaisheng/blog-shopconna.com/tree/main
 The source code for [shopconna.com](https://shopconna.com), built with [Astro](https://github.com/withastro/astro).
 
 
+## create logo svg
+
+replace     idea-to-action-cycle/src/components/AstroLogo.astro
+
+
 
 ## Updating Themes
 
