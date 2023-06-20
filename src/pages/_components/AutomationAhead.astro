@@ -1,0 +1,35 @@
+---
+import Card from "~/components/Card.astro"
+import CardBody from "~/components/CardBody.astro"
+import CardFooter from "~/components/CardFooter.astro"
+import CardLabel from "~/components/CardLabel.astro"
+import CoreWebVitalsGraph from "./CoreWebVitalsGraph.astro"
+import LandingSectionText from "./LandingSectionText.astro"
+---
+
+<section class="landing-section">
+	<LandingSectionText>
+		<Fragment slot="title">Brand Automation</Fragment>
+		<Fragment slot="body">
+ Our automation tools empower eCommerce brands to automate repetitive tasks, improve efficiency, enhance customer experiences, and achieve sustainable growth in the competitive eCommerce landscape.			
+		</Fragment>
+	</LandingSectionText>
+
+	<div class="mt-12 w-full max-w-5xl px-4">
+		<Card>
+			<CardBody>
+				<CardLabel>Real-World Performance Comparison</CardLabel>
+				<CoreWebVitalsGraph />
+				<CardFooter>
+					<p class="text-center">
+						Based on <a href="https://httparchive.org/" class="link-underline">HTTP Archive</a> real-world
+						performance data (Lighthouse, P90) • <a
+							href="/blog/2023-web-framework-performance-report/"
+							class="link-underline">Read the full report</a
+						>
+					</p>
+				</CardFooter>
+			</CardBody>
+		</Card>
+	</div>
+</section>

@@ -21,19 +21,19 @@ type Item = {
 
 const items: Item[] = [
 	{
-		title: "Blogs",
+		title: "Social Media Management",
 		description:
-			"Build personal and professional blogs with Astro's built-in Markdown support and content APIs.",
-		liveUrl: new URL("https://firebase.blog/"),
+			"Our tools automate competitor social media monitoring, social media posting, scheduling, and content distribution across various platforms. They help you maintain an active presence, engage with your audience, and promote your brand consistently.",
+		liveUrl: new URL("https://github.com/wanghaisheng/gen-brand-social-account-RSS"),
 		image: blogsImage,
 		cta: {
-			text: "Blog themes",
+			text: "Gen Rss for competitors social profile",
 			href: "/themes/?categories%5B%5D=blog",
 		},
 	},
 	{
-		title: "Marketing",
-		description: "Stand out from the crowd with a lightning fast site that ranks higher in SEO.",
+		title: "Email Marketing Automation",
+		description: "Streamline your email marketing campaigns with our tools that automate tasks such as segmenting your audience, creating personalized email templates, scheduling campaigns, and tracking performance metrics. This ensures efficient and targeted communication with your customers.",
 		liveUrl: new URL("https://rokt.com/"),
 		image: marketingImage,
 		cta: {
@@ -42,21 +42,21 @@ const items: Item[] = [
 		},
 	},
 	{
-		title: "Agencies",
+		title: "Content Creation and Management",
 		description:
-			"Agencies use Astro to build fast websites, faster. Customize every site with full control over your frontend code.",
-		liveUrl: new URL("https://www.thinkmill.com.au/"),
+			"Save time and effort by automating content creation tasks. Our tools can generate product descriptions, blog articles, and social media captions based on predefined templates or AI-generated content. They also manage content distribution and publishing across different channels.",
+		liveUrl: new URL("https://github.com/wanghaisheng/tiktoka-studio-uploader"),
 		image: agenciesImage,
 		cta: {
-			text: "Agency themes",
+			text: "video schedule and publish",
 			href: "/themes/?categories%5B%5D=landing-page",
 		},
 	},
 	{
-		title: "E-Commerce",
+		title: "Customer Relationship Management",
 		description:
-			"Time is money. Give your customers a better shopping experience and grow your business faster.",
-		liveUrl: new URL("https://www.enjoyyearof.com/"),
+			"Automate customer data management, lead generation, and customer support processes. Our CRM tools help you track customer interactions, segment your audience, automate personalized responses, and nurture leads throughout their buyer's journey.",
+		liveUrl: new URL("https://github.com/wanghaisheng/brand-contact-Email-collector"),
 		image: eCommerceImage,
 		cta: {
 			text: "E-Commerce themes",
@@ -64,9 +64,9 @@ const items: Item[] = [
 		},
 	},
 	{
-		title: "Portfolios",
+		title: "Workflow Automation",
 		description:
-			"Put your best foot forward with a portfolio that performs. Help people get to know you (and your work) faster.",
+			"Streamline your internal processes by automating workflows and task assignments. Our tools facilitate collaboration, improve efficiency, and ensure that tasks are completed on time.",
 		liveUrl: new URL("https://baldbeardedbuilder.com/"),
 		image: portfolioImage,
 		cta: {

@@ -1,18 +1,16 @@
 ---
 import { Icon } from "astro-icon"
+import CodeBlock from "~/components/CodeBlock.astro"
 import ExternalLink from "~/components/ExternalLink.astro"
 import PageTitleBlock from "~/components/PageTitleBlock.astro"
 
 const logos = [
-	{ src: "logos/tiktok", alt: "tiktok Logo", class: "py-1" },
-	{ src: "logos/facebook", alt: "facebook Logo" },
-	{ src: "logos/instagram", alt: "instagram Logo", class: "py-1" },
-	{ src: "logos/pinterest", alt: "pinterest Logo", class: "py-2" },
-	{ src: "logos/youtube", alt: "youtube Logo", class: "py-1.5" },
-	{ src: "logos/douyin", alt: "douyin Logo", class: "py-1" },
-	{ src: "logos/xiaohongshu", alt: "xiaohongshu Logo" },
-	{ src: "logos/reddit", alt: "reddit Logo" },
-
+	{ src: "logos/google", alt: "Google Logo", class: "py-1" },
+	{ src: "logos/netlify", alt: "Netlify Logo" },
+	{ src: "logos/nordvpn", alt: "NordVPN Logo", class: "py-1" },
+	{ src: "logos/rokt", alt: "Rokt Logo", class: "py-2" },
+	{ src: "logos/theguardian", alt: "The Guardian Logo", class: "py-1.5" },
+	{ src: "logos/trivago", alt: "Trivago Logo", class: "py-1" },
 ]
 ---
 
@@ -20,15 +18,15 @@ const logos = [
 	<div class="noise-underlay absolute inset-0"></div>
 	<PageTitleBlock
 		lg
-		body=" Our automation tools empower eCommerce brands to automate repetitive tasks, improve efficiency, enhance customer experiences, and achieve sustainable growth in the competitive eCommerce landscape."
+		body="from idea to action cycle is a nightmare for me.I am bad at this one,so came this challenge"
 	>
 		<h1
 			slot="title"
 			class="heading-2 mb-10 max-w-[10ch] px-4 text-center lg:heading-1 sm:max-w-[15ch]"
 		>
-			Automate, Analyze, Excel:
+			100 projects challenge
 			<br class="hidden sm:block" />
- Unleash the Potential of Your Brand
+			before get 40
 		</h1>
 	</PageTitleBlock>
 
@@ -45,7 +43,7 @@ const logos = [
 
 	<div class="flex flex-col gap-x-6 gap-y-8 px-4 md:px-6 lg:flex-row lg:items-center">
 		<p class="body px-8 text-astro-gray-200 lg:max-w-[12rem] lg:px-0 lg:text-left xl:text-lg">
-			Supported Platforms:
+			I have made over 1000+ github repos yet:
 		</p>
 		<div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-6 px-4">
 			{
