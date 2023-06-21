@@ -11,7 +11,7 @@ Effective Date: 2023-06-20
 
 At ShopConna, we are committed to protecting the privacy and security of our users' personal information. This Privacy Policy outlines how we collect, use, and safeguard your personal data in compliance with TikTok for Developer's Terms of Service. By using our video app (referred to as the "App"), you consent to the terms described in this Privacy Policy.
 
-# Information We Collect
+# 1 Information We Collect
 
 1.1 Personal Information
 
@@ -38,7 +38,7 @@ We automatically collect certain information when you use our App, such as:
 
 We may use cookies and similar technologies to enhance your experience and improve our App's functionality. These technologies collect information about your usage patterns within the App.
 
-# How We Use Your Information
+# 2 How We Use Your Information
 
 We use the information we collect for the following purposes:
 
@@ -48,7 +48,7 @@ We use the information we collect for the following purposes:
 * To detect and prevent fraud, unauthorized access, and other security incidents
 * To comply with legal obligations and enforce our Terms of Service
 
-# Data Sharing and Disclosure
+# 3 Data Sharing and Disclosure
 
 We may share your personal information and video content in the following circumstances:
 
@@ -58,11 +58,11 @@ We may share your personal information and video content in the following circum
 * Business Transfers: In the event of a merger, acquisition, or sale of assets, your personal information and video content may be transferred as part of the transaction, subject to the same privacy protections outlined in this policy.
 * Your Consent: We may share your information with third parties if you have given us explicit consent to do so.
 
-# Data Security
+# 4 Data Security
 
 We implement appropriate technical and organizational measures to protect your personal information and video content from unauthorized access, disclosure, alteration, or destruction. However, no data transmission over the internet or storage system is completely secure, so we cannot guarantee the absolute security of your data.
 
-# Your Rights
+# 5 Your Rights
 
 You have certain rights regarding your personal information and video content. These may include:
 
@@ -70,15 +70,15 @@ You have certain rights regarding your personal information and video content. T
 * Correction and Deletion: You can update or correct your personal information or request the deletion of your video content if it is inaccurate, incomplete, or no longer necessary for the purposes for which it was collected.
 * Account Closure: You can delete your account and associated personal information at any time.
 
-# Children's Privacy
+# 6 Children's Privacy
 
 Our App is not directed to individuals under the age of 13. We do not knowingly collect personal information from children. If you believe we have unintentionally collected personal information from a child, please contact us, and we will promptly delete it.
 
-# Changes to the Privacy Policy
+# 7 Changes to the Privacy Policy
 
 We may update this Privacy Policy from time to time. We will notify you of any significant changes by posting the revised policy within the App or by other means. Please review this policy periodically to stay informed about our privacy practices.
 
-# Contact Us
+# 8 Contact Us
 
 If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at admin@tiktokastudio.com.
 

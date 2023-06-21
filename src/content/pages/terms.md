@@ -11,7 +11,7 @@ Effective Date: 2023-06-20
 
 These Terms of Service ("Terms") govern your access to and use of the ShopConna Video App (referred to as the "App"). Please read these Terms carefully before using the App. By accessing or using the App, you agree to be bound by these Terms.
 
-# Use of the App
+# 1 Use of the App
 
 1.1 Eligibility
 You must be at least 13 years old to use the App. By using the App, you represent and warrant that you meet the eligibility requirements.
@@ -29,7 +29,7 @@ You agree not to engage in any of the following prohibited conduct:
 * Collecting or harvesting any information from the App without our prior written consent
 * Using the App for any commercial or promotional purposes without our prior written consent
 
-# User Content
+# 2 User Content
 
 2.1 Ownership of User Content
 You retain ownership of any content you upload, share, or post through the App ("User Content"). By uploading User Content, you grant us a non-exclusive, royalty-free, worldwide, sublicensable, and transferable license to use, reproduce, modify, distribute, display, and perform the User Content solely for the purposes of providing and improving the App.
@@ -40,35 +40,35 @@ You are solely responsible for the User Content you upload or share through the 
 2.3 Removal of User Content
 We reserve the right to remove or disable access to any User Content that violates these Terms or infringes upon the rights of others. However, we do not assume any responsibility for monitoring or controlling User Content and cannot guarantee the accuracy, completeness, or quality of any User Content.
 
-# Intellectual Property Rights
+# 3 Intellectual Property Rights
 
 The App and its content, including but not limited to text, graphics, logos, images, videos, and software, are owned by or licensed to us and are protected by copyright, trademark, and other intellectual property laws. You may not reproduce, modify, distribute, or create derivative works based on the App or its content without our prior written consent.
 
-# Privacy
+# 4 Privacy
 
 Our collection, use, and disclosure of personal information are governed by our Privacy Policy. By using the App, you consent to the collection and use of your information as described in the Privacy Policy.
 
-# Termination
+# 5 Termination
 
 We may suspend or terminate your access to the App at any time and for any reason, without prior notice or liability. Upon termination, your license to use the App will be automatically revoked, and you must cease all use of the App.
 
-# Disclaimer of Warranties
+# 6 Disclaimer of Warranties
 
 The App is provided on an "as is" and "as available" basis, without warranties of any kind, whether express or implied. We do not warrant that the App will be uninterrupted, error-free, or free of viruses or other harmful components. You use the App at your own risk.
 
-# Limitation of Liability
+# 7 Limitation of Liability
 
 To the maximum extent permitted by applicable law, we shall not be liable for any indirect, incidental, consequential, or punitive damages arising out of or in connection with your use of the App, even if we have been advised of the possibility of such damages.
 
-# Governing Law and Jurisdiction
+# 8 Governing Law and Jurisdiction
 
 These Terms shall be governed by and construed in accordance with the laws of [Jurisdiction]. Any dispute arising out of or relating to these Terms or your use of the App shall be subject to the exclusive jurisdiction of the courts located in [Jurisdiction].
 
-# Changes to the Terms
+# 9 Changes to the Terms
 
 We reserve the right to modify or update these Terms at any time, without prior notice. Any changes to the Terms will be effective immediately upon posting within the App. Your continued use of the App after the posting of revised Terms constitutes your acceptance of the changes.
 
-# Contact Us
+# 10 Contact Us
 
 If you have any questions, concerns, or requests regarding these Terms or your use of the App, please contact us at admin@tiktokastudio.com.
 
