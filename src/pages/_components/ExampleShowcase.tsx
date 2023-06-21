@@ -27,7 +27,7 @@ const items: Item[] = [
 		liveUrl: new URL("https://github.com/wanghaisheng/gen-brand-social-account-RSS"),
 		image: blogsImage,
 		cta: {
-			text: "Gen Rss for competitors social profile",
+			text: "Rss for social profile",
 			href: "/themes/?categories%5B%5D=blog",
 		},
 	},
