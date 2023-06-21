@@ -1,6 +1,6 @@
 ---
 import CatalogSubmitCallout, {
-	type Props as CalloutProps,
+type Props as CalloutProps,
 } from "~/components/CatalogSubmitCallout.astro"
 
 export type Props = Omit<CalloutProps, "slot" | "title" | "cta">
@@ -11,7 +11,7 @@ const { ...attrs } = Astro.props
 <CatalogSubmitCallout
 	title="Submit an integration"
 	cta={{
-		href: "https://docs.astro.build/en/guides/publish-to-npm/#integrations-library",
+		href: "https://docs.shopconna.com/en/guides/publish-to-npm/#integrations-library",
 		text: "Submit integration",
 	}}
 	{...attrs}
