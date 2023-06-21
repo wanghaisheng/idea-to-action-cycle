@@ -34,10 +34,10 @@ const items: Item[] = [
 	{
 		title: "Email Marketing Automation",
 		description: "Streamline your email marketing campaigns with our tools that automate tasks such as segmenting your audience, creating personalized email templates, scheduling campaigns, and tracking performance metrics. This ensures efficient and targeted communication with your customers.",
-		liveUrl: new URL("https://rokt.com/"),
+		liveUrl: new URL("https://github.com/wanghaisheng/brand-contact-Email-collector"),
 		image: marketingImage,
 		cta: {
-			text: "Marketing themes",
+			text: "email collect",
 			href: "/themes/?categories%5B%5D=landing-page",
 		},
 	},
