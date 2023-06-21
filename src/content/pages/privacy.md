@@ -1,72 +1,85 @@
 ---
 seo:
   title: Privacy Policy
-  description: Astro's privacy policy
-updated_date: 2023-03-01
+  description: shopconna's privacy policy
+updated_date: 2023-06-20
 ---
 
-_In addition to this Privacy Policy, Astro also has [Terms of Service](/terms)._
+_In addition to this Privacy Policy apply to your access and use of the shopconna website (the "Service") and our video sharing app. Please read them carefully., shopconna also has [Terms of Service](/terms)._
 
-The Astro Privacy Policy describes the privacy practices of Astro website and services. The laws of California and the laws of the United States apply. If you are a resident of EU/EEA, the European Commission-approved Standard Contractual Clauses (also referred to as Model Contracts) apply to Trans-Atlantic data transfers.
+Effective Date: 2023-06-20
 
-### General Information
+At ShopConna, we are committed to protecting the privacy and security of our users' personal information. This Privacy Policy outlines how we collect, use, and safeguard your personal data in compliance with TikTok for Developer's Terms of Service. By using our video app (referred to as the "App"), you consent to the terms described in this Privacy Policy.
 
-We collect very limited personally identifiable information described below (the “data”) from [GitHub](https://help.github.com/articles/github-privacy-policy/) and of those who communicate with us directly via e-mail, aggregate information on what pages consumers access or visit, and information volunteered by the consumer (such as survey information and/or site registrations). The information we collect is used to provide our services, and to improve the quality of our services, and is not shared with or sold to other organizations for commercial purposes, except to provide products or services you've requested when we have your permission, or under the following circumstances:
+# Information We Collect
 
-- It is necessary to share information in order to investigate, prevent, or take action regarding illegal activities, suspected fraud, situations involving potential threats to the physical safety of any person, violations of [Terms of Service](/terms), or as otherwise required by law.
-- We transfer information about you if Astro is acquired by or merged with another company. In this event, Astro will notify you before information about you is transferred and becomes subject to a different privacy policy.
+1.1 Personal Information
 
-### Information Gathering and Usage
+We may collect personal information from you when you interact with our App. This information may include:
 
-Astro uses collected information for the following general purposes: products and services provision, billing, identification and authentication through GitHub, Bitbucket, services improvement, contact, and research. Astro uses personally identifiable information on billing address and/or payment information only for the sole purpose of payment processing for Astro services.
+* Your username or display name
+* Profile information and preferences
+* Email address or phone number (if you choose to provide it)
+* Information you provide when communicating with us, such as through customer 
+* support channels or when submitting feedback
 
-Payment processing services enable us to process payments by credit card, bank transfer or other means. To ensure greater security, we share only the information necessary to execute the transaction with the financial intermediaries handling the transaction. Some of these services may also enable the sending of timed messages to our customer, such as emails containing invoices or notifications concerning the payment.
+1.2 Video Content
 
-### Cookies
+Our App is designed to allow users to share video recordings. When you upload videos to our App, we collect and store the content you provide.
 
-A cookie is a small amount of data, which often includes an anonymous unique identifier, which is sent to your browser from a web site's computers and stored on your computer's hard drive.
+1.3 Usage Data
 
-You can control how websites use cookies by configuring the privacy settings within your browser. Note that if you disable cookies entirely, Astro websites and applications may not function properly.
+We automatically collect certain information when you use our App, such as:
 
-### Data Storage
+* Log data, including your IP address, device information, browser type, and operating system
+* Usage metrics, such as the features you access, the duration of your sessions, and interactions within the App
 
-Astro uses third-party vendors and hosting partners to provide the necessary hardware, software, networking, storage, and related technology required to run Astro. Astro’s third-party vendors and hosting partners adhere to the European Commission-approved Standard Contractual Clauses (also referred to as Model Contracts).
+1.4 Cookies and Similar Technologies
 
-### Data Retention and Deletion
+We may use cookies and similar technologies to enhance your experience and improve our App's functionality. These technologies collect information about your usage patterns within the App.
 
-Data is kept for the time necessary to provide the products or services requested by the customer. We keep some of your personal data for as long as you are a user of the Astro Service. When you delete your account, we will delete your personal data and it will expire from backups; unless we are legally allowed or required to maintain certain personal data, including situations under the applicable laws to reveal personal data upon reasonable request of public authorities.
+# How We Use Your Information
 
-### Rights of Data Subjects
+We use the information we collect for the following purposes:
 
-Data subject (customer) can always request Astro to allow access and correction, supplement or update of data. Subject to a reasonable request of a data subject, Astro will remove data pertaining to a data subject unless applicable laws impose a duty to retain data for certain time or identification, location and deletion of data imposes a disproportionate financial burden upon Astro. Any requests for access, correction or deletion of data should be directed to Astro by sending an email to [privacy@astro.build](mailto:privacy@astro.build).
+* To provide and personalize our App services, including video sharing, recommendations, and user interactions
+* To communicate with you, respond to your inquiries, and provide support
+* To improve our App, analyze usage patterns, and enhance user experience
+* To detect and prevent fraud, unauthorized access, and other security incidents
+* To comply with legal obligations and enforce our Terms of Service
 
-You may be aware that a European Union law, called the General Data Protection Regulation or "GDPR" gives certain rights to individuals in relation to their personal data. In order to enable you to exercise these rights with ease in relation to how Astro uses your personal data, we provide you with access to the following settings via your Account Settings page:
+# Data Sharing and Disclosure
 
-- Remove Account - allows you to delete your account and associated personal data; and,
-- Notifications - allows you to manage communications you receive from Astro.
+We may share your personal information and video content in the following circumstances:
 
-As a user you may also request a copy of your data and that your data be updated, deleted, restricted or moved to another organization.
+* With Other Users: Our App is designed for sharing video content, so other users may be able to view and interact with the videos you upload.
+* Service Providers: We engage trusted service providers to perform functions on our behalf, such as cloud storage, content delivery, and analytics. These providers have access to your personal information and video content as necessary to perform their services and are obligated to protect your data.
+* Legal Compliance: We may disclose your information if required by law, court order, or to comply with legal processes.
+* Business Transfers: In the event of a merger, acquisition, or sale of assets, your personal information and video content may be transferred as part of the transaction, subject to the same privacy protections outlined in this policy.
+* Your Consent: We may share your information with third parties if you have given us explicit consent to do so.
 
-### We may share your information with
+# Data Security
 
-We want to process as little personal information as possible when you use our website. That's why we've chosen Fathom Analytics for our website analytics, which doesn't use cookies and complies with the GDPR, ePrivacy (including PECR), COPPA and CCPA. Using this privacy-friendly website analytics software, your IP address is only briefly processed, and we (running this website) have no way of identifying you. As per the CCPA, your personal information is de-identified. You can read more about this on Fathom Analytics' website.
+We implement appropriate technical and organizational measures to protect your personal information and video content from unauthorized access, disclosure, alteration, or destruction. However, no data transmission over the internet or storage system is completely secure, so we cannot guarantee the absolute security of your data.
 
-The purpose of us using this software is to understand our website traffic in the most privacy-friendly way possible so that we can continually improve our website and business. The lawful basis as per the GDPR is "Article 6(1)(f); where our legitimate interests are to improve our website and business continually." As per the explanation, no personal data is stored over time.
+# Your Rights
 
-When you choose to submit feedback on the docs site, we store your message using the [Feedback Fish](https://feedback.fish/) service. This enables us to gather helpful feedback and improve our documentation.
+You have certain rights regarding your personal information and video content. These may include:
 
-### Security
+* Access and Portability: You can request a copy of the personal information we hold about you and, in some cases, request it to be transferred to another provider.
+* Correction and Deletion: You can update or correct your personal information or request the deletion of your video content if it is inaccurate, incomplete, or no longer necessary for the purposes for which it was collected.
+* Account Closure: You can delete your account and associated personal information at any time.
 
-We understand that the security of your data is important. We provide reasonable administrative, technical, and physical security controls to protect your personal information from unauthorized access, disclosure, modification, or unauthorized destruction. However, despite our efforts, no security controls are 100% effective and Astro cannot ensure or warrant the security of your data.
+# Children's Privacy
 
-### Links
+Our App is not directed to individuals under the age of 13. We do not knowingly collect personal information from children. If you believe we have unintentionally collected personal information from a child, please contact us, and we will promptly delete it.
 
-We may display content that links to third-party websites. We cannot control or be held responsible for third parties’ privacy practices and content. If you click on a third-party advertisement or link, please understand that you are leaving the Astro website and any personal data you provide will not be covered by this Policy. Please read their privacy policies to find out how they collect and process your personal data.
+# Changes to the Privacy Policy
 
-### Changes
+We may update this Privacy Policy from time to time. We will notify you of any significant changes by posting the revised policy within the App or by other means. Please review this policy periodically to stay informed about our privacy practices.
 
-Astro may periodically update this policy. We encourage you to periodically review our website for the latest information on our privacy practices.
+# Contact Us
 
-### Questions
+If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at admin@tiktokastudio.com.
 
-Thank you for reading our Privacy Policy. If you have any questions about this Policy, please contact our Data Protection Officer by emailing [privacy@astro.build](mailto:privacy@astro.build).
+By using our App, you acknowledge that you have read and understood this Privacy Policy and consent to the collection, use, and disclosure of your personal information and video content as described herein.

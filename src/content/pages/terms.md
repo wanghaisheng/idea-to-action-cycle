@@ -1,113 +1,75 @@
 ---
 seo:
   title: Terms of Service
-  description: Astro's terms of service
-updated_date: 2022-01-06
+  description: shopconna's terms of service
+updated_date: 2023-06-20
 ---
 
-_These terms of service ("Terms") apply to your access and use of the Astro website (the "Service"). Please read them carefully._
+_These terms of service ("Terms") apply to your access and use of the shopconna website (the "Service") and our video sharing app. Please read them carefully._
 
-### Accepting these terms
+Effective Date: 2023-06-20
 
-If you access or use the Service, it means you agree to be bound by all of the terms below. So, before you use the Service, please read all of the terms. If you don’t agree to all of the terms below, please do not use the Service. Also, if a term does not make sense to you, please let us know by e-mailing [support@astro.build](mailto:support@astro.build).
+These Terms of Service ("Terms") govern your access to and use of the ShopConna Video App (referred to as the "App"). Please read these Terms carefully before using the App. By accessing or using the App, you agree to be bound by these Terms.
 
-### Changes to these Terms
+# Use of the App
 
-We reserve the right to modify these Terms at any time. Whenever we make changes to these Terms, the changes are effective 2 days after we post such revised Terms (indicated by revising the date at the top of these Terms) or upon your acceptance if we provide a mechanism for your immediate acceptance of the revised Terms (such as a click-through confirmation or acceptance button). It is your responsibility to check Astro for changes to these Terms.
+1.1 Eligibility
+You must be at least 13 years old to use the App. By using the App, you represent and warrant that you meet the eligibility requirements.
 
-If you continue to use the Service after the revised Terms go into effect, then you have accepted the changes to these Terms.
+1.2 License to Use the App
+Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable, and revocable license to use the App for personal, non-commercial purposes.
 
-### Privacy Policy
+1.3 Prohibited Conduct
+You agree not to engage in any of the following prohibited conduct:
 
-For information about how we collect and use information about users of the Service, please view our [privacy policy](/privacy).
+* Violating any applicable laws, regulations, or third-party rights
+* Uploading, sharing, or disseminating content that is unlawful, harmful, defamatory, abusive, obscene, or infringing
+* Engaging in any activity that may compromise the security or integrity of the App or interfere with its proper functioning
+* Impersonating any person or entity or misrepresenting your affiliation with any person or entity
+* Collecting or harvesting any information from the App without our prior written consent
+* Using the App for any commercial or promotional purposes without our prior written consent
 
-### Third-Party Services
+# User Content
 
-From time to time, we may provide you with links to third party websites or services that we do not own or control. Your use of the Service may also include the use of applications that are developed or owned by a third party. Your use of such third party applications, websites, and services is governed by that party’s own terms of service or privacy policies. We encourage you to read the terms and conditions and privacy policy of any third party application, website or service that you visit or use.
+2.1 Ownership of User Content
+You retain ownership of any content you upload, share, or post through the App ("User Content"). By uploading User Content, you grant us a non-exclusive, royalty-free, worldwide, sublicensable, and transferable license to use, reproduce, modify, distribute, display, and perform the User Content solely for the purposes of providing and improving the App.
 
-### Creating Accounts
+2.2 Responsibility for User Content
+You are solely responsible for the User Content you upload or share through the App. You represent and warrant that you have all necessary rights and permissions to upload and share the User Content and that it does not violate any third-party rights or any applicable laws.
 
-When you create an account or use another service to log in to the Service, you agree to maintain the security of your password and accept all risks of unauthorized access to any data or other information you provide to the Service.
+2.3 Removal of User Content
+We reserve the right to remove or disable access to any User Content that violates these Terms or infringes upon the rights of others. However, we do not assume any responsibility for monitoring or controlling User Content and cannot guarantee the accuracy, completeness, or quality of any User Content.
 
-If you discover or suspect any Service security breaches, please let us know as soon as possible.
+# Intellectual Property Rights
 
-### Your Content &amp; Conduct
+The App and its content, including but not limited to text, graphics, logos, images, videos, and software, are owned by or licensed to us and are protected by copyright, trademark, and other intellectual property laws. You may not reproduce, modify, distribute, or create derivative works based on the App or its content without our prior written consent.
 
-Our Service allows you and other users to post, link and otherwise make available content. You are responsible for the content that you make available to the Service, including its legality, reliability, and appropriateness.
+# Privacy
 
-When you post, link or otherwise make available content to the Service, you grant us the right and license to use, reproduce, modify, publicly perform, publicly display and distribute your content on or through the Service. We may format your content for display throughout the Service, but we will not edit or revise the substance of your content itself.
+Our collection, use, and disclosure of personal information are governed by our Privacy Policy. By using the App, you consent to the collection and use of your information as described in the Privacy Policy.
 
-Aside from our limited right to your content, you retain all of your rights to the content you post, link and otherwise make available on or through the Service.
+# Termination
 
-You can remove the content that you posted by deleting it. Once you delete your content, it will not appear on the Service, but copies of your deleted content may remain in our system or backups for some period of time.
+We may suspend or terminate your access to the App at any time and for any reason, without prior notice or liability. Upon termination, your license to use the App will be automatically revoked, and you must cease all use of the App.
 
-You may not post, link and otherwise make available on or through the Service any of the following:
+# Disclaimer of Warranties
 
-- Content that is libelous, defamatory, bigoted, fraudulent or deceptive;
-- Content that is illegal or unlawful, that would otherwise create liability;
-- Content that may infringe or violate any patent, trademark, trade secret, copyright, right of privacy, right of publicity or other intellectual or other right of any party;
-- Mass or repeated promotions, political campaigning or commercial messages directed at users who do not follow you (SPAM);
-- Private information of any third party (e.g., addresses, phone numbers, email addresses, Social Security numbers and credit card numbers); and
-- Viruses, corrupted data or other harmful, disruptive or destructive files or code.
+The App is provided on an "as is" and "as available" basis, without warranties of any kind, whether express or implied. We do not warrant that the App will be uninterrupted, error-free, or free of viruses or other harmful components. You use the App at your own risk.
 
-Also, you agree that you will not do any of the following in connection with the Service or other users:
+# Limitation of Liability
 
-- Use the Service in any manner that could interfere with, disrupt, negatively affect or inhibit other users from fully enjoying the Service or that could damage, disable, overburden or impair the functioning of the Service;
-- Impersonate or post on behalf of any person or entity or otherwise misrepresent your affiliation with a person or entity;
-- Collect any personal information about other users, or intimidate, threaten, stalk or otherwise harass other users of the Service;
-- Create an account or post any content if you are not over 13 years of age years of age; and
-- Circumvent or attempt to circumvent any filtering, security measures, rate limits or other features designed to protect the Service, users of the Service, or third parties.
+To the maximum extent permitted by applicable law, we shall not be liable for any indirect, incidental, consequential, or punitive damages arising out of or in connection with your use of the App, even if we have been advised of the possibility of such damages.
 
-### Astro Materials
+# Governing Law and Jurisdiction
 
-We put a lot of effort into creating the Service including, the logo and all designs, text, graphics, pictures, information and other content (excluding your content). This property is owned by us or our licensors and it is protected by U.S. and international copyright laws. We grant you the right to use it.
+These Terms shall be governed by and construed in accordance with the laws of [Jurisdiction]. Any dispute arising out of or relating to these Terms or your use of the App shall be subject to the exclusive jurisdiction of the courts located in [Jurisdiction].
 
-However, unless we expressly state otherwise, your rights do not include: (i) publicly performing or publicly displaying the Service; (ii) modifying or otherwise making any derivative uses of the Service or any portion thereof; (iii) using any data mining, robots or similar data gathering or extraction methods; (iv) downloading (other than page caching) of any portion of the Service or any information contained therein; (v) reverse engineering or accessing the Service in order to build a competitive product or service; or (vi) using the Service other than for its intended purposes. If you do any of this, we may terminate your use of the Service.
+# Changes to the Terms
 
-### Hyperlinks and Third Party Content
+We reserve the right to modify or update these Terms at any time, without prior notice. Any changes to the Terms will be effective immediately upon posting within the App. Your continued use of the App after the posting of revised Terms constitutes your acceptance of the changes.
 
-You may create a hyperlink to the Service. But, you may not use, frame or utilize framing techniques to enclose any of our trademarks, logos or other proprietary information without our express written consent.
+# Contact Us
 
-Astro makes no claim or representation regarding, and accepts no responsibility for third party websites accessible by hyperlink from the Service or websites linking to the Service. When you leave the Service, you should be aware that these Terms and our policies no longer govern.
+If you have any questions, concerns, or requests regarding these Terms or your use of the App, please contact us at admin@tiktokastudio.com.
 
-If there is any content on the Service from you and others, we don’t review, verify or authenticate it, and it may include inaccuracies or false information. We make no representations, warranties, or guarantees relating to the quality, suitability, truth, accuracy or completeness of any content contained in the Service. You acknowledge sole responsibility for and assume all risk arising from your use of or reliance on any content.
-
-### Unavoidable Legal Stuff
-
-THE SERVICE AND ANY OTHER SERVICE AND CONTENT INCLUDED ON OR OTHERWISE MADE AVAILABLE TO YOU THROUGH THE SERVICE ARE PROVIDED TO YOU ON AN AS IS OR AS AVAILABLE BASIS WITHOUT ANY REPRESENTATIONS OR WARRANTIES OF ANY KIND. WE DISCLAIM ANY AND ALL WARRANTIES AND REPRESENTATIONS (EXPRESS OR IMPLIED, ORAL OR WRITTEN) WITH RESPECT TO THE SERVICE AND CONTENT INCLUDED ON OR OTHERWISE MADE AVAILABLE TO YOU THROUGH THE SERVICE WHETHER ALLEGED TO ARISE BY OPERATION OF LAW, BY REASON OF CUSTOM OR USAGE IN THE TRADE, BY COURSE OF DEALING OR OTHERWISE.
-
-IN NO EVENT WILL ASTRO BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY SPECIAL, INDIRECT, INCIDENTAL, EXEMPLARY OR CONSEQUENTIAL DAMAGES OF ANY KIND ARISING OUT OF OR IN CONNECTION WITH THE SERVICE OR ANY OTHER SERVICE AND/OR CONTENT INCLUDED ON OR OTHERWISE MADE AVAILABLE TO YOU THROUGH THE SERVICE, REGARDLESS OF THE FORM OF ACTION, WHETHER IN CONTRACT, TORT, STRICT LIABILITY OR OTHERWISE, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES OR ARE AWARE OF THE POSSIBILITY OF SUCH DAMAGES. OUR TOTAL LIABILITY FOR ALL CAUSES OF ACTION AND UNDER ALL THEORIES OF LIABILITY WILL BE LIMITED TO THE AMOUNT YOU PAID TO ASTRO THIS SECTION WILL BE GIVEN FULL EFFECT EVEN IF ANY REMEDY SPECIFIED IN THIS AGREEMENT IS DEEMED TO HAVE FAILED OF ITS ESSENTIAL PURPOSE.
-
-You agree to defend, indemnify and hold us harmless from and against any and all costs, damages, liabilities, and expenses (including attorneys’ fees, costs, penalties, interest and disbursements) we incur in relation to, arising from, or for the purpose of avoiding, any claim or demand from a third party relating to your use of the Service or the use of the Service by any person using your account, including any claim that your use of the Service violates any applicable law or regulation, or the rights of any third party, and/or your violation of these Terms.
-
-### Copyright Complaints
-
-We take intellectual property rights seriously. In accordance with the Digital Millennium Copyright Act ("DMCA") and other applicable law, we have adopted a policy of terminating, in appropriate circumstances and, at our sole discretion, access to the service for users who are deemed to be repeat infringers.
-
-### Governing Law
-
-The validity of these Terms and the rights, obligations, and relations of the parties under these Terms will be construed and determined under and in accordance with the laws of the Delaware state, without regard to conflicts of law principles.
-
-### Jurisdiction
-
-You expressly agree that exclusive jurisdiction for any dispute with the Service or relating to your use of it, resides in the courts of the Delaware state and you further agree and expressly consent to the exercise of personal jurisdiction in the courts of the Delaware state in connection with any such dispute including any claim involving Service. You further agree that you and Service will not commence against the other a class action, class arbitration or other representative action or proceeding.
-
-### Termination
-
-If you breach any of these Terms, we have the right to suspend or disable your access to or use of the Service.
-
-### Assignment
-
-We may assign or delegate these Terms of Service and/or the Privacy Policy, in whole or in part, to any person or entity at any time with or without your consent, including the license grant in the "Your Content &amp; Conduct" section. You may not assign or delegate any rights or obligations under the Terms of Service or Privacy Policy without our prior written consent, and any unauthorized assignment and delegation by you is void.
-
-### Entire Agreement
-
-These Terms constitute the entire agreement between you and Astro. regarding the use of the Service, superseding any prior agreements between you and Astro relating to your use of the Service.
-
-### Feedback
-
-Please let us know what you think of the Service, these Terms and, in general, Astro. When you provide us with any feedback, comments or suggestions about the Service, these Terms and, in general, Astro, you irrevocably assign to us all of your right, title and interest in and to your feedback, comments and suggestions.
-
-### Questions & Contact Information
-
-Questions or comments about the Service may be directed to us at the email address [support@astro.build](mailto:support@astro.build)
+By using the App, you acknowledge that you have read and understood these Terms and agree to be bound by them.
