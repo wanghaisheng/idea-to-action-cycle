@@ -20,20 +20,31 @@ export const prerender = true
 
 const beliefs = [
 	{
-		label: "Belief 01",
-		heading: "It should be easier to build fast websites than a slow one",
+		label: "Flexibility",
+		heading: "Our toolkit offers a high degree of flexibility, allowing you to customize and adapt automation processes to suit your unique business needs.",
 		icon: iconFast.src,
 	},
 	{
-		label: "Belief 02",
-		heading: "It should be easier to build with code than without it",
+		label: "Scalability",
+		heading: "As your brand expands, our automation toolkit grows with you. It can seamlessly handle increasing workloads and support your business growth without compromising performance.",
 		icon: iconCode.src,
 	},
 	{
-		label: "Belief 03",
-		heading: "It should be easy to build a great website, period.",
+		label: "Integration",
+		heading: "We understand that brands rely on various software applications and platforms. Our automation toolkit is designed to integrate seamlessly with your existing systems, enabling smooth data flow and eliminating the need for manual data entry.",
 		icon: iconWebsite.src,
 	},
+	{
+		label: "User-Friendly",
+		heading: "We prioritize user experience and have developed an intuitive interface that ensures ease of use, even for those with minimal technical expertise. Our goal is to empower you to automate processes without the need for extensive coding knowledge.",
+		icon: iconWebsite.src,
+	},
+	{
+		label: "Community Support",
+		heading: "Join a vibrant community of like-minded individuals who are passionate about automation. Share ideas, collaborate, and leverage the collective knowledge of the ShopConna community to enhance your automation efforts.",
+		icon: iconWebsite.src,
+	},
+
 ]
 
 const allQuotes = await getCollection("quotes")
@@ -59,16 +70,11 @@ const quotes = await Promise.all(
 			<div slot="start" class="lg:py-20">
 				<h1 class="heading-2 mb-10">The web is what we make it</h1>
 				<p class="body pb-4 text-astro-gray-200 sm:body-large">
-					We think a lot about the early days of the internet. It was weird, it was wonderful, and
-					it was ours for the making.
+					in the beginning, I learn to run 2 shopify brand store and get my feet dirty in this brand building era.
 				</p>
 				<p class="body pb-4 text-astro-gray-200 sm:body-large">
-					A lot has changed since then—a lot of it for the better. Building a great website has
-					never been easier. But choosing the right tool for the job is, somehow, harder than ever.
-				</p>
-				<p class="body text-astro-gray-200 sm:body-large">
-					We built Astro to bring out the best of the web.
-				</p>
+Discover how our open-source automation toolkit can transform your brand's productivity and efficiency. Empower your team, save valuable time and resources, and unlock new opportunities for growth. Let us help you harness the true potential of automation.				</p>
+
 			</div>
 			<div slot="end" class="noise-underlay flex items-center">
 				<div
@@ -112,12 +118,39 @@ const quotes = await Promise.all(
 				<img src={burst.src} alt="" />
 			</div>
 			<div slot="end" class="flex flex-col gap-8 sm:gap-10 md:gap-12">
-				<h2 class="heading-3 sm:heading-2">Astro is for everyone</h2>
+				<h2 class="heading-3 sm:heading-2">Our Mission:</h2>
 				<p class="body text-astro-gray-200 sm:body-large">
-					The web is for everyone, so Astro is, too. Whether this is your first web project or
-					you’ve lost count, Astro is the easiest way to build a lightning-fast website. Keep
-					working with the tools you love, in an environment that’s easy to use. That’s Astro.
+					
+Our mission is to democratize automation by offering a comprehensive toolkit that empowers brands of all sizes. We are dedicated to providing accessible, user-friendly, and customizable automation solutions that help businesses achieve their goals while minimizing manual efforts.
 				</p>
+			</div>
+		</TwoUp>
+		<TwoUp class="lg:bleed-start 2xl:bleed-none" mobileReverse threshold="lg">
+			<div
+				slot="start"
+				class="graphic noise-underlay -mt-8 flex scale-150 items-center lg:mt-0 lg:scale-125"
+			>
+				<img src={burst.src} alt="" />
+			</div>
+			<div slot="end" class="flex flex-col gap-8 sm:gap-10 md:gap-12">
+				<h2 class="heading-3 sm:heading-2">What Sets Us Apart:</h2>
+				<p class="body text-astro-gray-200 sm:body-large">
+					
+At ShopConna, we stand out from the crowd because of our commitment to open-source principles. We firmly believe in the power of collaboration and transparency, which is why our automation toolkit is built on open-source technologies. This approach allows us to foster a community-driven ecosystem where users can contribute, share, and enhance the functionalities of our tools. We believe that together, we can drive innovation and create solutions that cater to the evolving needs of modern businesses.				</p>
+			</div>
+		</TwoUp>
+		<TwoUp class="lg:bleed-start 2xl:bleed-none" mobileReverse threshold="lg">
+			<div
+				slot="start"
+				class="graphic noise-underlay -mt-8 flex scale-150 items-center lg:mt-0 lg:scale-125"
+			>
+				<img src={burst.src} alt="" />
+			</div>
+			<div slot="end" class="flex flex-col gap-8 sm:gap-10 md:gap-12">
+				<h2 class="heading-3 sm:heading-2">Our Automation Toolkit:</h2>
+				<p class="body text-astro-gray-200 sm:body-large">
+					
+Our automation toolkit is a comprehensive suite of tools and resources designed to automate repetitive tasks, streamline workflows, and optimize operations. Whether you are a small startup or an established enterprise, our toolkit can be tailored to meet your specific requirements, allowing you to focus on what matters most—growing your brand.				</p>
 			</div>
 		</TwoUp>
 
@@ -125,8 +158,7 @@ const quotes = await Promise.all(
 			<div slot="start" class="flex flex-col items-start gap-6">
 				<h2 class="heading-3 pb-2 sm:heading-2">Open source is in our DNA</h2>
 				<p class="body text-astro-gray-200 sm:body-large">
-					Astro is a free, open source project with an active, supportive, and wildly entertaining
-					community around it. Come on over to Discord to join the fun.
+					Discover how our open-source automation toolkit can transform your brand's productivity and efficiency. Empower your team, save valuable time and resources, and unlock new opportunities for growth. Let us help you harness the true potential of automation..
 				</p>
 				<a href="/careers" rel="prefetch" class="button button-primary">Join us</a>
 			</div>
@@ -153,9 +185,7 @@ const quotes = await Promise.all(
 	<section class="company grid-container relative overflow-hidden">
 		<PageSection title="The Astro Technology Company" class="relative z-10">
 			<p class="body mx-auto max-w-screen-md text-center text-astro-gray-200 sm:body-large">
-				We formed the Astro Technology Company to support the open source project and its community
-				for the long haul. If you want to build the world’s best platform for web development with
-				us, we’re hiring!
+				At ShopConna, we believe that the power of automation should be accessible to all. We are a leading provider of open-source automation toolkits designed to empower brands and businesses to streamline their processes and enhance productivity. With our innovative solutions, we aim to bridge the gap between technology and people, enabling brands to reach new heights of efficiency and success.
 			</p>
 			<a href="/careers" rel="prefetch" class="button button-white self-center">See Open Roles</a>
 		</PageSection>

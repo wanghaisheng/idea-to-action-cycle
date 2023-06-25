@@ -28,7 +28,7 @@ const items: Item[] = [
 		image: blogsImage,
 		cta: {
 			text: "Rss for social profile",
-			href: "/themes/?categories%5B%5D=blog",
+			href: "/blogs/?categories%5B%5D=social",
 		},
 	},
 	{
@@ -38,7 +38,7 @@ const items: Item[] = [
 		image: marketingImage,
 		cta: {
 			text: "email collect",
-			href: "/themes/?categories%5B%5D=landing-page",
+			href: "/blogs/?categories%5B%5D=email",
 		},
 	},
 	{
@@ -49,29 +49,29 @@ const items: Item[] = [
 		image: agenciesImage,
 		cta: {
 			text: "video schedule and publish",
-			href: "/themes/?categories%5B%5D=landing-page",
+			href: "/blogs/?categories%5B%5D=content-management",
 		},
 	},
 	{
 		title: "Customer Relationship Management",
 		description:
 			"Automate customer data management, lead generation, and customer support processes. Our CRM tools help you track customer interactions, segment your audience, automate personalized responses, and nurture leads throughout their buyer's journey.",
-		liveUrl: new URL("https://github.com/wanghaisheng/brand-contact-Email-collector"),
+		liveUrl: new URL("https://github.com/wanghaisheng/AutoGPT-Social"),
 		image: eCommerceImage,
 		cta: {
-			text: "E-Commerce themes",
-			href: "/themes/?categories%5B%5D=ecommerce",
+			text: "AutoGPT-Social",
+			href: "/blogs/?categories%5B%5D=crm",
 		},
 	},
 	{
 		title: "Workflow Automation",
 		description:
 			"Streamline your internal processes by automating workflows and task assignments. Our tools facilitate collaboration, improve efficiency, and ensure that tasks are completed on time.",
-		liveUrl: new URL("https://baldbeardedbuilder.com/"),
+		liveUrl: new URL("https://github.com/wanghaisheng/auto-shop-pipeline"),
 		image: portfolioImage,
 		cta: {
-			text: "Portfolio themes",
-			href: "/themes/?categories%5B%5D=portfolio",
+			text: "autoshop pipeline",
+			href: "/blogs/?categories%5B%5D=workflow",
 		},
 	},
 ]

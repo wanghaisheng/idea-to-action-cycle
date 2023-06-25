@@ -193,4 +193,7 @@ export const collections = {
 	themes: {
 		schema: themeSchema,
 	},
+	toolkits: {
+		schema: themeSchema,
+	},
 }

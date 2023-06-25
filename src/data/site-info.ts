@@ -22,10 +22,10 @@ const siteInfo: SiteInfo = {
 	name: "shopconna",
 	title: "May curiosity be with you",
 	description:
-		"shopconna is a nickname of wanghaisheng that shows him passion about daily task automation and other problem solving coding practices.",
+		"AI empower brand building, your trustful brand copilot.",
 	image: {
 		src: "/og/social.jpg",
-		alt: "Build the web you want",
+		alt: "Build the brand  you want",
 	},
 	socialLinks: [
 		{

@@ -1,7 +1,6 @@
 ---
 import siteInfo from "~/data/site-info.js"
 import ChevronIcon from "~/icons/ChevronIcon.jsx"
-import LayersIcon from "~/icons/LayersIcon.jsx"
 import OpenBookIcon from "~/icons/OpenBookIcon.jsx"
 import PaletteIcon from "~/icons/PaletteIcon.jsx"
 import SocialLinks from "./SocialLinks.astro"
@@ -21,12 +20,12 @@ const socialLinks = siteInfo.socialLinks.filter((link) => !link.footerOnly)
 			<ChevronIcon class="inline-block rotate-0 transition-transform group-open:-rotate-180" />
 		</summary>
 		<div class="mt-4 flex flex-col gap-4 text-2xl font-light">
-			<a href="/themes/" rel="prefetch" class="link flex items-center gap-4">
-				<PaletteIcon /> Themes
+			<a href="/toolkit/" rel="prefetch" class="link flex items-center gap-4">
+				<PaletteIcon /> Toolkits
 			</a>
-			<a href="/integrations/" rel="prefetch" class="link flex items-center gap-4">
+			<!-- <a href="/integrations/" rel="prefetch" class="link flex items-center gap-4">
 				<LayersIcon /> Integrations
-			</a>
+			</a> -->
 			<a
 				href="https://docs.shopconna.com/en/tutorial/0-introduction/"
 				class="link flex items-center gap-4"
