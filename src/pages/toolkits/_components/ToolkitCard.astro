@@ -4,22 +4,22 @@ import Card from "~/components/Card.astro"
 import CardBadge from "~/components/CardBadge.astro"
 import CardBody from "~/components/CardBody.astro"
 import CardFooter from "~/components/CardFooter.astro"
-import { resolveImage } from "~/content/themes/_resolveImage.js"
+import { resolveImage } from "~/content/toolkits/_resolveImage.js"
 import Avatar from "./Avatar.astro"
 import Badge from "./Badge.astro"
 
 export type Props = {
-	theme: CollectionEntry<"themes">
+	toolkit: CollectionEntry<"toolkits">
 }
 
-const { theme } = Astro.props
+const { toolkit } = Astro.props
 
-const image = await resolveImage(theme)
+const image = await resolveImage(toolkit)
 ---
 
 <Card isLink>
-	{!!theme.data.badge && <CardBadge>{theme.data.badge}</CardBadge>}
-	<a class="flex h-full flex-col" href={`/themes/details/${theme.slug}`} rel="prefetch">
+	{!!toolkit.data.badge && <CardBadge>{toolkit.data.badge}</CardBadge>}
+	<a class="flex h-full flex-col" href={`/toolkits/details/${toolkit.slug}`} rel="prefetch">
 		<img
 			src={image.src}
 			width={image.width}
@@ -31,18 +31,18 @@ const image = await resolveImage(theme)
 		/>
 		<CardBody>
 			<div>
-				<h3 class:list={["heading-5 mb-2 text-white", { official: theme.data.official }]}>
-					{theme.data.title}
+				<h3 class:list={["heading-5 mb-2 text-white", { official: toolkit.data.official }]}>
+					{toolkit.data.title}
 				</h3>
-				<p class="line-clamp-3">{theme.data.description}</p>
+				<p class="line-clamp-3">{toolkit.data.description}</p>
 			</div>
 			<CardFooter
 				class="grid grid-cols-[1fr,auto] items-center justify-between gap-2 overflow-hidden border-t border-astro-gray-400 pt-6"
 			>
-				<Avatar theme={theme} />
+				<Avatar toolkit={toolkit} />
 
-				<Badge theme={theme.data.paid ? "primary" : "secondary"}>
-					{theme.data.paid ? "Paid" : "Free"}
+				<Badge toolkit={toolkit.data.paid ? "primary" : "secondary"}>
+					{toolkit.data.paid ? "Paid" : "Free"}
 				</Badge>
 			</CardFooter>
 		</CardBody>

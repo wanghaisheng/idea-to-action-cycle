@@ -6,11 +6,11 @@ import Pagination from "~/components/Pagination.astro"
 import SearchFilter, { FilterGroup } from "~/components/SearchFilter.astro"
 import SidebarLayout from "~/components/SidebarLayout.astro"
 import SidebarPanel from "~/components/SidebarPanel.astro"
-import { EcommerceBrandCategories, ThemeCategories, ThemeTools } from "~/content/config.js"
+import { EcommerceBrandCategories, ThemeTools, ToolkitCategories } from "~/content/config.js"
 import { paginate } from "~/helpers/paginate.js"
 import MainLayout from "~/layouts/MainLayout.astro"
 import SubmitToolkit from "./_components/SubmitToolkits.astro"
-import ThemeCard from "./_components/ThemeCard.astro"
+import ToolkitCard from "./_components/ToolkitCard.astro"
 
 // Sorting priority: featured first, then compare downloads, then sort alphabetically
 function sortThemes(a: CollectionEntry<"toolkits">, b: CollectionEntry<"toolkits">) {
@@ -46,7 +46,7 @@ if (!currentPage || isNaN(currentPage)) {
 const search = Astro.url.searchParams.get("search")
 
 // get a list of all supported categories, this is the same list used by the zod schema
-const categories = Array.from(ThemeCategories.keys())
+const categories = Array.from(ToolkitCategories.keys())
 const ecommercecategories = Array.from(EcommerceBrandCategories.keys())
 
 // get a list of category filters applied to the request
@@ -59,7 +59,7 @@ const categoryFilter: FilterGroup = {
 		id: c,
 		name: "categories[]",
 		value: c,
-		label: ThemeCategories.get(c)!,
+		label: ToolkitCategories.get(c)!,
 		selected: selectedCategories.includes(c),
 	})),
 }
@@ -93,17 +93,17 @@ const toolFilter: FilterGroup = {
 
 const searchRegex = search && new RegExp(search, "i")
 
-function themeFilter(theme: CollectionEntry<"toolkits">) {
+function themeFilter(toolkit: CollectionEntry<"toolkits">) {
 	// if at least one category filter is applied, hide themes that don't match
 	if (selectedCategories.length > 0) {
-		if (!theme.data.categories.some((c: string) => selectedCategories.includes(c))) {
+		if (!toolkit.data.categories.some((c: string) => selectedCategories.includes(c))) {
 			return false
 		}
 	}
 
 	// if at least one tool filter is applied, hide themes that don't match
 	if (selectedTools.length > 0) {
-		if (!theme.data.tools.some((c: string) => selectedTools.includes(c))) {
+		if (!toolkit.data.tools.some((c: string) => selectedTools.includes(c))) {
 			return false
 		}
 	}
@@ -111,9 +111,9 @@ function themeFilter(theme: CollectionEntry<"toolkits">) {
 	// if a search term was used, filter down checking name/title/description
 	if (searchRegex) {
 		return (
-			searchRegex.test(theme.data.title) ||
-			searchRegex.test(theme.data.description) ||
-			searchRegex.test(theme.body)
+			searchRegex.test(toolkit.data.title) ||
+			searchRegex.test(toolkit.data.description) ||
+			searchRegex.test(toolkit.body)
 		)
 	}
 
@@ -121,13 +121,13 @@ function themeFilter(theme: CollectionEntry<"toolkits">) {
 }
 
 // get themes, filtered by the applied search & filter, then sort the matches
-const allThemes = await getCollection("toolkits", themeFilter).then((entries) =>
+const allToolkits = await getCollection("toolkits", themeFilter).then((entries) =>
 	entries.sort(sortThemes),
 )
 
 // take all matching themes and create a paginated list of results
 const paginatedResults = paginate({
-	data: allThemes,
+	data: allToolkits,
 	pageSize: 12,
 	currentPage,
 	route: "/toolkits/[...page]",
@@ -141,12 +141,12 @@ if (allPages.length && !page) {
 	return Astro.redirect(allPages[0])
 }
 
-const themes = page.data
+const toolkits = page.data
 
 const showRecentlyAdded =
 	currentPage === 1 && !Array.from(Astro.url.searchParams).some(([_, value]) => !!value)
 const recentlyAdded = showRecentlyAdded
-	? allThemes.filter((entry) => entry.data.badge === "new")
+	? allToolkits.filter((entry) => entry.data.badge === "new")
 	: []
 const recentlyAddedSearch = new URLSearchParams(Astro.url.search)
 recentlyAddedSearch.append("categories[]", "recent")
@@ -178,7 +178,7 @@ const recentlyAddedHref = `${Astro.url.pathname}?${recentlyAddedSearch.toString(
 		</Fragment>
 
 		{
-			themes.length > 0 ? (
+			toolkits.length > 0 ? (
 				<div class="flex flex-col items-center gap-8 pb-10 pt-8 sm:px-4 sm:pb-12 md:gap-10 md:pb-16 lg:gap-12 lg:px-8 lg:pb-20 lg:pt-10 xl:px-10">
 					<h2 class="sr-only">Toolkits</h2>
 
@@ -192,8 +192,8 @@ const recentlyAddedHref = `${Astro.url.pathname}?${recentlyAddedSearch.toString(
 							}
 						>
 							<CardGrid class="w-full max-w-screen-2xl sm:grid-cols-2 xl:grid-cols-3">
-								{recentlyAdded.slice(0, 3).map((theme) => (
-									<ThemeCard theme={theme} />
+								{recentlyAdded.slice(0, 3).map((toolkit) => (
+									<ToolkitCard toolkits={toolkit} />
 								))}
 							</CardGrid>
 						</CardGridGroup>
@@ -203,8 +203,8 @@ const recentlyAddedHref = `${Astro.url.pathname}?${recentlyAddedSearch.toString(
 						title={showRecentlyAdded && recentlyAdded.length > 0 ? "All Tools" : undefined}
 					>
 						<CardGrid class="w-full max-w-screen-2xl sm:grid-cols-2 xl:grid-cols-3">
-							{themes.map((theme) => (
-								<ThemeCard theme={theme} />
+							{toolkits.map((toolkit) => (
+								<ToolkitCard toolkit={toolkit} />
 							))}
 						</CardGrid>
 					</CardGridGroup>

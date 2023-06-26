@@ -3,38 +3,38 @@ import { CollectionEntry, getCollection } from "astro:content"
 import CardGrid from "~/components/CardGrid.astro"
 import CardGridGroup from "~/components/CardGridGroup.astro"
 import ImageGallery from "~/components/ImageGallery.astro"
-import { resolveAllImages } from "~/content/themes/_resolveImage.js"
-import { getRelatedThemes } from "~/helpers/relatedThemes.js"
+import { resolveAllImages } from "~/content/toolkits/_resolveImage.js"
+import { getRelatedToolkits } from "~/helpers/relatedToolkits.js"
 import LeftArrowIcon from "~/icons/LeftArrowIcon.jsx"
 import MainLayout from "~/layouts/MainLayout.astro"
-import ThemeCTAs from "../_components/ThemeCTAs.astro"
-import ThemeCard from "../_components/ThemeCard.astro"
-import ThemeStats from "../_components/ThemeStats.astro"
+import ToolkitCTAs from "../_components/ToolkitCTAs.astro"
+import ToolkitCard from "../_components/ToolkitCard.astro"
+import ToolkitStats from "../_components/ToolkitStats.astro"
 
 export const prerender = true
 
 export async function getStaticPaths() {
-	const themes = await getCollection("themes")
+	const toolkits = await getCollection("toolkits")
 
-	return themes.map((theme) => {
+	return toolkits.map((toolkit) => {
 		return {
-			params: { slug: theme.slug },
-			props: { theme },
+			params: { slug: toolkit.slug },
+			props: { toolkit },
 		}
 	})
 }
 
-const { theme } = Astro.props as { theme: CollectionEntry<"themes"> }
+const { toolkit } = Astro.props as { toolkit: CollectionEntry<"toolkits"> }
 
-const { Content } = await theme.render()
-const relatedThemes = await getRelatedThemes(theme)
-const images = await resolveAllImages(theme)
+const { Content } = await toolkit.render()
+const relatedToolkits = await getRelatedToolkits(toolkit)
+const images = await resolveAllImages(toolkit)
 ---
 
 <MainLayout
-	title={theme.data.title}
-	description={theme.data.description}
-	image={{ src: images[0].fullImage.src, alt: theme.data.title }}
+	title={toolkit.data.title}
+	description={toolkit.data.description}
+	image={{ src: images[0].fullImage.src, alt: toolkit.data.title }}
 >
 	<div class="grid-container gap-y-0">
 		{
@@ -58,19 +58,19 @@ const images = await resolveAllImages(theme)
 		<div class="flex flex-col border-astro-gray-500 md:flex-row xl:border-x">
 			<section class="flex w-full flex-col gap-6 py-6 md:gap-8 md:p-8 lg:gap-10 lg:px-20 lg:py-10">
 				<a
-					href="/themes/"
+					href="/toolkits/"
 					rel="prefetch"
 					class="flex items-center gap-2 self-start text-sm text-astro-gray-200"
 				>
 					<LeftArrowIcon aria-hidden="true" />
-					<span class="pr-2">Back to themes</span>
+					<span class="pr-2">Back to toolkits</span>
 				</a>
 				<div>
-					<h1 class="heading-3 mb-4 sm:heading-2">{theme.data.title}</h1>
-					<p class="text-lg text-astro-gray-200 lg:text-xl">{theme.data.description}</p>
-					<ThemeCTAs theme={theme} class="py-6 md:hidden" />
+					<h1 class="heading-3 mb-4 sm:heading-2">{toolkit.data.title}</h1>
+					<p class="text-lg text-astro-gray-200 lg:text-xl">{toolkit.data.description}</p>
+					<ToolkitCTAs toolkit={toolkit} class="py-6 md:hidden" />
 					<hr class="border-astro-gray-500 md:hidden" />
-					<ThemeStats theme={theme} class="py-4 md:hidden" />
+					<ToolkitStats toolkit={toolkit} class="py-4 md:hidden" />
 				</div>
 				<hr class="hidden border-astro-gray-500 md:block" />
 				<article class="prose">
@@ -81,19 +81,19 @@ const images = await resolveAllImages(theme)
 			<aside
 				class="hidden w-full divide-y divide-astro-gray-500 border-astro-gray-500 md:block md:max-w-md md:border-l"
 			>
-				<ThemeCTAs theme={theme} class="p-6 lg:p-8 xl:p-10" />
+				<ToolkitCTAs toolkit={toolkit} class="p-6 lg:p-8 xl:p-10" />
 				<hr class="border-astro-gray-500" />
-				<ThemeStats theme={theme} class="p-6 lg:p-8 xl:p-10" />
+				<ToolkitStats toolkit={toolkit} class="p-6 lg:p-8 xl:p-10" />
 			</aside>
 		</div>
 		<div class="related bleed-full relative border-t border-astro-gray-500">
 			<div class="grid-container gap-y-10 pb-0 pt-20">
 				<CardGridGroup
-					title="Other themes to consider"
-					cta={{ href: "/themes/", text: "View more themes" }}
+					title="Other toolkits to consider"
+					cta={{ href: "/toolkits/", text: "View more toolkits" }}
 				>
 					<CardGrid class="md:grid-cols-2 lg:grid-cols-3">
-						{relatedThemes.map((theme) => <ThemeCard theme={theme} />)}
+						{relatedToolkits.map((toolkit) => <ToolkitCard toolkit={toolkit} />)}
 					</CardGrid>
 				</CardGridGroup>
 			</div>

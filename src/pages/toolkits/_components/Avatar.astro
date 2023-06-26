@@ -2,16 +2,16 @@
 import type { CollectionEntry } from "astro:content"
 
 export type Props = {
-	theme: CollectionEntry<"themes">
+	toolkit: CollectionEntry<"toolkits">
 }
 
-const { theme } = Astro.props
+const { toolkit } = Astro.props
 ---
 
 <div class="flex items-center gap-2">
 	<img
 		class="h-6 w-6 rounded-full"
-		src={theme.data.author.avatar}
+		src={toolkit.data.author.avatar}
 		alt=""
 		width="48"
 		height="48"
@@ -19,6 +19,6 @@ const { theme } = Astro.props
 		decoding="async"
 	/>
 	<span class="overflow-hidden text-ellipsis">
-		{theme.data.author.name}
+		{toolkit.data.author.name}
 	</span>
 </div>

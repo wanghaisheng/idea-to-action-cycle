@@ -49,6 +49,20 @@ const siteInfo: SiteInfo = {
 			icon: "social/twitter",
 		},
 		{
+			platform: "tiktok",
+			href: "https://tiktok.com/shopconna",
+			me: "https://tiktok.com/shopconna",
+			text: "Follow Astro on tiktok",
+			icon: "social/tiktok",
+		},
+		{
+			platform: "youtube",
+			href: "https://youtube.com/shopconna",
+			me: "https://youtube.com/shopconna",
+			text: "Follow Astro on youtube",
+			icon: "social/youtube",
+		},
+		{
 			platform: "mastodon",
 			href: "https://m.webtoo.ls/@shopconna",
 			me: "https://m.webtoo.ls/@shopconna",
