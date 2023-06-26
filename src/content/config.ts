@@ -77,7 +77,7 @@ export const ThemeCategories = new Map<string, string>([
 	["blog", "Blog"],
 	["landing-page", "Landing Page"],
 	["portfolio", "Portfolio"],
-	["ecommerce", "E-commerce"],
+	["ecommerce", "Ecommerce"],
 	["e-commerce", "E-commerce"],
 	["docs", "Docs"],
 	["saas", "SaaS"],
@@ -92,7 +92,7 @@ export const ThemeCategories = new Map<string, string>([
 	["website", "Website"],
 	["twitter", "Twitter"],
 	["SEO", "SEO"],
-	["seo", "SEO"],
+	["seo", "seo"],
 	["search engine", "search engine"],
 
 	["other", "Other"],
