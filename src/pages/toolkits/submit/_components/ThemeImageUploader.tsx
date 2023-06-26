@@ -9,7 +9,7 @@ export function ThemeImageUploader() {
 	const featuredImageInput = (
 		<input
 			name="featuredImage"
-			aria-label="Featured Theme Image"
+			aria-label="Featured Toolkits Image"
 			type="file"
 			accept="image/*"
 			required
@@ -26,7 +26,7 @@ export function ThemeImageUploader() {
 	const additionalImagesInput = (
 		<input
 			name="additionalImages"
-			aria-label="Additional Theme Images"
+			aria-label="Additional Toolkit Images"
 			type="file"
 			accept="image/*"
 			multiple
@@ -112,7 +112,7 @@ function FeaturedImageContent() {
 		<section class="flex flex-col items-center justify-center text-center font-light">
 			<FeaturedImageGraphic />
 			<h3 class="mb-3 text-2xl leading-tight">
-				Featured Theme Image
+				Featured Toolkit Image
 				<span title="Required" class="text-red-500">
 					*
 				</span>
@@ -131,7 +131,7 @@ function FeaturedImageContent() {
 function AdditionalImageContent() {
 	return (
 		<section class="flex flex-col items-center justify-center p-4 text-center font-light">
-			<h3 class="text-xl">Additional Theme Images</h3>
+			<h3 class="text-xl">Additional Toolkit Images</h3>
 			<p class="mb-2 text-sm text-astro-gray-200">Drag and drop to upload (max 8 images)</p>
 			<p class="button button-sm button button-white h-8 px-3">
 				Or Select Files

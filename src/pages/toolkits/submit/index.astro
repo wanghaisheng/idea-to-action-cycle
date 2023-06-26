@@ -11,7 +11,7 @@ import FormErrorList from "~/components/form/FormErrorList.astro"
 import FormFieldSet from "~/components/form/FormFieldSet.astro"
 import FormRadioGroup from "~/components/form/FormRadioGroup.astro"
 import RichTextEditor from "~/components/form/RichTextEditor.astro"
-import { themeSchema, ThemeTools } from "~/content/config.js"
+import { ThemeTools, themeSchema } from "~/content/config.js"
 import { editDiscordWebhookMessage, executeDiscordWebhook } from "~/helpers/discord.js"
 import { sanitizeThemeDescription } from "~/helpers/themes.js"
 import MainLayout from "~/layouts/MainLayout.astro"
@@ -60,7 +60,7 @@ const errorResponse = (formData: FormData, errors: z.typeToFlattenedError<typeof
 		data: btoa(stringifiedData.toString()),
 	})
 
-	return Astro.redirect(`/themes/submit?${params}`)
+	return Astro.redirect(`/toolkits/submit?${params}`)
 }
 
 if (Astro.request.method === "POST") {
@@ -98,7 +98,7 @@ if (Astro.request.method === "POST") {
 		if (!image) {
 			console.error("No image found in Discord message")
 			return errorResponse(formData, {
-				formErrors: ["Failed to submit theme, please try again."],
+				formErrors: ["Failed to submit toolkit, please try again."],
 				fieldErrors: {},
 			})
 		}
@@ -144,12 +144,12 @@ if (Astro.request.method === "POST") {
 	} catch (error) {
 		console.error(error)
 		return errorResponse(formData, {
-			formErrors: ["Failed to submit theme, please try again."],
+			formErrors: ["Failed to submit toolkit, please try again."],
 			fieldErrors: {},
 		})
 	}
 
-	return Astro.redirect("/themes/submit/success")
+	return Astro.redirect("/toolkits/submit/success")
 }
 
 let errors
@@ -165,13 +165,13 @@ if (prefilled != null) {
 }
 ---
 
-<MainLayout title="Submit a theme" image={{ src: "/og/themes-submit.jpg", alt: "Submit a theme" }}>
+<MainLayout title="Submit a toolkit" image={{ src: "/og/themes-submit.jpg", alt: "Submit a theme" }}>
 	<div class="flex items-start">
 		<div class="flex-1 border-astro-gray-600 p-8 lg:border-r">
 			<div class="mx-auto max-w-4xl">
-				<h1 class="heading-3 mb-4 lg:heading-2">Submit a theme</h1>
+				<h1 class="heading-3 mb-4 lg:heading-2">Submit a toolkit</h1>
 				<p class="text-astro-gray-200">
-					Thank you for sharing your themes with the Astro community! Choose to make your theme free
+					Thank you for sharing your toolkits with the shopconna community! Choose to make your toolkit free
 					or paid. All payments go directly to you, we don't handle the sale or take a cut.
 				</p>
 
@@ -197,7 +197,7 @@ if (prefilled != null) {
 				<form method="post" enctype="multipart/form-data" class="grid gap-10">
 					<FormFieldSet legend="Images">
 						<p>
-							Theme images should be max 8MB combined, 16:9 aspect ratio, and 1280px wide or larger.
+							Toolkit images should be max 8MB combined, 16:9 aspect ratio, and 1280px wide or larger.
 						</p>
 						<FormErrorList
 							errors={[
@@ -250,7 +250,7 @@ if (prefilled != null) {
 							<input
 								id="themeName"
 								name="themeName"
-								placeholder="My super cool theme"
+								placeholder="My super cool toolkit"
 								required
 								class="input"
 								value={prefilled?.get("themeName")}
@@ -284,7 +284,7 @@ if (prefilled != null) {
 						</script>
 
 						<Field errors={errors?.fieldErrors?.paidStatus}>
-							<p slot="label" id="paidStatusLabel">Is your theme free or paid?</p>
+							<p slot="label" id="paidStatusLabel">Is your toolkit free or paid?</p>
 							<FormRadioGroup
 								name="paidStatus"
 								options={[
@@ -359,7 +359,7 @@ if (prefilled != null) {
 						</Field>
 					</FormFieldSet>
 
-					<button type="submit" class="button button-primary">Submit Theme</button>
+					<button type="submit" class="button button-primary">Submit Toolkit</button>
 				</form>
 			</div>
 		</div>
