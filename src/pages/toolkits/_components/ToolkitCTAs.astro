@@ -20,9 +20,17 @@ const { toolkit, class: className, ...attrs } = Astro.props
 		)
 	}
 	{
+		toolkit.data.videoUrl && (
+			<a href={toolkit.data.videoUrl} class="button button-primary" data-analytics-event="PDDOCXCA:1">
+				<span>Watch now</span>
+				<ExternalLinkIcon aria-hidden="true" />
+			</a>
+		)
+	}	
+	{
 		toolkit.data.repoUrl && (
 			<a href={toolkit.data.repoUrl} class="button button-primary" data-analytics-event="PDDOCXCA:0">
-				<span>Get started</span>
+				<span>Source code</span>
 				<ExternalLinkIcon aria-hidden="true" />
 			</a>
 		)

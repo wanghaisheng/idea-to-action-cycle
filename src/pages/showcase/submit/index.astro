@@ -9,9 +9,8 @@ import Field from "~/components/form/Field.astro"
 import FormError from "~/components/form/FormError.astro"
 import FormErrorList from "~/components/form/FormErrorList.astro"
 import FormFieldSet from "~/components/form/FormFieldSet.astro"
-import FormRadioGroup from "~/components/form/FormRadioGroup.astro"
 import RichTextEditor from "~/components/form/RichTextEditor.astro"
-import { ThemeTools, toolkitSchema } from "~/content/config.js"
+import { shopconnatoolkits, showcaseSchema } from "~/content/config.js"
 import { editDiscordWebhookMessage, executeDiscordWebhook } from "~/helpers/discord.js"
 import { sanitizeToolkitDescription } from "~/helpers/toolkits.js"
 import MainLayout from "~/layouts/MainLayout.astro"
@@ -104,7 +103,7 @@ if (Astro.request.method === "POST") {
 			})
 		}
 
-		const theme: z.input<typeof toolkitSchema> = {
+		const theme: z.input<typeof showcaseSchema> = {
 			title: result.data.themeName,
 			description: result.data.themeShortDescription,
 			fullDescription: result.data.themeFullDescription,
@@ -168,14 +167,13 @@ if (prefilled != null) {
 }
 ---
 
-<MainLayout title="Submit a toolkit" image={{ src: "/og/themes-submit.jpg", alt: "Submit a theme" }}>
+<MainLayout title="Submit a brand website" image={{ src: "/og/themes-submit.jpg", alt: "Submit a brand website" }}>
 	<div class="flex items-start">
 		<div class="flex-1 border-astro-gray-600 p-8 lg:border-r">
 			<div class="mx-auto max-w-4xl">
-				<h1 class="heading-3 mb-4 lg:heading-2">Submit a toolkit</h1>
+				<h1 class="heading-3 mb-4 lg:heading-2">Submit your brand website</h1>
 				<p class="text-astro-gray-200">
-					Thank you for sharing your toolkits with the shopconna community! Choose to make your toolkit free
-					or paid. All payments go directly to you, we don't handle the sale or take a cut.
+					Thank you for sharing your brand website built with the shopconna toolkits!
 				</p>
 
 				{
@@ -221,7 +219,7 @@ if (prefilled != null) {
 						<ThemeImageUploader client:only />
 					</FormFieldSet>
 
-					<FormFieldSet legend="Author Info">
+					<FormFieldSet legend="Contact Info">
 						<Field errors={errors?.fieldErrors.authorName}>
 							<label slot="label" for="authorName">Your name</label>
 							<input
@@ -247,9 +245,9 @@ if (prefilled != null) {
 						</Field>
 					</FormFieldSet>
 
-					<FormFieldSet legend="Theme Info">
+					<FormFieldSet legend="Brand Info">
 						<Field errors={errors?.fieldErrors?.themeName}>
-							<label slot="label" for="themeName">Theme name</label>
+							<label slot="label" for="themeName">Brand name</label>
 							<input
 								id="themeName"
 								name="themeName"
@@ -281,27 +279,15 @@ if (prefilled != null) {
 								if (paidStatus() === "free") {
 									themeUrlLabel.textContent = "Public repo URL"
 								} else {
-									themeUrlLabel.textContent = "Purchase URL"
+									themeUrlLabel.textContent = "website URL"
 								}
 							})
 						</script>
 
-						<Field errors={errors?.fieldErrors?.paidStatus}>
-							<p slot="label" id="paidStatusLabel">Is your toolkit free or paid?</p>
-							<FormRadioGroup
-								name="paidStatus"
-								options={[
-									{ label: "Free", value: "free" },
-									{ label: "Paid", value: "paid" },
-								]}
-								defaultValue={prefilled?.get("paidStatus") ?? "free"}
-								aria-labelledby="paidStatusLabel"
-							/>
-						</Field>
 
 						<div class="grid gap-6 md:grid-cols-2">
 							<Field errors={errors?.fieldErrors?.themeUrl}>
-								<label slot="label" for="themeUrl">Public repo URL / Purchase URL</label>
+								<label slot="label" for="themeUrl">brand website URL</label>
 								<input
 									id="themeUrl"
 									name="themeUrl"
@@ -312,29 +298,7 @@ if (prefilled != null) {
 									value={prefilled?.get("themeUrl")}
 								/>
 							</Field>
-
-							<Field errors={errors?.fieldErrors?.themeDemoUrl}>
-								<label slot="label" for="themeDemoUrl">Live demo URL</label>
-								<input
-									id="themeDemoUrl"
-									name="themeDemoUrl"
-									type="url"
-									placeholder="https://example.com/my-theme-preview"
-									class="input"
-									value={prefilled?.get("themeDemoUrl")}
-								/>
-							</Field>
-							<Field errors={errors?.fieldErrors?.themeVideoUrl}>
-								<label slot="label" for="themeVideoUrl">video tutorial URL</label>
-								<input
-									id="themeVideoUrl"
-									name="themeVideoUrl"
-									type="url"
-									placeholder="https://example.com/my-theme-preview"
-									class="input"
-									value={prefilled?.get("themeVideoUrl")}
-								/>
-							</Field>							
+						
 						</div>
 
 						<Field errors={errors?.fieldErrors?.themeShortDescription}>
@@ -365,7 +329,7 @@ if (prefilled != null) {
 								client:idle
 								name="toolsUsed"
 								descriptionId="toolsLabel"
-								options={[...ThemeTools]
+								options={[...shopconnatoolkits]
 									.map(([value, label]) => ({ label, value }))
 									.sort((a, b) => a.label.localeCompare(b.label))}
 								defaultSelected={prefilled?.getAll("toolsUsed") ?? []}

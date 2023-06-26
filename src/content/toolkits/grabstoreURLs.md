@@ -1,5 +1,5 @@
 ---
-title: "Aakash Gill"
+title: "Grab all product and collection URLs from brand online store"
 description: "A sleek and modern personal website for you."
 image: "/src/content/toolkits/_images/tailcast.webp"
 images:

@@ -1,6 +1,6 @@
 ---
-title: " API, CLI, and Web App for analyzing and finding a brand's profile in +1000 social media \ websites "
-description: "A sleek and modern personal website for you."
+title: "brand social media profile detector"
+description: "API, CLI, and Web App for analyzing and finding a brand's profile in +1000 social media \ websites."
 image: "/src/content/toolkits/_images/tailcast.webp"
 images:
   - "/src/content/toolkits/_images/super-solstice-2.webp"

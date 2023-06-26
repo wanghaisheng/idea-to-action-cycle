@@ -1,5 +1,14 @@
 import { defineCollection, z } from "astro:content"
-
+export const shopconnatoolkits = new Map<string, string>([
+	["social media account creation", "social media account creation"],
+	["keyword research tool", "keyword research tool"],
+	["post auto publish and schedule", "post auto publish and schedule"],
+	["gpt writer", "gpt writer"],
+	["thumbnail generation", "thumbnail generation"],
+	["social media monitoring", "social media monitoring"],
+	["submit url to search engine", "submit url to search engine"],
+	["grab brand store urls", "grab brand store urls"],
+])
 export const IntegrationCategories = new Map<string, string>([
 	["featured", "Featured"],
 	["recent", "Recently Added"],
@@ -152,6 +161,88 @@ export const themeSchema = z
 		repoUrl: z.string().url().optional(),
 		demoUrl: z.string().url().optional(),
 		buyUrl: z.string().url().optional(),
+		videoUrl: z.string().url().optional(),
+		links: z
+			.array(
+				z.object({
+					href: z.string().url(),
+					text: z.string(),
+				}),
+			)
+			.default([]),
+		stars: z.number().min(0).default(0),
+		featured: z.number().min(1).optional(),
+		tools: z.array(z.enum(Array.from(ThemeTools.keys()) as [string, ...string[]])).default([]),
+		related: z.array(z.string()).max(3).default([]),
+		publishDate: z.date({ coerce: true }).optional(),
+		badge: z.string().optional(),
+	})
+	.transform((theme) => {
+		// computed properties
+		return {
+			...theme,
+			official: theme.categories.includes("official"),
+			paid: !!theme.buyUrl,
+		}
+	})
+export const showcaseSchema = z
+	.object({
+		title: z.string().min(1),
+		description: z.string().min(1),
+		fullDescription: z.string().optional(),
+		image: z.string(),
+		images: z.array(z.string()).default([]),
+		author: z.object({
+			url: z.string(),
+			name: z.string(),
+			avatar: z.string(),
+		}),
+		categories: z.array(z.enum(Array.from(ThemeCategories.keys()) as [string, ...string[]])),
+		repoUrl: z.string().url().optional(),
+		demoUrl: z.string().url().optional(),
+		buyUrl: z.string().url().optional(),
+		videoUrl: z.string().url().optional(),
+		links: z
+			.array(
+				z.object({
+					href: z.string().url(),
+					text: z.string(),
+				}),
+			)
+			.default([]),
+		stars: z.number().min(0).default(0),
+		featured: z.number().min(1).optional(),
+		tools: z.array(z.enum(Array.from(ThemeTools.keys()) as [string, ...string[]])).default([]),
+		related: z.array(z.string()).max(3).default([]),
+		publishDate: z.date({ coerce: true }).optional(),
+		badge: z.string().optional(),
+	})
+	.transform((theme) => {
+		// computed properties
+		return {
+			...theme,
+			official: theme.categories.includes("official"),
+			paid: !!theme.buyUrl,
+		}
+	})
+
+export const toolkitSchema = z
+	.object({
+		title: z.string().min(1),
+		description: z.string().min(1),
+		fullDescription: z.string().optional(),
+		image: z.string(),
+		images: z.array(z.string()).default([]),
+		author: z.object({
+			url: z.string(),
+			name: z.string(),
+			avatar: z.string(),
+		}),
+		categories: z.array(z.enum(Array.from(ThemeCategories.keys()) as [string, ...string[]])),
+		repoUrl: z.string().url().optional(),
+		demoUrl: z.string().url().optional(),
+		buyUrl: z.string().url().optional(),
+		videoUrl: z.string().url().optional(),
 		links: z
 			.array(
 				z.object({

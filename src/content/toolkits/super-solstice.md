@@ -15,6 +15,8 @@ categories:
   - "portfolio"
 demoUrl: "https://super-solstice.vercel.app/"
 buyUrl: "https://andreisurugiu.lemonsqueezy.com/checkout/buy/6bde7bc3-b287-4778-990a-d2db6e8a173f"
+videoUrl: "https://www.youtube.com/watch?v=vv1Gqu9MOMk&pp=ygVcaGFtbWVyc21pdGggaW5mYW50IG5ldXJvbG9naWNhbCBleGFtaW5hdGlvbiBvciBoYW1tZXJzbWl0aCBuZW9uYXRhbCBuZXVyb2xvZ2ljYWwgZXhhbWluYXRpb24%3D"
+
 tools:
   - "tailwind"
   - "typescript"
