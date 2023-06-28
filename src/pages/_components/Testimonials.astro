@@ -1,0 +1,46 @@
+---
+import { CollectionEntry, getCollection } from "astro:content"
+import TwoUp from "~/components//TwoUp.astro"
+import QuoteCard from "../_components/QuoteCard.astro"
+
+
+const allQuotes = await getCollection("quotes")
+
+const quoteSlugs = [
+	"adrianmg-no-brainer",
+	"theo-holy-shit",
+	"still_scripts-feel-like-thanos",
+	"thomasreggi-feels-like-php",
+]
+
+const quotes = await Promise.all(
+	quoteSlugs.map((slug) => allQuotes.find((entry) => entry.slug === slug)),
+).then((entries) => entries.filter(Boolean) as CollectionEntry<"quotes">[])
+---
+		<TwoUp threshold="lg">
+			<div slot="start" class="flex flex-col items-start gap-6">
+				<h2 class="heading-3 pb-2 sm:heading-2">Discover why customers love ShopConna</h2>
+				<p class="body text-astro-gray-200 sm:body-large">
+					See what they say about our revolutionary brand building tool and experience the power of best developer tools, AI, RPA, and automation technology firsthand. Start your brand building journey with ShopConna today!
+
+				</p>
+				<a href="/careers" rel="prefetch" class="button button-primary">Join us</a>
+			</div>
+			<div slot="end" class="quotes relative flex flex-col items-center lg:items-start">
+				{
+					quotes.map((quote, i) => (
+						<QuoteCard
+							quote={quote}
+							class={
+								[
+									"ml-16 -translate-y-4 scale-90",
+									"z-20 ml-6",
+									"z-10 ml-24 -translate-y-6 scale-90",
+									"-translate-y-12",
+								][i]
+							}
+						/>
+					))
+				}
+			</div>
+		</TwoUp>

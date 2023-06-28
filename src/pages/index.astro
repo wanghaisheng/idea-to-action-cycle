@@ -1,12 +1,13 @@
 ---
 import { Sprite } from "astro-icon"
 import MainLayout from "~/layouts/MainLayout.astro"
+import AllInOneToolkit from "./_components/AllInOneToolkit.astro"
 import GetStarted from "./_components/GetStarted.astro"
-import HandsFree from "./_components/HandsFree.astro"
 import Hero from "./_components/Hero.astro"
+import ProductAndServices from "./_components/ProductAndServices.astro"
 import SellingPoints from "./_components/SellingPoints.astro"
-import ToolingAndEcosystem from "./_components/ToolingAndEcosystem.astro"
-
+import Testimonials from "./_components/Testimonials.astro"
+import WhoWeAre from "./_components/WhoWeAre.astro"
 export const prerender = true
 ---
 
@@ -16,9 +17,11 @@ export const prerender = true
 		<div class="relative">
 			<div class="noise-underlay bg-grid absolute inset-0"></div>
 			<div class="relative grid gap-32 sm:gap-40 md:gap-48 lg:gap-64">
-				<HandsFree />
+				<WhoWeAre />
 				<SellingPoints />
-				<ToolingAndEcosystem />
+				<AllInOneToolkit />
+				<ProductAndServices/>
+				<Testimonials/>
 				<GetStarted />
 			</div>
 		</div>

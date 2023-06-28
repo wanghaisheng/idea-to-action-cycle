@@ -1,0 +1,178 @@
+---
+import clsx from "clsx"
+import Card from "~/components/Card.astro"
+import CardBody from "~/components/CardBody.astro"
+import CardFooter from "~/components/CardFooter.astro"
+import CardHeading from "~/components/CardHeading.astro"
+import CardLabel from "~/components/CardLabel.astro"
+import CardParagraph from "~/components/CardParagraph.astro"
+import communityCloud from "../_assets/community-cloud.webp"
+import DocsGraphic from "./DocsGraphic.astro"
+import LandingSectionText from "./LandingSectionText.astro"
+import SandboxGraphic from "./SandboxGraphic.astro"
+import ThemesGraphic from "./ThemesGraphic.astro"
+
+const toolingLogos = [
+	{ icon: "logos/react-logomark", alt: "React Logo" },
+	{ icon: "logos/preact-logomark", alt: "Preact Logo" },
+	{ icon: "logos/svelte-logomark", alt: "Svelte Logo" },
+	{ icon: "logos/vue-logomark", alt: "Vue Logo" },
+	{ icon: "logos/lit-logomark", alt: "Lit Logo" },
+	{ icon: "logos/solid-logomark", alt: "Solid Logo" },
+	{ icon: "logos/tailwind-logomark", alt: "Tailwind Logo" },
+	{ icon: "logos/alpinejs-logomark", alt: "Alpine Logo" },
+]
+const ecosystemLogos = [
+	{ icon: "logos/react-logomark", alt: "React Logo" },
+	{ icon: "logos/preact-logomark", alt: "Preact Logo" },
+	{ icon: "logos/svelte-logomark", alt: "Svelte Logo" },
+	{ icon: "logos/vue-logomark", alt: "Vue Logo" },
+	{ icon: "logos/lit-logomark", alt: "Lit Logo" },
+	{ icon: "logos/solid-logomark", alt: "Solid Logo" },
+	{ icon: "logos/tailwind-logomark", alt: "Tailwind Logo" },
+	{ icon: "logos/alpinejs-logomark", alt: "Alpine Logo" },
+]
+// repeat the logos so they fill the width
+toolingLogos.push(...toolingLogos)
+
+const deployLogos = [
+	{ icon: "logos/cloudflare-logomark", alt: "Cloudflare Logo" },
+	{ icon: "logos/netlify-logomark", alt: "Netlify Logo" },
+	{ icon: "logos/vercel-logomark", alt: "Vercel Logo" },
+	{ icon: "logos/node-logomark", alt: "Node.js Logo" },
+	{ icon: "logos/deno-logomark", alt: "Deno Logo" },
+]
+
+// repeat the logos so they fill the width
+deployLogos.push(...deployLogos)
+
+// adds a fake box to limit the width of the first line,
+// so it doesn't overlap the graphic
+const graphicCardHeadingClass = clsx("before:float-right before:h-1 before:w-32")
+---
+
+<section class="landing-section">
+	<LandingSectionText>
+		<Fragment slot="title">
+			Products and services
+		</Fragment>
+	</LandingSectionText>
+
+	<div
+		class="mx-auto grid min-w-0 max-w-screen-xl grid-cols-1 gap-4 px-4 sm:grid-cols-2 lg:grid-cols-3"
+	>
+		<!-- <div class="grid lg:col-span-2">
+			<Card>
+				<CardBody>
+					<CardLabel>Open-Source Empowerment</CardLabel>
+					<CardBleed>
+						<LogoCarousel logos={toolingLogos} />
+					</CardBleed>
+					<div class="flex grid-cols-2 flex-col justify-center gap-5 lg:grid">
+						<CardHeading>Self-deploy your own</CardHeading>
+						<p class="body mt-2 text-gray-100">
+							giving you the power to shape the tool according to your requirements. Dive into the source code, contribute to the community, and take an active role in the evolution of brand building tools.
+						</p>
+					</div>
+				</CardBody>
+			</Card>
+		</div>
+		<div class="grid lg:col-span-2">
+
+		<Card>
+			<CardBody>
+				<CardLabel>Chatgpt and AI empowerment</CardLabel>
+				<CardBleed>
+					<LogoCarousel logos={ecosystemLogos} />
+				</CardBleed>
+					<div class="flex grid-cols-2 flex-col justify-center gap-5 lg:grid">
+						<CardHeading>Harness the Power of AI and Automation</CardHeading>
+						<p class="body mt-2 text-gray-100">
+							leverages AI and automation technologies to supercharge your brand building efforts. 
+						</p>
+					</div>
+			</CardBody>
+		</Card>
+		</div> -->
+
+		<Card background="blue-purple">
+			<SandboxGraphic class="absolute right-2 top-8" />
+			<CardBody>
+				<CardLabel>opensource|automation</CardLabel>
+				<div class={graphicCardHeadingClass}>
+					<CardHeading>Social Media Management</CardHeading>
+				</div>
+				<CardParagraph>
+					Our tools automate competitor social media monitoring, social media posting, scheduling, and content distribution across various platforms. They help you maintain an active presence, engage with your audience, and promote your brand consistently.
+				</CardParagraph>
+				<CardFooter>
+					<a href="/blogs/?categories%5B%5D=social" class="button button-white">Start social media scheduling</a>
+				</CardFooter>
+			</CardBody>
+		</Card>
+
+		<Card background="blue-green">
+			<ThemesGraphic class="absolute right-0 top-6" />
+			<CardBody>
+				<CardLabel>opensource|automation</CardLabel>
+				<div class={graphicCardHeadingClass}>
+					<CardHeading>Content Creation and Management</CardHeading>
+				</div>
+				<CardParagraph>
+					Save time and effort by automating content creation tasks. Our tools can generate product descriptions, blog articles, and social media captions based on predefined templates or AI-generated content. They also manage content distribution and publishing across different channels.
+				</CardParagraph>
+				<CardFooter>
+					<a href="/blogs/?categories%5B%5D=content-management" rel="prefetch" class="button button-white">Explore auto social gpt</a>
+				</CardFooter>
+			</CardBody>
+		</Card>
+
+		<Card background="red-pink">
+			<DocsGraphic class="absolute right-2 top-6" />
+			<CardBody>
+				<CardLabel>opensource|automation</CardLabel>
+				<div class={graphicCardHeadingClass}>
+					<CardHeading>Email Marketing Automation</CardHeading>
+				</div>
+				<CardParagraph>
+					Streamline your email marketing campaigns with our tools that automate tasks such as segmenting your audience, creating personalized email templates, scheduling campaigns, and tracking performance metrics. This ensures efficient and targeted communication with your customers.
+				</CardParagraph>
+				<CardFooter>
+					<a href="/blogs/?categories%5B%5D=email" class="button button-white">Try email collect tool</a>
+				</CardFooter>
+			</CardBody>
+		</Card>
+
+		<div class="grid lg:col-span-3">
+			<Card background="blue-purple">
+				<div class="flex flex-1 flex-col lg:flex-row">
+					<CardBody>
+						<CardLabel>Community</CardLabel>
+						<div class="flex flex-1 flex-col justify-center gap-6 lg:px-8 lg:pb-12">
+							<CardHeading>
+								<span class="lg:heading-2 lg:leading-[1.1]">Join our community</span>
+							</CardHeading>
+							<CardParagraph>
+								ShopConna isn't just a tool; it's a vibrant community of forward-thinking brand builders. Connect with like-minded professionals, exchange ideas, and co-create innovative solutions. Together, we push the boundaries of brand building and inspire each other to achieve greatness.
+							</CardParagraph>
+							<div class="mt-auto lg:mt-0">
+								<a href="/chat" class="button button-white">Join our Discord</a>
+							</div>
+						</div>
+					</CardBody>
+					<div class="relative h-[420px] overflow-hidden sm:hidden lg:block lg:h-[480px] lg:flex-1">
+						<img
+							src={communityCloud.src}
+							width={communityCloud.width}
+							height={communityCloud.height}
+							alt=""
+							class="absolute left-16 top-8 h-[150%] w-[150%] max-w-none object-contain object-left-top"
+							loading="lazy"
+							decoding="async"
+						/>
+					</div>
+				</div>
+			</Card>
+		</div>
+	</div>
+</section>

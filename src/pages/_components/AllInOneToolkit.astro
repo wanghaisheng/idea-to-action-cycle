@@ -1,0 +1,69 @@
+---
+import { Icon } from "astro-icon"
+import MainSponsorItem from "./MainSponsorItem.astro"
+
+const sponsors = [
+        { src: "sponsors/vercel", alt: "Vercel Logo", href: "https://vercel.com/" },
+        {
+                src: "sponsors/chrome",
+                alt: "Google Chrome Logo",
+                href: "https://developer.chrome.com/blog/framework-fund-2022/",
+        },
+        {
+                src: "sponsors/shipshape",
+                alt: "Ship Shape Logo",
+                href: "https://shipshape.io/?ref=astro",
+        },
+        {
+                src: "sponsors/buttercms",
+                alt: "ButterCMS Logo",
+                href: "https://buttercms.com/?utm_source=shopconna.com&utm_medium=banner&utm_campaign=sponsorship",
+        },
+        { src: "sponsors/deepgram", alt: "Deepgram Logo", href: "https://deepgram.com/" },
+        { src: "sponsors/divriots", alt: "Div Riots Logo", href: "https://divriots.com/" },
+        {
+                src: "sponsors/cloudcannon",
+                alt: "CloudCannon CMS Logo",
+                href: "https://cloudcannon.com/astro-cms/?utm_campaign=Astro%20out-of-beta&utm_source=astro-sponsorship",
+        },
+]
+
+const mainSponsorLogoHeight = 40
+---
+
+<section class="landing-section gap-12 py-16 sm:gap-24 sm:py-20 md:py-24 lg:py-28 xl:py-32">
+        <h2 class="heading-4 max-w-4xl px-8 lg:heading-3">
+                Consolidate tools.Cut costs.
+        </h2>
+				<p class="body text-astro-gray-200 sm:body-large">
+					"We got rid of nearly a dozen different tools because of what Notion does for us."
+				</p>
+        <div class="flex flex-wrap items-center justify-center gap-12 px-8 sm:gap-16">
+                <MainSponsorItem href="https://tiktokastudio.com/" caption="">
+                        <Icon
+                                name="sponsors/tiktokastudio"
+                                alt="tiktokastudio Logo"
+                                aria-label="tiktokastudio"
+                                height={mainSponsorLogoHeight}
+                        />
+                </MainSponsorItem>
+				<p class="body text-astro-gray-200 sm:body-large">
+                                        Justin Watt<br/>
+					Director of Ops & Marketing, TiktokaStudio
+				</p>                
+                
+       
+
+                <!-- <MainSponsorItem
+                        href="https://www.storyblok.com/?utm_source=astro&utm_medium=display&utm_campaign=AWA_SPON_ASTR_TRA&utm_content=astro_collab"
+                        caption="Official CMS Partner"
+                >
+                        <Icon
+                                name="sponsors/storyblok"
+                                alt="Storyblok Logo"
+                                aria-label="Storyblok"
+                                height={mainSponsorLogoHeight}
+                        />
+                </MainSponsorItem> -->
+        </div>
+</section>
