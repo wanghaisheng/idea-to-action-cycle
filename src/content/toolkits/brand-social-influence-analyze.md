@@ -9,8 +9,8 @@ images:
   - "/src/content/toolkits/_images/super-solstice-5.webp"
 url: "https://github.com/shop-conan/brand-social-analyzer"
 author:
-  url: "https://andreisurugiu.com"
-  name: "andreisurugiu"
-  avatar: "https://andreisurugiu.com/images/avatar_ai.webp"
+  url: "https://shopconna.com"
+  name: "conna"
+  avatar: "https://avatars.githubusercontent.com/u/2363295?v=4"
 categories: ["social media"]
 ---

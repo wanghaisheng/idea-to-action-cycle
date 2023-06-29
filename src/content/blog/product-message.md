@@ -1,16 +1,16 @@
 ---
-title: "Introducing ShopConna brand copilot toolkits: Your Trusted Copilot for Brand Building!"
+title: "Your Trusted Copilot for Brand Building!"
 description: "Elevate your brand to new heights with ShopConna, the ultimate open-source brand building tool. Designed to be your trusted copilot, ShopConna empowers you to navigate the complex world of brand building with confidence and efficiency."
 publishDate: "June 26, 2023"
 authors:
   - conna
 socialImage: "/src/content/blog/_images/hybrid-rendering/social.webp"
-coverImage: "/src/content/blog/_images/hybrid-rendering/cover.webp"
+# coverImage: "/src/content/blog/_images/hybrid-rendering/cover.webp"
 lang: "en"
 ---
 
 
-
+# Introducing ShopConna brand copilot toolkits: Your Trusted Copilot for Brand Building!
 
 
 ## Unleash Your Brand's Potential:

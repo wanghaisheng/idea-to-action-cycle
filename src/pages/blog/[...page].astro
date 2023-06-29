@@ -32,26 +32,23 @@ const allPages = [...Array(page.lastPage).keys()].map((num) => {
 const allPosts = await getCollection("blog")
 
 const featuredPosts = [
-	"astro-2",
-	"introducing-content-collections",
-	"astro-webstorm-support",
-	"hybrid-rendering",
+	"product-message",
 ]
 	.map((slug) => allPosts.find((post) => post.slug === slug))
 	.filter(Boolean) as CollectionEntry<"blog">[]
 ---
 
 <Layout
-	title="The Astro Blog"
-	description="Get all the latest news from the Astroverse."
-	image={{ src: "/og/blog.jpg", alt: "What’s new in the Astro ecosystem" }}
+	title="The ShopConna Blog"
+	description="Get all the latest news from the ShopConna."
+	image={{ src: "/og/blog.jpg", alt: "What’s new in the ShopConna ecosystem" }}
 >
 	<div class="lg:py-18 grid-container relative py-12 sm:py-14 md:py-16 xl:py-20">
 		<div class="bleed-full bg-grid absolute inset-0"></div>
 		<div class="relative flex flex-col items-center gap-6 text-center">
 			<h1 class="heading-2 mx-auto max-w-screen-lg md:heading-1">Welcome, world</h1>
 			<p class="body text-astro-gray-200 md:body-large">
-				Get all the latest news from the Astroverse.
+				Get all the latest news from the ShopConna.
 			</p>
 		</div>
 	</div>
@@ -80,7 +77,7 @@ const featuredPosts = [
 			<SidebarPanel>
 				<h2 class="code">Subscribe</h2>
 				<p class="body mb-6 mt-4 text-astro-gray-200">
-					Stay up-to-date with news from the Astroverse
+					Stay up-to-date with news from the ShopConna
 				</p>
 				<a href="/rss.xml" class="button button-sm">
 					<RSSIcon aria-hidden="true" />
