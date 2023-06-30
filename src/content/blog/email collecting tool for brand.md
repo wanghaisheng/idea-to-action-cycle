@@ -3,7 +3,9 @@ title: "chatgpt empower email collecting tool"
 description: "Unleash the Power of Personalized Email Marketing"
 publishDate: "July 27, 2023"
 authors:
-  - connan
+  - conna
+categories:
+  - social media    
 lang: "en"
 ---
 

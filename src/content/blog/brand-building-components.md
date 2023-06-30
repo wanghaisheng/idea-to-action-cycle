@@ -4,6 +4,8 @@ description: "By carefully considering and managing these brand building compone
 publishDate: "June 20, 2023"
 authors:
   - fuzzy
+categories:
+  - social media  
 socialImage: "/src/content/blog/_images/community-awards/social-min.webp"
 lang: "en"
 ---

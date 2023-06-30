@@ -2,9 +2,11 @@
 import { CollectionEntry, getCollection, getEntryBySlug } from "astro:content"
 import { format } from "date-fns"
 import Avatar from "~/components/Avatar.astro"
+// import Category from "./_components/Category.astro"
 import { resolveCoverImage, resolveSocialImage } from "~/content/blog/_resolveImage.js"
 import { randomFromArray } from "~/helpers/random.js"
 import Layout from "~/layouts/MainLayout.astro"
+import Badge from "./_components/Badge.astro"
 
 export const prerender = true
 
@@ -32,6 +34,11 @@ const socialImage = await resolveSocialImage(post)
 const authors = await Promise.all(
 	data.authors.map((author) => getEntryBySlug("authors", author)),
 ).then((authors) => authors.filter(Boolean) as CollectionEntry<"authors">[])
+
+
+// const categories = await Promise.all(
+// 	data.categories.map((category) => getEntryBySlug("categories", category)),
+// ).then((categories) => categories.filter(Boolean) as CollectionEntry<"categories">[])
 
 const gradients = [
 	"bg-red-pink-gradient",
@@ -73,14 +80,30 @@ const placeholderGradient = randomFromArray(gradients)
 	}
 
 	<div class="grid-container relative mx-auto max-w-screen-lg md:z-10">
+		
 		<div
 			class="noise-container mx-auto w-fit max-w-full bg-astro-gray-700 py-5 sm:py-8 md:px-10 md:py-12 lg:p-12 lg:py-16 xl:p-16 xl:py-20"
 		>
+					{
+				data.categories.map((category) => {
+					return (
+						<div class="flex items-center gap-2 category">
+
+
+				<a href="${{category}}" class="link whitespace-nowrap">
+				<p>{category}</p>
+				</a>
+
+										</div>
+
+					)
+				})
+			}
 			<div class="noise"></div>
+
+			
 			<header class="mx-auto w-full max-w-prose text-center">
-				<time class="code text-astro-gray-200" datetime={data.publishDate.toISOString()}>
-					{format(data.publishDate, "MMMM d, yyyy")}
-				</time>
+
 				<h1 class="heading-3 mb-4 mt-2 md:heading-2 sm:mb-5 sm:mt-3">{data.title}</h1>
 				<div class="code flex flex-wrap items-center justify-center gap-4 text-astro-gray-200">
 					<span>By</span>
@@ -90,13 +113,21 @@ const placeholderGradient = randomFromArray(gradients)
 								<div class="flex items-center gap-2">
 									<Avatar name={author.slug} lg />
 									<span>{author.data.name}</span>
+									<a href="${{category}}" class="link whitespace-nowrap">
+																		
 								</div>
 							)
 						})
 					}
+		
+				<time class="code text-astro-gray-200" datetime={data.publishDate.toISOString()}>
+				Updated on {format(data.publishDate, "MMMM d, yyyy")}
+				</time>					
 				</div>
 			</header>
 			<hr class="-mx-16 my-16 border-astro-gray-500" />
+
+			
 			<article class="prose">
 				<Content />
 			</article>

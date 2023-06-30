@@ -4,6 +4,8 @@ description: "Elevate your brand to new heights with ShopConna, the ultimate ope
 publishDate: "June 26, 2023"
 authors:
   - conna
+categories:
+  - social media    
 socialImage: "/src/content/blog/_images/hybrid-rendering/social.webp"
 # coverImage: "/src/content/blog/_images/hybrid-rendering/cover.webp"
 lang: "en"

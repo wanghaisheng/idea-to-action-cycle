@@ -11,7 +11,7 @@ import portfolioImage from "../_assets/example-portfolio.webp"
 type Item = {
 	title: string
 	description: string
-	liveUrl: URL
+	liveUrl: string
 	image: ImageMetadata
 	cta: {
 		text: string
@@ -24,11 +24,11 @@ const items: Item[] = [
 		title: "Unleash the Power of Open-Source",
 		description:
 			"ShopConna is built on the foundation of open-source technology. This means you have full control over customizing and tailoring the toolkit to perfectly align with your brand's unique requirements. Embrace the freedom to enhance, modify, and contribute to the community, ensuring that your brand stands out from the crowd.",
-		liveUrl: new URL("https://github.com/wanghaisheng/gen-brand-social-account-RSS"),
+		liveUrl: "/blogs/?categories%5B%5D=social",
 		image: blogsImage,
 		cta: {
-			text: "Rss for social profile",
-			href: "/blogs/?categories%5B%5D=social",
+			text: "Try Rss for social profile",
+			href: "https://github.com/wanghaisheng/gen-brand-social-account-RSS",
 		},
 	},
 	{
@@ -119,8 +119,8 @@ export default function ExampleShowcase() {
 										<a href={item.cta.href} class="link-underline">
 											{item.cta.text}
 										</a>
-										<a href={item.liveUrl.href} class="link-underline">
-											See it in the wild
+										<a href={item.liveUrl} class="link-underline">
+											Finding more
 										</a>
 									</p>
 								</Collapse>
@@ -171,7 +171,7 @@ export default function ExampleShowcase() {
 								src={item.image.src}
 								width={item.image.width}
 								height={item.image.height}
-								alt={`Example image for ${item.title}`}
+								alt={`shopconna image for ${item.title}`}
 								class="w-full object-cover object-left-top"
 								loading="lazy"
 								decoding="async"

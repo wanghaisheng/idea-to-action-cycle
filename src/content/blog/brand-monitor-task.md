@@ -4,6 +4,8 @@ description: "The main task in brand monitoring for brand building is to track a
 publishDate: "June 20, 2023"
 authors:
   - fuzzy
+categories:
+  - social media    
 socialImage: "/src/content/blog/_images/community-awards/social-min.webp"
 lang: "en"
 ---

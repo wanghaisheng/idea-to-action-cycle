@@ -4,6 +4,8 @@ description: "The Astro Community Awards for 2022 have been announced! These awa
 publishDate: "June 20, 2023"
 authors:
   - fuzzy
+categories:
+  - social media    
 socialImage: "/src/content/blog/_images/community-awards/social-min.webp"
 lang: "en"
 ---

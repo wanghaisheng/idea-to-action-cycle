@@ -97,6 +97,31 @@ export const ThemeCategories = new Map<string, string>([
 
 	["other", "Other"],
 ])
+
+export const BlogCategories = new Map<string, string>([
+	["featured", "Featured"],
+	["recent", "Recently Added"],
+	["official", "Official"],
+	["landing-page", "Landing Page"],
+	["portfolio", "Portfolio"],
+	["ecommerce", "Ecommerce"],
+	["e-commerce", "E-commerce"],
+	["docs", "Docs"],
+	["shopify", "Shopify"],
+	["wordpress", "Wordpress"],
+	["magento", "Magento"],
+	["bigcommerce", "Bigcommerce"],
+	["prestashop", "PrestaShop"],
+	["social media", "Social Media"],
+	["gpt", "chatGPT"],
+	["minimal", "Minimal"],
+	["website", "Website"],
+	["twitter", "Twitter"],
+	["SEO", "SEO"],
+	["search engine", "search engine"],
+	["other", "Other"],
+])
+
 export const ToolkitCategories = new Map<string, string>([
 	["featured", "Featured"],
 	["recent", "Recently Added"],
@@ -277,6 +302,13 @@ export const collections = {
 			mastodon: z.string().optional(),
 		}),
 	}),
+	categories: defineCollection({
+		schema: z.object({
+			icon: z.string().optional(),
+			name: z.array(z.enum(Array.from(BlogCategories.keys()) as [string, ...string[]])),
+		}),
+	}),
+
 	blog: defineCollection({
 		schema: z.object({
 			title: z.string(),
@@ -286,6 +318,8 @@ export const collections = {
 				.or(z.date())
 				.transform((val) => new Date(val)),
 			authors: z.array(z.string()),
+			categories: z.array(z.enum(Array.from(BlogCategories.keys()) as [string, ...string[]])),
+
 			socialImage: z.string().optional(),
 			coverImage: z.string().optional(),
 			lang: z.enum(["en"]).default("en"),

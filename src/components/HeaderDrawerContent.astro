@@ -1,7 +1,6 @@
 ---
 import siteInfo from "~/data/site-info.js"
 import ChevronIcon from "~/icons/ChevronIcon.jsx"
-import OpenBookIcon from "~/icons/OpenBookIcon.jsx"
 import SocialLinks from "./SocialLinks.astro"
 
 const socialLinks = siteInfo.socialLinks.filter((link) => !link.footerOnly)
@@ -25,12 +24,10 @@ const socialLinks = siteInfo.socialLinks.filter((link) => !link.footerOnly)
 			<!-- <a href="/integrations/" rel="prefetch" class="link flex items-center gap-4">
 				<LayersIcon /> Integrations
 			</a> -->
-			<a
-				href="https://docs.shopconna.com/en/tutorial/0-introduction/"
-				class="link flex items-center gap-4"
-			>
-				<OpenBookIcon /> Tutorials
-			</a>
+			<!-- <a				href="/videos"				class="link flex items-center gap-4">
+				<LayersIcon class="h-4 w-4" />  Videos
+
+			</a> -->
 		</div>
 	</details>
 	<a href="/about/" rel="prefetch" class="link"> About</a>
