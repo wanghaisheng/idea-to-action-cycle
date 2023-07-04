@@ -6,6 +6,7 @@ import siteInfo from "~/data/site-info"
 import "~/styles/fonts.css"
 import Favicon from "./Favicon.astro"
 import SEO from "./SEO.astro"
+import { GoogleAnalytics } from "astro-google-analytics"
 
 export type Props = {
 	title?: string
@@ -15,7 +16,7 @@ export type Props = {
 	pageType?: "website" | "article"
 }
 
-const twitterHandle = "astrodotbuild"
+const twitterHandle = "shopconna"
 
 const {
 	description = siteInfo.description,
@@ -45,6 +46,9 @@ const resolvedImage = {
 		y.parentNode.insertBefore(t, y)
 	})(window, document, "clarity", "script", "hipjtbqu57")
 </script>
+
+<GoogleAnalytics id="G-37S3WS90LC" />
+
 <!-- Fathom - beautiful, simple website analytics -->
 <script src="https://cdn.usefathom.com/script.js" data-site="EZBHTSIG" defer></script>
 <!-- Global Metadata -->
@@ -53,8 +57,6 @@ const resolvedImage = {
 <meta name="generator" content={Astro.generator} />
 <meta name="viewport" content="width=device-width" />
 <meta name="theme-color" content="#8D46E7" />
-
-<title set:html={smartypants(title, 1)} />
 
 <!-- Font preloads from local drive -->
 <!-- <link

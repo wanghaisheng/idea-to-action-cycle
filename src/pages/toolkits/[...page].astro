@@ -137,7 +137,7 @@ function themeFilter(toolkit: CollectionEntry<"toolkits">) {
 	}
 	if (selectedEcommerceCategories.length > 0) {
 		if (
-			!toolkit.data.EcommerceBrandCategories.some((c: string) =>
+			!toolkit.data.ecommerceBrandCategories.some((c: string) =>
 				selectedEcommerceCategories.includes(c),
 			)
 		) {
@@ -196,7 +196,8 @@ const recentlyAddedHref = `${Astro.url.pathname}?${recentlyAddedSearch.toString(
 			<h1
 				class="heading-3 mx-auto max-w-screen-lg pt-24 text-center sm:heading-2 lg:heading-1 md:pt-32 lg:pt-40"
 			>
-				Jumpstart your next brand with a tool
+				Copilot for your brand<br />
+				<!-- Jumpstart with toolkit now -->
 			</h1>
 		</div>
 	</div>
