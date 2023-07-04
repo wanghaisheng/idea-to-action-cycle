@@ -12,6 +12,6 @@ author:
   url: "https://shopconna.com"
   name: "conna"
   avatar: "https://avatars.githubusercontent.com/u/2363295?v=4"
-categories: ["twitter", "social media"]
+categories: ["saas"]
 highlight: true
 ---

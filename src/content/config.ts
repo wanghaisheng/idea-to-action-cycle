@@ -97,7 +97,25 @@ export const ThemeCategories = new Map<string, string>([
 
 	["other", "Other"],
 ])
-
+export const ToolkitIntegrationCategories = new Map<string, string>([
+	["shopify", "Shopify"],
+	["wordpress", "Wordpress"],
+	["magento", "Magento"],
+	["bigcommerce", "Bigcommerce"],
+	["prestashop", "PrestaShop"],
+	["social media", "Social Media"],
+	["gpt", "chatGPT"],
+	["twitter", "Twitter"],
+	["other", "Other"],
+])
+export const SassBrandCategories = new Map<string, string>([
+	["brand monitor", "Shopify"],
+	["other", "Other"],
+])
+export const ToolkitsTags = new Map<string, string>([
+	["brand monitor", "Shopify"],
+	["other", "Other"],
+])
 export const BlogCategories = new Map<string, string>([
 	["featured", "Featured"],
 	["recent", "Recently Added"],
@@ -123,34 +141,13 @@ export const BlogCategories = new Map<string, string>([
 ])
 
 export const ToolkitCategories = new Map<string, string>([
-	["featured", "Featured"],
-	["recent", "Recently Added"],
-	["official", "Official"],
-	["blog", "Blog"],
-	["landing-page", "Landing Page"],
-	["portfolio", "Portfolio"],
+	["deskstop app", "Desktop APP"],
 	["ecommerce", "E-commerce"],
-	["e-commerce", "E-commerce"],
-	["docs", "Docs"],
 	["saas", "SaaS"],
-	["shopify", "Shopify"],
-	["wordpress", "Wordpress"],
-	["magento", "Magento"],
-	["bigcommerce", "Bigcommerce"],
-	["prestashop", "PrestaShop"],
-	["social media", "Social Media"],
-	["gpt", "chatGPT"],
-	["minimal", "Minimal"],
-	["website", "Website"],
-	["twitter", "Twitter"],
-	["SEO", "SEO"],
-	["seo", "SEO"],
-	["search engine", "search engine"],
-
 	["other", "Other"],
 ])
 
-export const ThemeTools = new Map<string, string>([
+export const ProgamingLang = new Map<string, string>([
 	["python", "Python"],
 	["go", "Go"],
 	["rust", "Rust"],
@@ -169,7 +166,16 @@ export const ThemeTools = new Map<string, string>([
 	["vue", "Vue"],
 
 ])
+export const DeployPlatforms = new Map<string, string>([
+	["github action", "Github Action"],
+	["vercel", "Vercel"],
+	["netifly", "Netifly"],
+	["cloudflare", "Cloudflare"],
+	["windows", "Windows"],
+	["macOS", "MacOS"],
+	["linux", "Linux"],
 
+])
 export const themeSchema = z
 	.object({
 		title: z.string().min(1),
@@ -197,7 +203,8 @@ export const themeSchema = z
 			.default([]),
 		stars: z.number().min(0).default(0),
 		featured: z.number().min(1).optional(),
-		tools: z.array(z.enum(Array.from(ThemeTools.keys()) as [string, ...string[]])).default([]),
+		deployPlatforms: z.array(z.enum(Array.from(DeployPlatforms.keys()) as [string, ...string[]])).default([]).optional(),
+		tools: z.array(z.enum(Array.from(ProgamingLang.keys()) as [string, ...string[]])).default([]),
 		related: z.array(z.string()).max(3).default([]),
 		publishDate: z.date({ coerce: true }).optional(),
 		badge: z.string().optional(),
@@ -237,7 +244,7 @@ export const showcaseSchema = z
 			.default([]),
 		stars: z.number().min(0).default(0),
 		featured: z.number().min(1).optional(),
-		tools: z.array(z.enum(Array.from(ThemeTools.keys()) as [string, ...string[]])).default([]),
+		tools: z.array(z.enum(Array.from(ProgamingLang.keys()) as [string, ...string[]])).default([]),
 		related: z.array(z.string()).max(3).default([]),
 		publishDate: z.date({ coerce: true }).optional(),
 		badge: z.string().optional(),
@@ -263,11 +270,13 @@ export const toolkitSchema = z
 			name: z.string(),
 			avatar: z.string(),
 		}),
-		categories: z.array(z.enum(Array.from(ThemeCategories.keys()) as [string, ...string[]])),
+		categories: z.array(z.enum(Array.from(ToolkitCategories.keys()) as [string, ...string[]])),
+		ecommerceBrandCategories: z.array(z.enum(Array.from(EcommerceBrandCategories.keys()) as [string, ...string[]])).optional(),
 		repoUrl: z.string().url().optional(),
 		demoUrl: z.string().url().optional(),
 		buyUrl: z.string().url().optional(),
 		videoUrl: z.string().url().optional(),
+		webUrl: z.string().url().optional(),
 		links: z
 			.array(
 				z.object({
@@ -278,7 +287,8 @@ export const toolkitSchema = z
 			.default([]),
 		stars: z.number().min(0).default(0),
 		featured: z.number().min(1).optional(),
-		tools: z.array(z.enum(Array.from(ThemeTools.keys()) as [string, ...string[]])).default([]),
+		tools: z.array(z.enum(Array.from(ProgamingLang.keys()) as [string, ...string[]])).default([]),
+		deployPlatforms: z.array(z.enum(Array.from(DeployPlatforms.keys()) as [string, ...string[]])).default([]),
 		related: z.array(z.string()).max(3).default([]),
 		publishDate: z.date({ coerce: true }).optional(),
 		badge: z.string().optional(),
@@ -415,6 +425,6 @@ export const collections = {
 		schema: themeSchema,
 	},
 	toolkits: {
-		schema: themeSchema,
+		schema: toolkitSchema,
 	},
 }

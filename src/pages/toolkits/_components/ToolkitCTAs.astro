@@ -8,9 +8,28 @@ export type Props = HTMLAttributes<"div"> & {
 }
 
 const { toolkit, class: className, ...attrs } = Astro.props
+
+console.log(toolkit.data.repoUrl)
 ---
 
 <div class:list={["flex flex-col gap-4", className]} {...attrs}>
+	{
+		toolkit.data.webUrl && (
+			<a href={toolkit.data.webUrl} class="button" data-analytics-event="PDDOCXCA:0">
+				<span>Website</span>
+				<ExternalLinkIcon aria-hidden="true" />
+			</a>
+		)
+	}
+
+	{
+		toolkit.data.demoUrl && (
+			<a href={toolkit.data.demoUrl} class="button" data-analytics-event="DI9WVRXV:0">
+				<span>Live demo</span>
+				<ExternalLinkIcon aria-hidden="true" />
+			</a>
+		)
+	}
 	{
 		toolkit.data.buyUrl && (
 			<a href={toolkit.data.buyUrl} class="button button-primary" data-analytics-event="PDDOCXCA:1">
@@ -21,24 +40,24 @@ const { toolkit, class: className, ...attrs } = Astro.props
 	}
 	{
 		toolkit.data.videoUrl && (
-			<a href={toolkit.data.videoUrl} class="button button-primary" data-analytics-event="PDDOCXCA:1">
+			<a
+				href={toolkit.data.videoUrl}
+				class="button button-primary"
+				data-analytics-event="PDDOCXCA:1"
+			>
 				<span>Watch now</span>
-				<ExternalLinkIcon aria-hidden="true" />
-			</a>
-		)
-	}	
-	{
-		toolkit.data.repoUrl && (
-			<a href={toolkit.data.repoUrl} class="button button-primary" data-analytics-event="PDDOCXCA:0">
-				<span>Source code</span>
 				<ExternalLinkIcon aria-hidden="true" />
 			</a>
 		)
 	}
 	{
-		toolkit.data.demoUrl && (
-			<a href={toolkit.data.demoUrl} class="button" data-analytics-event="DI9WVRXV:0">
-				<span>Live demo</span>
+		toolkit.data.repoUrl && (
+			<a
+				href={toolkit.data.repoUrl}
+				class="button button-primary"
+				data-analytics-event="PDDOCXCA:0"
+			>
+				<span>Source code</span>
 				<ExternalLinkIcon aria-hidden="true" />
 			</a>
 		)

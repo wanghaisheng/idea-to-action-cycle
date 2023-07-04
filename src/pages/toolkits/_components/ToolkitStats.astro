@@ -1,6 +1,7 @@
 ---
 import type { HTMLAttributes } from "astro/types"
 import type { CollectionEntry } from "astro:content"
+import { DeployPlatforms, ProgamingLang } from "~/content/config.js"
 import Avatar from "./Avatar.astro"
 import Badge from "./Badge.astro"
 
@@ -29,6 +30,27 @@ const netlifyUrl =
 		<a href={toolkit.data.author.url} target="_blank" class="link">
 			<Avatar toolkit={toolkit} />
 		</a>
+	</div>
+	<div class="flex items-center justify-between">
+		<small class="code text-astro-gray-200">Technology built with</small>
+		{
+			toolkit.data.tools.map((tool) => (
+				<a href={"/toolkits?search=&technology%5B%5D=" + tool} target="_blank" class="link">
+					{ProgamingLang.get(tool)}
+				</a>
+			))
+		}
+	</div>
+	<hr class="border-astro-gray-500" />
+	<div class="flex items-center justify-between">
+		<small class="code text-astro-gray-200">Runs on</small>
+		{
+			toolkit.data.deployPlatforms.map((platform) => (
+				<a href={"/toolkits?search=&platforms%5B%5D=" + platform} target="_blank" class="link">
+					{DeployPlatforms.get(platform)}
+				</a>
+			))
+		}
 	</div>
 	{
 		netlifyUrl && (

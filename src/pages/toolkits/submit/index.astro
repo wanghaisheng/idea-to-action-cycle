@@ -11,7 +11,14 @@ import FormErrorList from "~/components/form/FormErrorList.astro"
 import FormFieldSet from "~/components/form/FormFieldSet.astro"
 import FormRadioGroup from "~/components/form/FormRadioGroup.astro"
 import RichTextEditor from "~/components/form/RichTextEditor.astro"
-import { ThemeTools, toolkitSchema } from "~/content/config.js"
+import {
+	DeployPlatforms,
+	EcommerceBrandCategories,
+	ProgamingLang,
+	SassBrandCategories,
+	ToolkitCategories,
+	toolkitSchema,
+} from "~/content/config.js"
 import { editDiscordWebhookMessage, executeDiscordWebhook } from "~/helpers/discord.js"
 import { sanitizeToolkitDescription } from "~/helpers/toolkits.js"
 import MainLayout from "~/layouts/MainLayout.astro"
@@ -31,14 +38,30 @@ const schema = zfd
 		authorEmail: zfd.text(
 			z.string().refine((v) => v.includes("@"), "Invalid email address, must include @"),
 		),
-		themeName: zfd.text(z.string()),
+		toolkitName: zfd.text(z.string()),
 		themeUrl: zfd.text(z.string().url(invalidUrlMessage)),
+		toolkitWebUrl: zfd.text(z.string().url(invalidUrlMessage)),
+		toolkitSourceCodeUrl: zfd.text(z.string().url(invalidUrlMessage)),
+		toolkitBuyUrl: zfd.text(z.string().url(invalidUrlMessage)),
+		toolkitVideoUrl: zfd.text(z.string().url(invalidUrlMessage)),
+		toolkitDemoUrl: zfd.text(z.string().url(invalidUrlMessage)),
+
 		themeDemoUrl: zfd.text(z.string().url(invalidUrlMessage).optional()),
 		themeVideoUrl: zfd.text(z.string().url(invalidUrlMessage).optional()),
 		paidStatus: zfd.text(z.enum(["free", "paid"])),
 		themeShortDescription: zfd.text(z.string()),
 		themeFullDescription: zfd.text(z.string().transform(sanitizeToolkitDescription).optional()),
+		ecommerceBrandCategories: z.optional(zfd.repeatableOfType(zfd.text())),
+		toolkitIntegrationCategories: z.optional(zfd.repeatableOfType(zfd.text())),
+		sassBrandCategories: z.optional(zfd.repeatableOfType(zfd.text())),
+		EcommerceBrandCategories: z.optional(zfd.repeatableOfType(zfd.text())),
+
+		toolkitCategories: z.optional(zfd.repeatableOfType(zfd.text())),
+
 		toolsUsed: z.optional(zfd.repeatableOfType(zfd.text())),
+
+		programmingLangUsed: z.optional(zfd.repeatableOfType(zfd.text())),
+		platformSupported: z.optional(zfd.repeatableOfType(zfd.text())),
 	})
 	.refine((data) => {
 		const size =
@@ -104,8 +127,8 @@ if (Astro.request.method === "POST") {
 			})
 		}
 
-		const theme: z.input<typeof toolkitSchema> = {
-			title: result.data.themeName,
+		const toolkit: z.input<typeof toolkitSchema> = {
+			title: result.data.toolkitName,
 			description: result.data.themeShortDescription,
 			fullDescription: result.data.themeFullDescription,
 			image: image.url,
@@ -116,16 +139,21 @@ if (Astro.request.method === "POST") {
 				url: "",
 			},
 			categories: [],
-			demoUrl: result.data.themeDemoUrl,
-			videoUrl: result.data.themeVideoUrl,
-			
-			tools: result.data.toolsUsed,
+			demoUrl: result.data.toolkitDemoUrl,
+			videoUrl: result.data.toolkitVideoUrl,
+			webUrl: result.data.toolkitWebUrl,
+			repoUrl: result.data.toolkitSourceCodeUrl,
+			buyUrl: result.data.toolkitBuyUrl,
+			deployPlatforms: result.data.platformSupported,
+			tools: result.data.programmingLangUsed,
 		}
 
 		if (result.data.paidStatus === "paid") {
-			theme.buyUrl = result.data.themeUrl
+			if (!result.data.toolkitBuyUrl) {
+				toolkit.buyUrl = result.data.themeUrl
+			}
 		} else {
-			theme.repoUrl = result.data.themeUrl
+			toolkit.repoUrl = result.data.themeUrl
 		}
 
 		await editDiscordWebhookMessage(SUBMISSION_DISCORD_WEBHOOK_URL, message.id, {
@@ -136,10 +164,10 @@ if (Astro.request.method === "POST") {
 						matter.stringify(
 							"",
 							// clean up undefined values, which gray matter doesn't appreciate
-							JSON.parse(JSON.stringify(theme)),
+							JSON.parse(JSON.stringify(toolkit)),
 						),
 					],
-					slugify(result.data.themeName) + ".md",
+					slugify(result.data.toolkitName) + ".md",
 				),
 				new File([JSON.stringify(result.data, undefined, 2)], "submission.json"),
 			],
@@ -168,14 +196,18 @@ if (prefilled != null) {
 }
 ---
 
-<MainLayout title="Submit a toolkit" image={{ src: "/og/themes-submit.jpg", alt: "Submit a theme" }}>
+<MainLayout
+	title="Submit a toolkit"
+	image={{ src: "/og/themes-submit.jpg", alt: "Submit a theme" }}
+>
 	<div class="flex items-start">
 		<div class="flex-1 border-astro-gray-600 p-8 lg:border-r">
 			<div class="mx-auto max-w-4xl">
 				<h1 class="heading-3 mb-4 lg:heading-2">Submit a toolkit</h1>
 				<p class="text-astro-gray-200">
-					Thank you for sharing your toolkits with the shopconna community! Choose to make your toolkit free
-					or paid. All payments go directly to you, we don't handle the sale or take a cut.
+					Thank you for sharing your toolkits with the shopconna community! Choose to make your
+					toolkit free or paid. All payments go directly to you, we don't handle the sale or take a
+					cut.
 				</p>
 
 				{
@@ -200,7 +232,8 @@ if (prefilled != null) {
 				<form method="post" enctype="multipart/form-data" class="grid gap-10">
 					<FormFieldSet legend="Images">
 						<p>
-							Toolkit images should be max 8MB combined, 16:9 aspect ratio, and 1280px wide or larger.
+							Toolkit images should be max 8MB combined, 16:9 aspect ratio, and 1280px wide or
+							larger.
 						</p>
 						<FormErrorList
 							errors={[
@@ -223,7 +256,7 @@ if (prefilled != null) {
 
 					<FormFieldSet legend="Author Info">
 						<Field errors={errors?.fieldErrors.authorName}>
-							<label slot="label" for="authorName">Your name</label>
+							<label slot="label" for="authorName">Your company/brand/personal name</label>
 							<input
 								id="authorName"
 								name="authorName"
@@ -247,16 +280,16 @@ if (prefilled != null) {
 						</Field>
 					</FormFieldSet>
 
-					<FormFieldSet legend="Theme Info">
-						<Field errors={errors?.fieldErrors?.themeName}>
-							<label slot="label" for="themeName">Theme name</label>
+					<FormFieldSet legend="Toolkit Info">
+						<Field errors={errors?.fieldErrors?.toolkitName}>
+							<label slot="label" for="toolkitName">Toolkit name</label>
 							<input
-								id="themeName"
-								name="themeName"
+								id="toolkitName"
+								name="toolkitName"
 								placeholder="My super cool toolkit"
 								required
 								class="input"
-								value={prefilled?.get("themeName")}
+								value={prefilled?.get("toolkitName")}
 							/>
 						</Field>
 
@@ -277,13 +310,13 @@ if (prefilled != null) {
 								})
 							}
 
-							createEffect(() => {
-								if (paidStatus() === "free") {
-									themeUrlLabel.textContent = "Public repo URL"
-								} else {
-									themeUrlLabel.textContent = "Purchase URL"
-								}
-							})
+							// createEffect(() => {
+							// 	if (paidStatus() === "free") {
+							// 		themeUrlLabel.textContent = "Public repo URL"
+							// 	} else {
+							// 		themeUrlLabel.textContent = "Purchase URL"
+							// 	}
+							// })
 						</script>
 
 						<Field errors={errors?.fieldErrors?.paidStatus}>
@@ -300,41 +333,67 @@ if (prefilled != null) {
 						</Field>
 
 						<div class="grid gap-6 md:grid-cols-2">
-							<Field errors={errors?.fieldErrors?.themeUrl}>
-								<label slot="label" for="themeUrl">Public repo URL / Purchase URL</label>
+							<Field errors={errors?.fieldErrors?.toolkitWebUrl}>
+								<label slot="label" for="toolkitWebUrl"
+									>Your toolkit Landingpage or brand/company URL</label
+								>
 								<input
-									id="themeUrl"
-									name="themeUrl"
+									id="toolkitWebUrl"
+									name="toolkitWebUrl"
 									type="url"
 									placeholder="https://github.com/me/my-theme"
 									required
 									class="input"
-									value={prefilled?.get("themeUrl")}
+									value={prefilled?.get("toolkitWebUrl")}
+								/>
+							</Field>
+							<Field errors={errors?.fieldErrors?.toolkitSourceCodeUrl}>
+								<label slot="label" for="toolkitSourceCodeUrl">Public source code repo URL</label>
+								<input
+									id="toolkitSourceCodeUrl"
+									name="toolkitSourceCodeUrl"
+									type="url"
+									placeholder="https://github.com/me/my-theme"
+									class="input"
+									value={prefilled?.get("toolkitSourceCodeUrl")}
+								/>
+							</Field>
+							<Field errors={errors?.fieldErrors?.toolkitBuyUrl}>
+								<label slot="label" for="toolkitBuyUrl"
+									>If paid,Purchase URL,if free,Sponsorship URL</label
+								>
+								<input
+									id="toolkitBuyUrl"
+									name="toolkitBuyUrl"
+									type="url"
+									placeholder="https://github.com/me/my-theme"
+									class="input"
+									value={prefilled?.get("toolkitBuyUrl")}
 								/>
 							</Field>
 
-							<Field errors={errors?.fieldErrors?.themeDemoUrl}>
-								<label slot="label" for="themeDemoUrl">Live demo URL</label>
+							<Field errors={errors?.fieldErrors?.toolkitDemoUrl}>
+								<label slot="label" for="toolkitDemoUrl">Live demo URL</label>
 								<input
-									id="themeDemoUrl"
-									name="themeDemoUrl"
+									id="toolkitDemoUrl"
+									name="toolkitDemoUrl"
 									type="url"
-									placeholder="https://example.com/my-theme-preview"
+									placeholder="https://example.com/my-toolkit-preview"
 									class="input"
-									value={prefilled?.get("themeDemoUrl")}
+									value={prefilled?.get("toolkitDemoUrl")}
 								/>
 							</Field>
-							<Field errors={errors?.fieldErrors?.themeVideoUrl}>
-								<label slot="label" for="themeVideoUrl">video tutorial URL</label>
+							<Field errors={errors?.fieldErrors?.toolkitVideoUrl}>
+								<label slot="label" for="toolkitVideoUrl">video tutorial URL</label>
 								<input
-									id="themeVideoUrl"
-									name="themeVideoUrl"
+									id="toolkitVideoUrl"
+									name="toolkitVideoUrl"
 									type="url"
-									placeholder="https://example.com/my-theme-preview"
+									placeholder="https://example.com/my-video-tutorials"
 									class="input"
-									value={prefilled?.get("themeVideoUrl")}
+									value={prefilled?.get("toolkitVideoUrl")}
 								/>
-							</Field>							
+							</Field>
 						</div>
 
 						<Field errors={errors?.fieldErrors?.themeShortDescription}>
@@ -359,16 +418,64 @@ if (prefilled != null) {
 							/>
 						</Field>
 
+						<Field errors={errors?.fieldErrors?.toolkitCategories}>
+							<p slot="label" id="toolkitCategoriesLabel">Toolkits Type</p>
+							<DropdownMultiSelect
+								client:idle
+								name="toolkitCategories"
+								descriptionId="toolkitCategoriesLabel"
+								options={[...ToolkitCategories]
+									.map(([value, label]) => ({ label, value }))
+									.sort((a, b) => a.label.localeCompare(b.label))}
+								defaultSelected={prefilled?.getAll("toolsUsed") ?? []}
+							/>
+						</Field>
 						<Field errors={errors?.fieldErrors?.toolsUsed}>
-							<p slot="label" id="toolsLabel">Tools used</p>
+							<p slot="label" id="toolsLabel">Dev Tools used</p>
 							<DropdownMultiSelect
 								client:idle
 								name="toolsUsed"
 								descriptionId="toolsLabel"
-								options={[...ThemeTools]
+								options={[...ProgamingLang]
 									.map(([value, label]) => ({ label, value }))
 									.sort((a, b) => a.label.localeCompare(b.label))}
 								defaultSelected={prefilled?.getAll("toolsUsed") ?? []}
+							/>
+						</Field>
+						<Field errors={errors?.fieldErrors?.platformSupported}>
+							<p slot="label" id="platformSupportedLabel">Supported platforms</p>
+							<DropdownMultiSelect
+								client:idle
+								name="platformSupported"
+								descriptionId="platformSupportedLabel"
+								options={[...DeployPlatforms]
+									.map(([value, label]) => ({ label, value }))
+									.sort((a, b) => a.label.localeCompare(b.label))}
+								defaultSelected={prefilled?.getAll("platformSupported") ?? []}
+							/>
+						</Field>
+						<Field errors={errors?.fieldErrors?.sassBrandCategories}>
+							<p slot="label" id="sassBrandCategoriesLabel">sass Brand Categories</p>
+							<DropdownMultiSelect
+								client:idle
+								name="sassBrandCategories"
+								descriptionId="sassBrandCategoriesLabel"
+								options={[...SassBrandCategories]
+									.map(([value, label]) => ({ label, value }))
+									.sort((a, b) => a.label.localeCompare(b.label))}
+								defaultSelected={prefilled?.getAll("sassBrandCategories") ?? []}
+							/>
+						</Field>
+						<Field errors={errors?.fieldErrors?.ecommerceBrandCategories}>
+							<p slot="label" id="ecommerceBrandCategoriesLabel">ecommerce Brand Categories</p>
+							<DropdownMultiSelect
+								client:idle
+								name="ecommerceBrandCategories"
+								descriptionId="ecommerceBrandCategoriesLabel"
+								options={[...EcommerceBrandCategories]
+									.map(([value, label]) => ({ label, value }))
+									.sort((a, b) => a.label.localeCompare(b.label))}
+								defaultSelected={prefilled?.getAll("ecommerceBrandCategories") ?? []}
 							/>
 						</Field>
 					</FormFieldSet>

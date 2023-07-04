@@ -19,7 +19,9 @@
     "format:prettier": "prettier -w --plugin-search-dir=. .",
     "update:integrations": "node -r dotenv/config ./scripts/update-integrations.mjs",
     "update:showcase": "node -r dotenv/config ./scripts/update-showcase.mjs",
-    "update:themes": "node -r dotenv/config ./scripts/update-themes.mjs"
+    "update:themes": "node -r dotenv/config ./scripts/update-themes.mjs",
+    "update:toolkits": "node -r dotenv/config ./scripts/update-toolkits.mjs"
+
   },
   "dependencies": {
     "@astrojs/image": "^0.15.1",
@@ -36,6 +38,7 @@
     "clsx": "^1.2.1",
     "gray-matter": "^4.0.3",
     "node-fetch": "^3.3.0",
+    "playwright": "^1.35.1",
     "quill": "^1.3.7",
     "sharp": "^0.31.3",
     "slugify": "^1.6.5",

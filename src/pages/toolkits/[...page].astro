@@ -6,14 +6,19 @@ import Pagination from "~/components/Pagination.astro"
 import SearchFilter, { FilterGroup } from "~/components/SearchFilter.astro"
 import SidebarLayout from "~/components/SidebarLayout.astro"
 import SidebarPanel from "~/components/SidebarPanel.astro"
-import { EcommerceBrandCategories, ThemeTools, ToolkitCategories } from "~/content/config.js"
+import {
+	DeployPlatforms,
+	EcommerceBrandCategories,
+	ProgamingLang,
+	ToolkitCategories,
+} from "~/content/config.js"
 import { paginate } from "~/helpers/paginate.js"
 import MainLayout from "~/layouts/MainLayout.astro"
 import SubmitToolkit from "./_components/SubmitToolkits.astro"
 import ToolkitCard from "./_components/ToolkitCard.astro"
 
 // Sorting priority: featured first, then compare downloads, then sort alphabetically
-function sortThemes(a: CollectionEntry<"toolkits">, b: CollectionEntry<"toolkits">) {
+function sortToolkits(a: CollectionEntry<"toolkits">, b: CollectionEntry<"toolkits">) {
 	if (a.data.featured && b.data.featured) {
 		return a.data.featured - b.data.featured
 	}
@@ -63,18 +68,20 @@ const categoryFilter: FilterGroup = {
 		selected: selectedCategories.includes(c),
 	})),
 }
+const selectedEcommerceCategories = Astro.url.searchParams.getAll("ecommerce-categories[]")
+
 const ecommercecategoryFilter: FilterGroup = {
 	title: "EcommerceBrandCategories",
 	options: ecommercecategories.map((c) => ({
 		id: c,
-		name: "ecommercecategories[]",
+		name: "ecommerce-categories[]",
 		value: c,
 		label: EcommerceBrandCategories.get(c)!,
-		selected: selectedCategories.includes(c),
+		selected: selectedEcommerceCategories.includes(c),
 	})),
 }
 // get a list of all supported tools, this is the same list used by the zod schema
-const tools = Array.from(ThemeTools.keys())
+const tools = Array.from(ProgamingLang.keys())
 
 // get a list of tool filters applied to the request
 const selectedTools = Astro.url.searchParams.getAll("technology[]")
@@ -86,8 +93,23 @@ const toolFilter: FilterGroup = {
 		id: t,
 		name: "technology[]",
 		value: t,
-		label: ThemeTools.get(t)!,
+		label: ProgamingLang.get(t)!,
 		selected: selectedTools.includes(t),
+	})),
+}
+const selectedPlatorms = Astro.url.searchParams.getAll("platforms[]")
+
+// massage tool data for the Filter components
+const platforms = Array.from(DeployPlatforms.keys())
+
+const deployPlatformsFilter: FilterGroup = {
+	title: "platforms",
+	options: platforms.map((t) => ({
+		id: t,
+		name: "platforms[]",
+		value: t,
+		label: DeployPlatforms.get(t)!,
+		selected: selectedPlatorms.includes(t),
 	})),
 }
 
@@ -107,6 +129,21 @@ function themeFilter(toolkit: CollectionEntry<"toolkits">) {
 			return false
 		}
 	}
+	// if at least one tool filter is applied, hide themes that don't match
+	if (selectedPlatorms.length > 0) {
+		if (!toolkit.data.deployPlatforms.some((c: string) => selectedPlatorms.includes(c))) {
+			return false
+		}
+	}
+	if (selectedEcommerceCategories.length > 0) {
+		if (
+			!toolkit.data.EcommerceBrandCategories.some((c: string) =>
+				selectedEcommerceCategories.includes(c),
+			)
+		) {
+			return false
+		}
+	}
 
 	// if a search term was used, filter down checking name/title/description
 	if (searchRegex) {
@@ -122,7 +159,7 @@ function themeFilter(toolkit: CollectionEntry<"toolkits">) {
 
 // get themes, filtered by the applied search & filter, then sort the matches
 const allToolkits = await getCollection("toolkits", themeFilter).then((entries) =>
-	entries.sort(sortThemes),
+	entries.sort(sortToolkits),
 )
 
 // take all matching themes and create a paginated list of results
@@ -169,7 +206,7 @@ const recentlyAddedHref = `${Astro.url.pathname}?${recentlyAddedSearch.toString(
 			<SidebarPanel>
 				<SearchFilter
 					indexRoute="/toolkits"
-					groups={[categoryFilter,ecommercecategoryFilter, toolFilter]}
+					groups={[categoryFilter, ecommercecategoryFilter, toolFilter, deployPlatformsFilter]}
 					search={search}
 					searchPlaceholder="Search for a tool"
 				/>
@@ -216,7 +253,7 @@ const recentlyAddedHref = `${Astro.url.pathname}?${recentlyAddedSearch.toString(
 			) : (
 				<div class="flex flex-col items-center gap-12 pt-8 text-center sm:px-4 md:px-8 lg:px-10 lg:pt-10">
 					<p>
-						<strong>0</strong> results found for themes matching <strong>"{search}"</strong>
+						<strong>0</strong> results found for toolkit matching <strong>"{search}"</strong>
 					</p>
 					<a href="/toolkits/" rel="prefetch" class="button button-primary">
 						Clear filters
