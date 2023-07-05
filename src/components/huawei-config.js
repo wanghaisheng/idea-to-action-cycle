@@ -12,18 +12,17 @@
 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 * See the License for the specific language governing permissions and
 * limitations under the License.
+
+https://github.com/AppGalleryConnect/agc-demos/blob/de3aacbacb1add9ae187415278b3a321026a941b/Web/agc-authservice-demo-javascript/src/components/config.js
 */
 
 import agconnect from '@agconnect/api'
 import '@agconnect/instance'
 import '@hw-hmscore/analytics-web'
                       
-
-
-
 // paste your SDK Code Snippet here, SDK Code Snippet can be found on your project general information
 
-var agConnectConfig = 
+const  agConnectConfig = 
 {
 	"agcgw":{
 		"backurl":"connect-dra.hispace.hicloud.com",
@@ -103,15 +102,13 @@ var agConnectConfig =
 	"configuration_version":"3.0"
 }
 
-
 /**
  * Initializes app configuration
  */
 
-export function configInstance() {
 // 启用调试模式
 agconnect.analytics.InitSettings.debugMode = true;
 // 调试模式下，自定义终端标识
 agconnect.analytics.InitSettings.terminalName = "custom terminal name";        
-  agconnect.instance().configInstance(agConnectConfig);
-}
+agconnect.instance().configInstance(agConnectConfig);
+let analytics = agconnect.analytics();
