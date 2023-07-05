@@ -16,18 +16,10 @@
 
 import agconnect from '@agconnect/api'
 import '@agconnect/instance'
+import '@hw-hmscore/analytics-web'
+                      
 
-/**
- * Initializes app configuration
- */
 
-export function configInstance() {
-// 启用调试模式
-agconnect.analytics.InitSettings.debugMode = true;
-// 调试模式下，自定义终端标识
-agconnect.analytics.InitSettings.terminalName = "custom terminal name";        
-  agconnect.instance().configInstance(agConnectConfig);
-}
 
 // paste your SDK Code Snippet here, SDK Code Snippet can be found on your project general information
 
@@ -109,4 +101,17 @@ var agConnectConfig =
 	},
 	"region":"SG",
 	"configuration_version":"3.0"
-};
+}
+
+
+/**
+ * Initializes app configuration
+ */
+
+export function configInstance() {
+// 启用调试模式
+agconnect.analytics.InitSettings.debugMode = true;
+// 调试模式下，自定义终端标识
+agconnect.analytics.InitSettings.terminalName = "custom terminal name";        
+  agconnect.instance().configInstance(agConnectConfig);
+}
