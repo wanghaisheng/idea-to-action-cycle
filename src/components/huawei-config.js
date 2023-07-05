@@ -21,7 +21,11 @@ import '@agconnect/instance'
  * Initializes app configuration
  */
 
-export function configInstance(){
+export function configInstance() {
+// 启用调试模式
+agconnect.analytics.InitSettings.debugMode = true;
+// 调试模式下，自定义终端标识
+agconnect.analytics.InitSettings.terminalName = "custom terminal name";        
   agconnect.instance().configInstance(agConnectConfig);
 }
 
