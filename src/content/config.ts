@@ -147,6 +147,25 @@ export const ToolkitCategories = new Map<string, string>([
 	["other", "Other"],
 ])
 
+export const ThemeTools = new Map<string, string>([
+	["python", "Python"],
+	["go", "Go"],
+	["rust", "Rust"],
+	["javascript", "Javascript"],
+	["alpinejs", "Alpine.js"],
+	["lit", "Lit"],
+	["mdx", "MDX"],
+	["postcss", "PostCSS"],
+	["preact", "Preact"],
+	["react", "React"],
+	["sass", "SASS"],
+	["solidjs", "SolidJS"],
+	["svelte", "Svelte"],
+	["tailwind", "Tailwind"],
+	["typescript", "TypeScript"],
+	["vue", "Vue"],
+
+])
 export const ProgamingLang = new Map<string, string>([
 	["python", "Python"],
 	["go", "Go"],
