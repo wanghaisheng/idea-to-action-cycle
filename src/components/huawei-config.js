@@ -14,8 +14,8 @@
 * limitations under the License.
 */
 
-import agconnect from '@agconnect/api';
-import '@agconnect/instance';
+import agconnect from '@agconnect/api'
+import '@agconnect/instance'
 
 /**
  * Initializes app configuration
@@ -26,7 +26,6 @@ export function configInstance(){
 }
 
 // paste your SDK Code Snippet here, SDK Code Snippet can be found on your project general information
-
 
 var agConnectConfig = 
 {
@@ -59,8 +58,11 @@ var agConnectConfig =
 	"client":{
 		"cp_id":"30086000699684214",
 		"product_id":"388421841221558915",
+		"client_id":"1193280356850093632",
+		"client_secret":"BB5A3727B7DBC0B15094309A817C6125E515CAE6086834E72C89D887D4A2963D",
 		"project_id":"388421841221558915",
-		"app_id":"172249065902578551"
+		"app_id":"172249065902578551",
+		"api_key":"DAEDAO/o5fefFSH7hsp0Q+DaCvkZ4hqUmOmQUTBmDAYgvL0N9cpZjGc3Ljl71fkZLzzWAQdXkFpM1ma+Vlmf8Qy1sZfTto2MNJUpAw=="
 	},
 	"oauth_client":{
 		"client_id":"108667239",
