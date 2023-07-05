@@ -1,6 +1,6 @@
-import fs from 'fs'
-import path from 'path'
-import { chromium } from 'playwright'
+import fs from 'fs';
+import path from 'path';
+import { chromium } from 'playwright';
 
 async function captureWebpageSlides(url,repositoryName) {
   const browser = await chromium.launch();
@@ -78,7 +78,7 @@ if (!fs.existsSync(directoryPath)) {
   fs.mkdirSync(directoryPath, { recursive: true });
 }
     await page.screenshot({ path: slideScreenshotPath });
-    console.log(`Slide ${i + 1} captured and saved to ${slideScreenshotPath}`);
+    console.log(`${repositoryName} ${i + 1} captured and saved to ${slideScreenshotPath}`);
   }
 
   await browser.close();
@@ -90,5 +90,9 @@ let parts = url.split("/");
 
 // The repository name is usually the last part of the URL
 let repositoryName = parts[parts.length - 1];
+if(!repositoryName){
+  repositoryName="default"
+
+}
 
 captureWebpageSlides(url,repositoryName)
