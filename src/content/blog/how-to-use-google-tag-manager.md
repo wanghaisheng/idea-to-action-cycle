@@ -10,3 +10,6 @@ socialImage: "/src/content/blog/_images/community-awards/social-min.webp"
 lang: "en"
 ---
 
+* https://blog.hubspot.com/marketing/google-tag-manager-guide
+
+* https://reflectivedata.com/using-google-analytics-for-tracking-saas/
