@@ -315,13 +315,13 @@ export const collections = {
 	categories: defineCollection({
 		schema: z.object({
 			icon: z.string().optional(),
-			name: z.array(z.enum(Array.from(ToolkitCategories.keys()) as [string, ...string[]])),
+			name: z.enum(Array.from(ToolkitCategories.keys()) as [string, ...string[]]),
 		}),
 	}),
 	tags: defineCollection({
 		schema: z.object({
 			icon: z.string().optional(),
-			name: z.array(z.enum(Array.from(ToolkitsTags.keys()) as [string, ...string[]])),
+			name: z.enum(Array.from(ToolkitsTags.keys()) as [string, ...string[]]),
 		}),
 	}),
 	blog: defineCollection({
