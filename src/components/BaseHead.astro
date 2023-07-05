@@ -62,7 +62,16 @@ const resolvedImage = {
 </script>
 
 <GoogleAnalytics id="G-37S3WS90LC" />
+<script>
+	import { configInstance } from "./huawei-config"
 
+	export default {
+		name: "App",
+		created() {
+			configInstance()
+		},
+	}
+</script>
 <!-- Fathom - beautiful, simple website analytics -->
 <script src="https://cdn.usefathom.com/script.js" data-site="EZBHTSIG" defer></script>
 <!-- Global Metadata -->
