@@ -107,10 +107,10 @@ const  agConnectConfig =
  */
 
 // 启用调试模式
-agconnect.analytics.InitSettings.debugMode = true;
+//agconnect.analytics.InitSettings.debugMode = true;
 // 调试模式下，自定义终端标识
-agconnect.analytics.InitSettings.terminalName = "custom terminal name";        
-agconnect.instance().configInstance(agConnectConfig);
+//agconnect.analytics.InitSettings.terminalName = "custom terminal name";        
+//agconnect.instance().configInstance(agConnectConfig);
 
 // 是否启用url聚类
 //https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/javascript-accessing-0000001051147976#section2459527366
