@@ -34,11 +34,11 @@ const items: Item[] = [
 	{
 		title: "Harness the Magic of ChatGPT and AI",
 		description: "With ChatGPT and AI at your disposal, ShopConna takes your brand's communication and engagement to new heights. Automate customer interactions, provide personalized experiences, and deliver real-time support with intelligent chatbots powered by cutting-edge AI technology. Watch your brand connect with customers on a deeper level.",
-		liveUrl: new URL("https://github.com/wanghaisheng/brand-contact-Email-collector"),
+		liveUrl:"/blogs/?categories%5B%5D=AI",
 		image: marketingImage,
 		cta: {
 			text: "email collect",
-			href: "/blogs/?categories%5B%5D=email",
+			href: "https://github.com/wanghaisheng/brand-contact-Email-collector",
 		},
 	},
 	{
