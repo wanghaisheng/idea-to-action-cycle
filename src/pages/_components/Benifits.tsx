@@ -45,33 +45,33 @@ const items: Item[] = [
 		title: "RPA and Automation for Efficiency",
 		description:
 			"Save valuable time and resources with the power of RPA and automation. ShopConna automates repetitive and time-consuming tasks, allowing you to focus on strategic initiatives. From content creation to data analysis, our toolkit streamlines your workflow, enhances efficiency, and enables you to achieve more in less time.",
-		liveUrl: new URL("https://github.com/wanghaisheng/tiktoka-studio-uploader"),
+		liveUrl:"/blogs/?categories%5B%5D=content-management",
 		image: agenciesImage,
 		cta: {
 			text: "video schedule and publish",
-			href: "/blogs/?categories%5B%5D=content-management",
+			href:  "https://github.com/wanghaisheng/tiktoka-studio-uploader",
 		},
 	},
 	{
 		title: "Hands-Free Brand Building",
 		description:
 			"ShopConna liberates you from the shackles of manual processes. Say goodbye to mundane tasks and hello to hands-free brand building. Our toolkit handles the heavy lifting, enabling you to concentrate on creativity, strategy, and nurturing your brand's essence. Unleash your potential without being bogged down by tedious operations.",
-		liveUrl: new URL("https://github.com/wanghaisheng/AutoGPT-Social"),
+		liveUrl: "/blogs/?categories%5B%5D=handsfree",
 		image: eCommerceImage,
 		cta: {
 			text: "AutoGPT-Social",
-			href: "/blogs/?categories%5B%5D=crm",
+			href: "https://github.com/wanghaisheng/AutoGPT-Social",
 		},
 	},
 	{
 		title: "Take Control of Your Budget",
 		description:
 			"Budget control is key to successful brand building, and ShopConna puts you in charge. Our toolkit offers cost-effective solutions that maximize the value of your resources. By leveraging existing best developer tools and automation technology, ShopConna ensures your budget is utilized optimally, without compromising quality.",
-		liveUrl: new URL("https://github.com/wanghaisheng/auto-shop-pipeline"),
+		liveUrl: "/blogs/?categories%5B%5D=workflow",
 		image: portfolioImage,
 		cta: {
 			text: "autoshop pipeline",
-			href: "/blogs/?categories%5B%5D=workflow",
+			href: "https://github.com/wanghaisheng/auto-shop-pipeline",
 		},
 	},
 ]
