@@ -1,5 +1,5 @@
 ---
-title: "a free tool for copying full or partial websites locally onto your hard-disk for offline viewing."
+title: "dump brand website to your local PC"
 description: "A sleek and modern personal website for you."
 image: "/src/content/toolkits/_images/tailcast.webp"
 images:
@@ -13,4 +13,9 @@ author:
   name: "conna"
   avatar: "https://avatars.githubusercontent.com/u/2363295?v=4"
 categories: ["saas"]
+tags: ["saas","AI"]
 ---
+
+
+
+a free tool for copying full or partial websites locally onto your hard-disk for offline viewing.

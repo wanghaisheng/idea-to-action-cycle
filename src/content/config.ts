@@ -109,12 +109,17 @@ export const ToolkitIntegrationCategories = new Map<string, string>([
 	["other", "Other"],
 ])
 export const SassBrandCategories = new Map<string, string>([
-	["brand monitor", "Shopify"],
+	["brand-monitor", "Shopify"],
 	["other", "Other"],
 ])
-export const ToolkitsTags = new Map<string, string>([
-	["brand monitor", "Shopify"],
+export const ToolkitTags = new Map<string, string>([
+	["social-media", "social media"],
 	["other", "Other"],
+	["AI", "AI"],
+	["content-management", "content management"],
+	["handsfree", "hands free"],
+	["saas", "saas"],
+
 ])
 export const BlogCategories = new Map<string, string>([
 	["featured", "Featured"],
@@ -136,12 +141,12 @@ export const BlogCategories = new Map<string, string>([
 	["website", "Website"],
 	["twitter", "Twitter"],
 	["SEO", "SEO"],
-	["search engine", "search engine"],
+	["search-engine", "search engine"],
 	["other", "Other"],
 ])
 
 export const ToolkitCategories = new Map<string, string>([
-	["deskstop app", "Desktop APP"],
+	["deskstop-app", "Desktop APP"],
 	["ecommerce", "E-commerce"],
 	["saas", "SaaS"],
 	["other", "Other"],
@@ -186,7 +191,7 @@ export const ProgamingLang = new Map<string, string>([
 
 ])
 export const DeployPlatforms = new Map<string, string>([
-	["github action", "Github Action"],
+	["github-action", "Github Action"],
 	["vercel", "Vercel"],
 	["netifly", "Netifly"],
 	["cloudflare", "Cloudflare"],
@@ -290,6 +295,7 @@ export const toolkitSchema = z
 			avatar: z.string(),
 		}),
 		categories: z.array(z.enum(Array.from(ToolkitCategories.keys()) as [string, ...string[]])),
+		tags: z.array(z.enum(Array.from(ToolkitTags.keys()) as [string, ...string[]])).optional(),
 		ecommerceBrandCategories: z.array(z.enum(Array.from(EcommerceBrandCategories.keys()) as [string, ...string[]])).optional(),
 		repoUrl: z.string().url().optional(),
 		demoUrl: z.string().url().optional(),
@@ -340,7 +346,7 @@ export const collections = {
 	tags: defineCollection({
 		schema: z.object({
 			icon: z.string().optional(),
-			name: z.enum(Array.from(ToolkitsTags.keys()) as [string, ...string[]]),
+			name: z.enum(Array.from(ToolkitTags.keys()) as [string, ...string[]]),
 		}),
 	}),
 	blog: defineCollection({

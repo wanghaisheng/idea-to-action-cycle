@@ -24,5 +24,6 @@ tools:
   - "tailwind"
   - "typescript"
 deployPlatforms:
-  - "github action"
+  - "github-action"
+tags: ["saas"]
 ---

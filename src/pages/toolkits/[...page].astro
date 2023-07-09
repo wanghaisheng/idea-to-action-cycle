@@ -11,6 +11,7 @@ import {
 	EcommerceBrandCategories,
 	ProgamingLang,
 	ToolkitCategories,
+	ToolkitTags,
 } from "~/content/config.js"
 import { paginate } from "~/helpers/paginate.js"
 import MainLayout from "~/layouts/MainLayout.astro"
@@ -52,7 +53,6 @@ const search = Astro.url.searchParams.get("search")
 
 // get a list of all supported categories, this is the same list used by the zod schema
 const categories = Array.from(ToolkitCategories.keys())
-const ecommercecategories = Array.from(EcommerceBrandCategories.keys())
 
 // get a list of category filters applied to the request
 const selectedCategories = Astro.url.searchParams.getAll("categories[]")
@@ -68,10 +68,30 @@ const categoryFilter: FilterGroup = {
 		selected: selectedCategories.includes(c),
 	})),
 }
+
+const tags = Array.from(ToolkitTags.keys())
+
+// get a list of category filters applied to the request
+const selectedTags = Astro.url.searchParams.getAll("tags[]")
+
+// massage category data for the Filter components
+const tagFilter: FilterGroup = {
+	title: "Tags",
+	options: tags.map((c) => ({
+		id: c,
+		name: "tags[]",
+		value: c,
+		label: ToolkitTags.get(c)!,
+		selected: selectedTags.includes(c),
+	})),
+}
+
+const ecommercecategories = Array.from(EcommerceBrandCategories.keys())
+
 const selectedEcommerceCategories = Astro.url.searchParams.getAll("ecommerce-categories[]")
 
 const ecommercecategoryFilter: FilterGroup = {
-	title: "EcommerceBrandCategories",
+	title: "Ecommerce Brand Categories",
 	options: ecommercecategories.map((c) => ({
 		id: c,
 		name: "ecommerce-categories[]",
@@ -103,7 +123,7 @@ const selectedPlatorms = Astro.url.searchParams.getAll("platforms[]")
 const platforms = Array.from(DeployPlatforms.keys())
 
 const deployPlatformsFilter: FilterGroup = {
-	title: "platforms",
+	title: "Platforms",
 	options: platforms.map((t) => ({
 		id: t,
 		name: "platforms[]",
@@ -132,6 +152,13 @@ function themeFilter(toolkit: CollectionEntry<"toolkits">) {
 	// if at least one tool filter is applied, hide themes that don't match
 	if (selectedPlatorms.length > 0) {
 		if (!toolkit.data.deployPlatforms.some((c: string) => selectedPlatorms.includes(c))) {
+			return false
+		}
+	}
+
+	// if at least one tool filter is applied, hide themes that don't match
+	if (selectedTags.length > 0) {
+		if (!toolkit.data.tags.some((c: string) => selectedTags.includes(c))) {
 			return false
 		}
 	}
@@ -207,7 +234,13 @@ const recentlyAddedHref = `${Astro.url.pathname}?${recentlyAddedSearch.toString(
 			<SidebarPanel>
 				<SearchFilter
 					indexRoute="/toolkits"
-					groups={[categoryFilter, ecommercecategoryFilter, toolFilter, deployPlatformsFilter]}
+					groups={[
+						categoryFilter,
+						ecommercecategoryFilter,
+						toolFilter,
+						deployPlatformsFilter,
+						tagFilter,
+					]}
 					search={search}
 					searchPlaceholder="Search for a tool"
 				/>
@@ -238,7 +271,9 @@ const recentlyAddedHref = `${Astro.url.pathname}?${recentlyAddedSearch.toString(
 					)}
 
 					<CardGridGroup
-						title={showRecentlyAdded && recentlyAdded.length > 0 ? "All Tools" : undefined}
+						title={
+							showRecentlyAdded && recentlyAdded.length > 0 ? "All Tools" : undefined
+						}
 					>
 						<CardGrid class="w-full max-w-screen-2xl sm:grid-cols-2 xl:grid-cols-3">
 							{toolkits.map((toolkit) => (
@@ -254,7 +289,8 @@ const recentlyAddedHref = `${Astro.url.pathname}?${recentlyAddedSearch.toString(
 			) : (
 				<div class="flex flex-col items-center gap-12 pt-8 text-center sm:px-4 md:px-8 lg:px-10 lg:pt-10">
 					<p>
-						<strong>0</strong> results found for toolkit matching <strong>"{search}"</strong>
+						<strong>0</strong> results found for toolkit matching{" "}
+						<strong>"{search}"</strong>
 					</p>
 					<a href="/toolkits/" rel="prefetch" class="button button-primary">
 						Clear filters

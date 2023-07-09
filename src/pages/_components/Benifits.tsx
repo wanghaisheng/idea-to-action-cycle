@@ -24,7 +24,7 @@ const items: Item[] = [
 		title: "Unleash the Power of Open-Source",
 		description:
 			"ShopConna is built on the foundation of open-source technology. This means you have full control over customizing and tailoring the toolkit to perfectly align with your brand's unique requirements. Embrace the freedom to enhance, modify, and contribute to the community, ensuring that your brand stands out from the crowd.",
-		liveUrl: "/blogs/?categories%5B%5D=social",
+		liveUrl: "/toolkits?search=&tags%5B%5D=social-media",
 		image: blogsImage,
 		cta: {
 			text: "Try Rss for social profile",
@@ -34,7 +34,7 @@ const items: Item[] = [
 	{
 		title: "Harness the Magic of ChatGPT and AI",
 		description: "With ChatGPT and AI at your disposal, ShopConna takes your brand's communication and engagement to new heights. Automate customer interactions, provide personalized experiences, and deliver real-time support with intelligent chatbots powered by cutting-edge AI technology. Watch your brand connect with customers on a deeper level.",
-		liveUrl:"/blogs/?categories%5B%5D=AI",
+		liveUrl:"/toolkits?search=&tags%5B%5D=AI",
 		image: marketingImage,
 		cta: {
 			text: "email collect",
@@ -45,7 +45,7 @@ const items: Item[] = [
 		title: "RPA and Automation for Efficiency",
 		description:
 			"Save valuable time and resources with the power of RPA and automation. ShopConna automates repetitive and time-consuming tasks, allowing you to focus on strategic initiatives. From content creation to data analysis, our toolkit streamlines your workflow, enhances efficiency, and enables you to achieve more in less time.",
-		liveUrl:"/blogs/?categories%5B%5D=content-management",
+		liveUrl:"/toolkits?search=&tags%5B%5D=content-management",
 		image: agenciesImage,
 		cta: {
 			text: "video schedule and publish",
@@ -56,7 +56,7 @@ const items: Item[] = [
 		title: "Hands-Free Brand Building",
 		description:
 			"ShopConna liberates you from the shackles of manual processes. Say goodbye to mundane tasks and hello to hands-free brand building. Our toolkit handles the heavy lifting, enabling you to concentrate on creativity, strategy, and nurturing your brand's essence. Unleash your potential without being bogged down by tedious operations.",
-		liveUrl: "/blogs/?categories%5B%5D=handsfree",
+		liveUrl: "/toolkits?search=&tags%5B%5D=handsfree",
 		image: eCommerceImage,
 		cta: {
 			text: "AutoGPT-Social",
@@ -67,7 +67,7 @@ const items: Item[] = [
 		title: "Take Control of Your Budget",
 		description:
 			"Budget control is key to successful brand building, and ShopConna puts you in charge. Our toolkit offers cost-effective solutions that maximize the value of your resources. By leveraging existing best developer tools and automation technology, ShopConna ensures your budget is utilized optimally, without compromising quality.",
-		liveUrl: "/blogs/?categories%5B%5D=workflow",
+		liveUrl: "/toolkits?search=&tags%5B%5D=workflow",
 		image: portfolioImage,
 		cta: {
 			text: "autoshop pipeline",
