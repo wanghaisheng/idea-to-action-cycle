@@ -1,6 +1,6 @@
 @font-face {
 	font-family: "MD IO 0.5";
-	src: url("fonts/Obviously-Light.woff2") format("woff2");
+	src: url("https://shopconna.com/fonts/MDIO0.5-Regular.woff2") format("woff2");
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
 	font-family: "Obviously";
-	src: url("fonts/Obviously-Light.woff2") format("woff2");
+	src: url("https://shopconna.com/fonts/Obviously-Narrow.woff2") format("woff2");
 	font-weight: 300;
 	font-style: normal;
 	font-display: swap;
@@ -16,7 +16,7 @@
 
 @font-face {
 	font-family: "Obviously";
-	src: url("fonts/Obviously-Regular.woff2") format("woff2");
+	src: url("https://shopconna.com/fonts/Obviously-Regular.woff2") format("woff2");
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -24,7 +24,7 @@
 
 @font-face {
 	font-family: "Obviously Extended";
-	src: url("fonts/Obviously-Extended.woff2") format("woff2");
+	src: url("https://shopconna.com/fonts/Obviously-Extended.woff2") format("woff2");
 	font-weight: 600;
 	font-style: normal;
 	font-stretch: wider;

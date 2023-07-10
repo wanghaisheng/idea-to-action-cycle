@@ -8,6 +8,8 @@ import { randomFromArray } from "~/helpers/random.js"
 import Layout from "~/layouts/MainLayout.astro"
 import Badge from "./_components/Badge.astro"
 import { Breadcrumbs } from "astro-breadcrumbs"
+import "astro-breadcrumbs/breadcrumbs.css"
+
 export const prerender = true
 
 export async function getStaticPaths() {
@@ -118,7 +120,9 @@ const placeholderGradient = randomFromArray(gradients)
 
 			<header class="mx-auto w-full max-w-prose text-center">
 				<h1 class="heading-3 mb-4 mt-2 md:heading-2 sm:mb-5 sm:mt-3">{data.title}</h1>
-				<div class="code flex flex-wrap items-center justify-center gap-4 text-astro-gray-200">
+				<div
+					class="code flex flex-wrap items-center justify-center gap-4 text-astro-gray-200"
+				>
 					<span>By</span>
 					{
 						authors.map((author) => {
@@ -133,7 +137,10 @@ const placeholderGradient = randomFromArray(gradients)
 						})
 					}
 
-					<time class="code text-astro-gray-200" datetime={data.publishDate.toISOString()}>
+					<time
+						class="code text-astro-gray-200"
+						datetime={data.publishDate.toISOString()}
+					>
 						Updated on {format(data.publishDate, "MMMM d, yyyy")}
 					</time>
 				</div>
