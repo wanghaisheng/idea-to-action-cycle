@@ -13,9 +13,9 @@ author:
   name: "conna"
   avatar: "https://avatars.githubusercontent.com/u/2363295?v=4"
 categories: ["saas"]
-tags: ["saas","AI"]
+tags:
+  - "saas"
+  - "AI"
 ---
-
-
 
 a free tool for copying full or partial websites locally onto your hard-disk for offline viewing.

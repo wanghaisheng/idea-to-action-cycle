@@ -13,6 +13,8 @@ author:
   name: "conna"
   avatar: "https://avatars.githubusercontent.com/u/2363295?v=4"
 categories: ["saas"]
-tags: ["saas"]
+tags:
+  - "twitter"
+  - "social-media"
 highlight: true
 ---

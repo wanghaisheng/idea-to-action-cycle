@@ -13,5 +13,7 @@ author:
   name: "conna"
   avatar: "https://avatars.githubusercontent.com/u/2363295?v=4"
 categories: ["ecommerce"]
-tags: ["saas"]
+tags:
+  - "website"
+  - "saas"
 ---

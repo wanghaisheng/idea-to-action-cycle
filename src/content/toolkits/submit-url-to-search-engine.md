@@ -25,5 +25,6 @@ tools:
   - "typescript"
 deployPlatforms:
   - "github-action"
-tags: ["saas"]
+tags:
+  - "saas"
 ---

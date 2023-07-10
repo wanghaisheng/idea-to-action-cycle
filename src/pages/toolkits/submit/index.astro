@@ -12,13 +12,13 @@ import FormFieldSet from "~/components/form/FormFieldSet.astro"
 import FormRadioGroup from "~/components/form/FormRadioGroup.astro"
 import RichTextEditor from "~/components/form/RichTextEditor.astro"
 import {
-DeployPlatforms,
-EcommerceBrandCategories,
-ProgamingLang,
-SassBrandCategories,
-ToolkitCategories,
-ToolkitTags,
-toolkitSchema,
+	DeployPlatforms,
+	EcommerceBrandCategories,
+	ProgamingLang,
+	SassBrandCategories,
+	ToolkitCategories,
+	ToolkitTags,
+	toolkitSchema,
 } from "~/content/config.js"
 import { editDiscordWebhookMessage, executeDiscordWebhook } from "~/helpers/discord.js"
 import { sanitizeToolkitDescription } from "~/helpers/toolkits.js"
@@ -147,7 +147,6 @@ if (Astro.request.method === "POST") {
 			buyUrl: result.data.toolkitBuyUrl,
 			deployPlatforms: result.data.platformSupported,
 			ecommerceBrandCategories: result.data.ecommerceBrandCategories,
-
 			tools: result.data.programmingLangUsed,
 			tags: result.data.toolkitTags,
 		}
@@ -209,17 +208,16 @@ if (prefilled != null) {
 			<div class="mx-auto max-w-4xl">
 				<h1 class="heading-3 mb-4 lg:heading-2">Submit a toolkit</h1>
 				<p class="text-astro-gray-200">
-					Thank you for sharing your toolkits with the shopconna community! Choose to make
-					your toolkit free or paid. All payments go directly to you, we don't handle the
-					sale or take a cut.
+					Thank you for sharing your toolkits with the shopconna community! Choose to make your
+					toolkit free or paid. All payments go directly to you, we don't handle the sale or take a
+					cut.
 				</p>
 
 				{
 					errors && (
 						<div class="my-4">
 							<FormError>
-								There were problems with your submission. Please fix the errors
-								below and try again.
+								There were problems with your submission. Please fix the errors below and try again.
 							</FormError>
 							<FormErrorList errors={errors?.formErrors} />
 						</div>
@@ -237,8 +235,8 @@ if (prefilled != null) {
 				<form method="post" enctype="multipart/form-data" class="grid gap-10">
 					<FormFieldSet legend="Images">
 						<p>
-							Toolkit images should be max 8MB combined, 16:9 aspect ratio, and 1280px
-							wide or larger.
+							Toolkit images should be max 8MB combined, 16:9 aspect ratio, and 1280px wide or
+							larger.
 						</p>
 						<FormErrorList
 							errors={[
@@ -261,9 +259,7 @@ if (prefilled != null) {
 
 					<FormFieldSet legend="Author Info">
 						<Field errors={errors?.fieldErrors.authorName}>
-							<label slot="label" for="authorName"
-								>Your company/brand/personal name</label
-							>
+							<label slot="label" for="authorName">Your company/brand/personal name</label>
 							<input
 								id="authorName"
 								name="authorName"
@@ -304,10 +300,7 @@ if (prefilled != null) {
 							import { createEffect, createSignal } from "solid-js"
 							import { getElement, getElements } from "~/helpers/dom.js"
 
-							const paidStatusOptions = getElements(
-								"[name=paidStatus]",
-								HTMLInputElement,
-							)
+							const paidStatusOptions = getElements("[name=paidStatus]", HTMLInputElement)
 							const themeUrlLabel = getElement("[for=themeUrl]", HTMLLabelElement)
 
 							const [paidStatus, setPaidStatus] = createSignal(
@@ -358,9 +351,7 @@ if (prefilled != null) {
 								/>
 							</Field>
 							<Field errors={errors?.fieldErrors?.toolkitSourceCodeUrl}>
-								<label slot="label" for="toolkitSourceCodeUrl"
-									>Public source code repo URL</label
-								>
+								<label slot="label" for="toolkitSourceCodeUrl">Public source code repo URL</label>
 								<input
 									id="toolkitSourceCodeUrl"
 									name="toolkitSourceCodeUrl"
@@ -409,8 +400,7 @@ if (prefilled != null) {
 						</div>
 
 						<Field errors={errors?.fieldErrors?.themeShortDescription}>
-							<label slot="label" for="themeShortDescription">Short description</label
-							>
+							<label slot="label" for="themeShortDescription">Short description</label>
 							<textarea
 								id="themeShortDescription"
 								name="themeShortDescription"
@@ -480,9 +470,7 @@ if (prefilled != null) {
 							/>
 						</Field>
 						<Field errors={errors?.fieldErrors?.ecommerceBrandCategories}>
-							<p slot="label" id="ecommerceBrandCategoriesLabel">
-								ecommerce Brand Categories
-							</p>
+							<p slot="label" id="ecommerceBrandCategoriesLabel">ecommerce Brand Categories</p>
 							<DropdownMultiSelect
 								client:idle
 								name="ecommerceBrandCategories"
@@ -490,8 +478,7 @@ if (prefilled != null) {
 								options={[...EcommerceBrandCategories]
 									.map(([value, label]) => ({ label, value }))
 									.sort((a, b) => a.label.localeCompare(b.label))}
-								defaultSelected={prefilled?.getAll("ecommerceBrandCategories") ??
-									[]}
+								defaultSelected={prefilled?.getAll("ecommerceBrandCategories") ?? []}
 							/>
 						</Field>
 						<Field errors={errors?.fieldErrors?.toolkitTags}>

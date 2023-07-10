@@ -14,5 +14,8 @@ author:
   avatar: "https://avatars.githubusercontent.com/u/2363295?v=4"
 categories: ["saas"]
 highlight: true
-tags: ["saas"]
+tags:
+  - "twitter"
+  - "tiktok"
+  - "social-media"
 ---

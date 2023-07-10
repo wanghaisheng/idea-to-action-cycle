@@ -156,7 +156,7 @@ function toolkitFilter(toolkit: CollectionEntry<"toolkits">) {
 		}
 	}
 
-	// if at least one tool filter is applied, hide themes that don't match
+	// // if at least one tool filter is applied, hide themes that don't match
 	if (selectedTags.length > 0) {
 		if (!toolkit.data.tags.some((c: string) => selectedTags.includes(c))) {
 			return false

@@ -119,6 +119,9 @@ export const ToolkitTags = new Map<string, string>([
 	["content-management", "Content management"],
 	["handsfree", "Hands free"],
 	["saas", "Saas"],
+	["twitter", "Twitter"],
+	["tiktok", "Tiktok"],
+	["website", "Website"],
 
 ])
 export const BlogCategories = new Map<string, string>([
@@ -227,6 +230,8 @@ export const themeSchema = z
 			.default([]),
 		stars: z.number().min(0).default(0),
 		featured: z.number().min(1).optional(),
+		tags: z.array(z.enum(Array.from(ToolkitTags.keys()) as [string, ...string[]])).optional(),
+
 		deployPlatforms: z.array(z.enum(Array.from(DeployPlatforms.keys()) as [string, ...string[]])).default([]).optional(),
 		tools: z.array(z.enum(Array.from(ProgamingLang.keys()) as [string, ...string[]])).default([]),
 		related: z.array(z.string()).max(3).default([]),
@@ -294,9 +299,8 @@ export const toolkitSchema = z
 			name: z.string(),
 			avatar: z.string(),
 		}),
-		categories: z.array(z.enum(Array.from(ToolkitCategories.keys()) as [string, ...string[]])),
-		tags: z.array(z.enum(Array.from(ToolkitTags.keys()) as [string, ...string[]])).optional(),
-		ecommerceBrandCategories: z.array(z.enum(Array.from(EcommerceBrandCategories.keys()) as [string, ...string[]])).optional(),
+		categories: z.array(z.enum(Array.from(ToolkitCategories.keys()) as [string, ...string[]])).default([]),
+		ecommerceBrandCategories: z.array(z.enum(Array.from(EcommerceBrandCategories.keys()) as [string, ...string[]])).default([]),
 		repoUrl: z.string().url().optional(),
 		demoUrl: z.string().url().optional(),
 		buyUrl: z.string().url().optional(),
@@ -314,6 +318,7 @@ export const toolkitSchema = z
 		featured: z.number().min(1).optional(),
 		tools: z.array(z.enum(Array.from(ProgamingLang.keys()) as [string, ...string[]])).default([]),
 		deployPlatforms: z.array(z.enum(Array.from(DeployPlatforms.keys()) as [string, ...string[]])).default([]),
+		tags: z.array(z.enum(Array.from(ToolkitTags.keys()) as [string, ...string[]])).default([]),
 		related: z.array(z.string()).max(3).default([]),
 		publishDate: z.date({ coerce: true }).optional(),
 		badge: z.string().optional(),
