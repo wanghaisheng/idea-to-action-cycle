@@ -7,7 +7,7 @@ import { resolveCoverImage, resolveSocialImage } from "~/content/blog/_resolveIm
 import { randomFromArray } from "~/helpers/random.js"
 import Layout from "~/layouts/MainLayout.astro"
 import Badge from "./_components/Badge.astro"
-import { Breadcrumbs } from "astro-breadcrumbs";
+import { Breadcrumbs } from "astro-breadcrumbs"
 export const prerender = true
 
 export async function getStaticPaths() {
@@ -35,21 +35,16 @@ const authors = await Promise.all(
 	data.authors.map((author) => getEntryBySlug("authors", author)),
 ).then((authors) => authors.filter(Boolean) as CollectionEntry<"authors">[])
 
-
 const categories = await Promise.all(
 	data.categories.map((category) => getEntryBySlug("categories", category)),
 ).then((categories) => categories.filter(Boolean) as CollectionEntry<"categories">[])
 
-console.log(data.categories)
-
-console.log(categories)
 const gradients = [
 	"bg-red-pink-gradient",
 	"bg-blue-green-gradient",
 	"bg-blue-purple-gradient",
 	"bg-orange-yellow-gradient",
 ]
-
 
 const placeholderGradient = randomFromArray(gradients)
 ---
@@ -84,48 +79,44 @@ const placeholderGradient = randomFromArray(gradients)
 	}
 
 	<div class="grid-container relative mx-auto max-w-screen-lg md:z-10">
-		
 		<div
 			class="noise-container mx-auto w-fit max-w-full bg-astro-gray-700 py-5 sm:py-8 md:px-10 md:py-12 lg:p-12 lg:py-16 xl:p-16 xl:py-20"
 		>
-	        <Breadcrumbs indexText="Home">
-          <span slot="index">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              ><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
-              ></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg
-            >
-          </span>
-          <span slot="separator" class="c-breadcrumbs__separator">/</span>
-        </Breadcrumbs>		
-					{
+			<Breadcrumbs indexText="Home">
+				<span slot="index">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="20"
+						height="20"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline
+							points="9 22 9 12 15 12 15 22"></polyline></svg
+					>
+				</span>
+				<span slot="separator" class="c-breadcrumbs__separator">/</span>
+			</Breadcrumbs>
+			{
 				data.categories.map((category) => {
 					return (
-						<div class="flex items-center gap-2 category">
-
-
-				<a href={"/blogs/tags/"+category.trim().replace(" ","-")} class="link whitespace-nowrap">
-				<p>{category}</p>
-				</a>
-
-										</div>
-
+						<div class="category flex items-center gap-2">
+							<a
+								href={"/blogs/tags/" + category.trim().replace(" ", "-")}
+								class="link whitespace-nowrap"
+							>
+								<p>{category}</p>
+							</a>
+						</div>
 					)
 				})
 			}
 			<div class="noise"></div>
 
-			
 			<header class="mx-auto w-full max-w-prose text-center">
-
 				<h1 class="heading-3 mb-4 mt-2 md:heading-2 sm:mb-5 sm:mt-3">{data.title}</h1>
 				<div class="code flex flex-wrap items-center justify-center gap-4 text-astro-gray-200">
 					<span>By</span>
@@ -135,21 +126,20 @@ const placeholderGradient = randomFromArray(gradients)
 								<div class="flex items-center gap-2">
 									<Avatar name={author.slug} lg />
 									<a href={author.data.twitter} class="link whitespace-nowrap">
-									<span>{author.data.name}</span>
+										<span>{author.data.name}</span>
 									</a>
 								</div>
 							)
 						})
 					}
-		
-				<time class="code text-astro-gray-200" datetime={data.publishDate.toISOString()}>
-				Updated on {format(data.publishDate, "MMMM d, yyyy")}
-				</time>					
+
+					<time class="code text-astro-gray-200" datetime={data.publishDate.toISOString()}>
+						Updated on {format(data.publishDate, "MMMM d, yyyy")}
+					</time>
 				</div>
 			</header>
 			<hr class="-mx-16 my-16 border-astro-gray-500" />
 
-			
 			<article class="prose">
 				<Content />
 			</article>

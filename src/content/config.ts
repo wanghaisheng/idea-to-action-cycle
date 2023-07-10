@@ -113,12 +113,12 @@ export const SassBrandCategories = new Map<string, string>([
 	["other", "Other"],
 ])
 export const ToolkitTags = new Map<string, string>([
-	["social-media", "social media"],
+	["social-media", "Social media"],
 	["other", "Other"],
 	["AI", "AI"],
-	["content-management", "content management"],
-	["handsfree", "hands free"],
-	["saas", "saas"],
+	["content-management", "Content management"],
+	["handsfree", "Hands free"],
+	["saas", "Saas"],
 
 ])
 export const BlogCategories = new Map<string, string>([

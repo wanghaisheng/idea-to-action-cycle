@@ -135,7 +135,7 @@ const deployPlatformsFilter: FilterGroup = {
 
 const searchRegex = search && new RegExp(search, "i")
 
-function themeFilter(toolkit: CollectionEntry<"toolkits">) {
+function toolkitFilter(toolkit: CollectionEntry<"toolkits">) {
 	// if at least one category filter is applied, hide themes that don't match
 	if (selectedCategories.length > 0) {
 		if (!toolkit.data.categories.some((c: string) => selectedCategories.includes(c))) {
@@ -185,7 +185,7 @@ function themeFilter(toolkit: CollectionEntry<"toolkits">) {
 }
 
 // get themes, filtered by the applied search & filter, then sort the matches
-const allToolkits = await getCollection("toolkits", themeFilter).then((entries) =>
+const allToolkits = await getCollection("toolkits", toolkitFilter).then((entries) =>
 	entries.sort(sortToolkits),
 )
 
@@ -271,9 +271,7 @@ const recentlyAddedHref = `${Astro.url.pathname}?${recentlyAddedSearch.toString(
 					)}
 
 					<CardGridGroup
-						title={
-							showRecentlyAdded && recentlyAdded.length > 0 ? "All Tools" : undefined
-						}
+						title={showRecentlyAdded && recentlyAdded.length > 0 ? "All Tools" : undefined}
 					>
 						<CardGrid class="w-full max-w-screen-2xl sm:grid-cols-2 xl:grid-cols-3">
 							{toolkits.map((toolkit) => (
@@ -289,8 +287,7 @@ const recentlyAddedHref = `${Astro.url.pathname}?${recentlyAddedSearch.toString(
 			) : (
 				<div class="flex flex-col items-center gap-12 pt-8 text-center sm:px-4 md:px-8 lg:px-10 lg:pt-10">
 					<p>
-						<strong>0</strong> results found for toolkit matching{" "}
-						<strong>"{search}"</strong>
+						<strong>0</strong> results found for toolkit matching <strong>"{search}"</strong>
 					</p>
 					<a href="/toolkits/" rel="prefetch" class="button button-primary">
 						Clear filters

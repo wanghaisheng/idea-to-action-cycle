@@ -8,8 +8,6 @@ export type Props = HTMLAttributes<"div"> & {
 }
 
 const { toolkit, class: className, ...attrs } = Astro.props
-
-console.log(toolkit.data.repoUrl)
 ---
 
 <div class:list={["flex flex-col gap-4", className]} {...attrs}>
