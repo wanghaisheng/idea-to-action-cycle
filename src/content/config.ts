@@ -348,12 +348,7 @@ export const collections = {
 			name: z.enum(Array.from(ToolkitCategories.keys()) as [string, ...string[]]),
 		}),
 	}),
-	tags: defineCollection({
-		schema: z.object({
-			icon: z.string().optional(),
-			name: z.enum(Array.from(ToolkitTags.keys()) as [string, ...string[]]),
-		}),
-	}),
+
 	blog: defineCollection({
 		schema: z.object({
 			title: z.string(),
@@ -364,7 +359,7 @@ export const collections = {
 				.transform((val) => new Date(val)),
 			authors: z.array(z.string()),
 			categories: z.array(z.enum(Array.from(BlogCategories.keys()) as [string, ...string[]])),
-
+			tags: z.array(z.string()).optional(),
 			socialImage: z.string().optional(),
 			coverImage: z.string().optional(),
 			lang: z.enum(["en"]).default("en"),

@@ -1,0 +1,282 @@
+---
+import { CollectionEntry, getCollection } from "astro:content"
+import CardGrid from "~/components//CardGrid.astro"
+import TwoUp from "~/components//TwoUp.astro"
+import Card from "~/components/Card.astro"
+import CardBody from "~/components/CardBody.astro"
+import CardHeading from "~/components/CardHeading.astro"
+import CardLabel from "~/components/CardLabel.astro"
+import PageSection from "~/components/PageSection.astro"
+import EcosystemIllustration from "~/icons/EcosystemIllustration.jsx"
+import ShopConnaLogomark from "~/icons/ShopConnaLogomark.jsx"
+import MainLayout from "~/layouts/MainLayout.astro"
+import QuoteCard from "../_components/QuoteCard.astro"
+import iconCode from "./_assets/icon-code.png"
+import iconFast from "./_assets/icon-fast.png"
+import iconWebsite from "./_assets/icon-website.png"
+import burst from "./_assets/illustration-burst.png"
+
+export const prerender = true
+
+const beliefs = [
+	{
+		label: "Flexibility",
+		heading:
+			"Our toolkit offers a high degree of flexibility, allowing you to customize and adapt automation processes to suit your unique business needs.",
+		icon: iconFast.src,
+	},
+	{
+		label: "Scalability",
+		heading:
+			"As your brand expands, our automation toolkit grows with you. It can seamlessly handle increasing workloads and support your business growth without compromising performance.",
+		icon: iconCode.src,
+	},
+	{
+		label: "Integration",
+		heading:
+			"We understand that brands rely on various software applications and platforms. Our automation toolkit is designed to integrate seamlessly with your existing systems, enabling smooth data flow and eliminating the need for manual data entry.",
+		icon: iconWebsite.src,
+	},
+	{
+		label: "User-Friendly",
+		heading:
+			"We prioritize user experience and have developed an intuitive interface that ensures ease of use, even for those with minimal technical expertise. Our goal is to empower you to automate processes without the need for extensive coding knowledge.",
+		icon: iconWebsite.src,
+	},
+	{
+		label: "Community Support",
+		heading:
+			"Join a vibrant community of like-minded individuals who are passionate about automation. Share ideas, collaborate, and leverage the collective knowledge of the ShopConna community to enhance your automation efforts.",
+		icon: iconWebsite.src,
+	},
+]
+
+const allQuotes = await getCollection("quotes")
+
+const quoteSlugs = [
+	"adrianmg-no-brainer",
+	"theo-holy-shit",
+	"still_scripts-feel-like-thanos",
+	"thomasreggi-feels-like-php",
+]
+
+const quotes = await Promise.all(
+	quoteSlugs.map((slug) => allQuotes.find((entry) => entry.slug === slug)),
+).then((entries) => entries.filter(Boolean) as CollectionEntry<"quotes">[])
+---
+
+<MainLayout
+	title="You can contact us for any issue or support"
+	image={{ src: "/og/about.jpg", alt: "Shopconna is for everyone" }}
+>
+	<section class="grid-container">
+		<TwoUp class="py-32 lg:bleed-end 2xl:bleed-none" threshold="lg">
+			<div slot="start" class="lg:py-20">
+				<h1 class="heading-2 mb-10">Feishu Group</h1>
+				<p class="body pb-4 text-astro-gray-200 sm:body-large">
+					Open-source brand tools offer brands the freedom to customize and tailor software to their
+					specific needs, as well as benefit from the contributions and enhancements of a community
+					of developers. They provide cost-effective solutions that empower brands to establish and
+					manage their brand identity, engage with customers, and optimize their marketing efforts.
+				</p>
+
+				<p class="body pb-4 text-astro-gray-200 sm:body-large">
+					in the beginning, I learn to run 2 shopify brand store and get my feet dirty in this brand
+					building era.
+				</p>
+				<p class="body pb-4 text-astro-gray-200 sm:body-large">
+					Discover how our open-source automation toolkit can transform your brand's productivity
+					and efficiency. Empower your team, save valuable time and resources, and unlock new
+					opportunities for growth. Let us help you harness the true potential of automation.
+				</p>
+			</div>
+			<div slot="end" class="noise-underlay flex items-center">
+				<div
+					class="hero-graphic relative scale-150 md:scale-125 lg:translate-x-16 xl:translate-x-32"
+				>
+					<EcosystemIllustration class="h-full w-full" />
+					<ShopConnaLogomark class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+				</div>
+			</div>
+		</TwoUp>
+
+		<PageSection title="Our core beliefs">
+			<CardGrid class="lg:grid-cols-3">
+				{
+					beliefs.map((item) => (
+						<Card>
+							<CardBody>
+								<div class="flex h-full flex-col justify-between">
+									<CardLabel>{item.label}</CardLabel>
+									<img
+										src={item.icon}
+										alt=""
+										width="200"
+										height="100"
+										class="object-fit mx-auto my-6"
+									/>
+									<CardHeading>{item.heading}</CardHeading>
+								</div>
+							</CardBody>
+						</Card>
+					))
+				}
+			</CardGrid>
+		</PageSection>
+
+		<TwoUp class="lg:bleed-start 2xl:bleed-none" mobileReverse threshold="lg">
+			<div
+				slot="start"
+				class="graphic noise-underlay -mt-8 flex scale-150 items-center lg:mt-0 lg:scale-125"
+			>
+				<img src={burst.src} alt="" />
+			</div>
+			<div slot="end" class="flex flex-col gap-8 sm:gap-10 md:gap-12">
+				<h2 class="heading-3 sm:heading-2">Our Mission:</h2>
+				<p class="body text-astro-gray-200 sm:body-large">
+					Our mission is to democratize automation by offering a comprehensive toolkit that empowers
+					brands of all sizes. We are dedicated to providing accessible, user-friendly, and
+					customizable automation solutions that help businesses achieve their goals while
+					minimizing manual efforts.
+				</p>
+			</div>
+		</TwoUp>
+		<TwoUp class="lg:bleed-start 2xl:bleed-none" mobileReverse threshold="lg">
+			<div
+				slot="start"
+				class="graphic noise-underlay -mt-8 flex scale-150 items-center lg:mt-0 lg:scale-125"
+			>
+				<img src={burst.src} alt="" />
+			</div>
+			<div slot="end" class="flex flex-col gap-8 sm:gap-10 md:gap-12">
+				<h2 class="heading-3 sm:heading-2">What Sets Us Apart:</h2>
+				<p class="body text-astro-gray-200 sm:body-large">
+					At ShopConna, we stand out from the crowd because of our commitment to open-source
+					principles. We firmly believe in the power of collaboration and transparency, which is why
+					our automation toolkit is built on open-source technologies. This approach allows us to
+					foster a community-driven ecosystem where users can contribute, share, and enhance the
+					functionalities of our tools. We believe that together, we can drive innovation and create
+					solutions that cater to the evolving needs of modern businesses.
+				</p>
+			</div>
+		</TwoUp>
+		<TwoUp class="lg:bleed-start 2xl:bleed-none" mobileReverse threshold="lg">
+			<div
+				slot="start"
+				class="graphic noise-underlay -mt-8 flex scale-150 items-center lg:mt-0 lg:scale-125"
+			>
+				<img src={burst.src} alt="" />
+			</div>
+			<div slot="end" class="flex flex-col gap-8 sm:gap-10 md:gap-12">
+				<h2 class="heading-3 sm:heading-2">Our Automation Toolkit:</h2>
+				<p class="body text-astro-gray-200 sm:body-large">
+					Our automation toolkit is a comprehensive suite of tools and resources designed to
+					automate repetitive tasks, streamline workflows, and optimize operations. Whether you are
+					a small startup or an established enterprise, our toolkit can be tailored to meet your
+					specific requirements, allowing you to focus on what matters most—growing your brand.
+				</p>
+			</div>
+		</TwoUp>
+
+		<TwoUp threshold="lg">
+			<div slot="start" class="flex flex-col items-start gap-6">
+				<h2 class="heading-3 pb-2 sm:heading-2">Open source is in our DNA</h2>
+				<p class="body text-astro-gray-200 sm:body-large">
+					Discover how our open-source automation toolkit can transform your brand's productivity
+					and efficiency. Empower your team, save valuable time and resources, and unlock new
+					opportunities for growth. Let us help you harness the true potential of automation..
+				</p>
+				<a href="/careers" rel="prefetch" class="button button-primary">Join us</a>
+			</div>
+			<div slot="end" class="quotes relative flex flex-col items-center lg:items-start">
+				{
+					quotes.map((quote, i) => (
+						<QuoteCard
+							quote={quote}
+							class={
+								[
+									"ml-16 -translate-y-4 scale-90",
+									"z-20 ml-6",
+									"z-10 ml-24 -translate-y-6 scale-90",
+									"-translate-y-12",
+								][i]
+							}
+						/>
+					))
+				}
+			</div>
+		</TwoUp>
+	</section>
+
+	<section class="company grid-container relative overflow-hidden">
+		<PageSection title="The ShopConna Technology Company" class="relative z-10">
+			<p class="body mx-auto max-w-screen-md text-center text-astro-gray-200 sm:body-large">
+				At ShopConna, we believe that the power of automation should be accessible to all. We are a
+				leading provider of open-source automation toolkits designed to empower brands and
+				businesses to streamline their processes and enhance productivity. With our innovative
+				solutions, we aim to bridge the gap between technology and people, enabling brands to reach
+				new heights of efficiency and success.
+			</p>
+			<a href="/careers" rel="prefetch" class="button button-white self-center">See Open Roles</a>
+		</PageSection>
+	</section>
+</MainLayout>
+
+<style>
+	.hero-graphic::after {
+		@apply absolute bg-blue-purple-gradient;
+		content: "";
+		width: 150%;
+		height: 150%;
+		top: 50%;
+		left: 50%;
+		translate: -50% -50%;
+		mask-image: radial-gradient(rgba(0, 0, 0, 1), transparent 65%);
+		z-index: -1;
+	}
+
+	.quotes::before {
+		@apply absolute bg-blue-purple-gradient;
+		content: "";
+		width: 200%;
+		height: 150%;
+		left: -50%;
+		top: -35%;
+		z-index: -1;
+		background: url(/assets/noise.webp) repeat, linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
+		background-blend-mode: overlay;
+		mask-image: radial-gradient(rgba(0, 0, 0, 1), transparent 70%);
+	}
+
+	.company::before {
+		@apply absolute right-0 w-full bg-orange-yellow-gradient;
+		content: "";
+		z-index: -1;
+		top: 25%;
+		height: 150%;
+		width: 150%;
+		left: -25%;
+		background: url(/assets/noise.webp) repeat, linear-gradient(266.93deg, #f8e42e 0%, #ff7d54 100%);
+		background-blend-mode: overlay;
+		mask-image: radial-gradient(rgba(0, 0, 0, 0.7), transparent 70%);
+	}
+
+	@media screen(lg) {
+		.quotes::before {
+			height: 175%;
+			width: 160%;
+			left: -20%;
+			top: -50%;
+			background: url(/assets/noise.webp) repeat,
+				linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
+			background-blend-mode: overlay;
+			mask-image: radial-gradient(rgba(0, 0, 0, 1), transparent 60%);
+		}
+
+		.company::before {
+			left: 0%;
+			width: 100%;
+			mask-image: radial-gradient(rgba(0, 0, 0, 0.7), transparent 60%);
+		}
+	}
+</style>

@@ -7,11 +7,11 @@ import SearchFilter, { FilterGroup } from "~/components/SearchFilter.astro"
 import SidebarLayout from "~/components/SidebarLayout.astro"
 import SidebarPanel from "~/components/SidebarPanel.astro"
 import {
-	DeployPlatforms,
-	EcommerceBrandCategories,
-	ProgamingLang,
-	ToolkitCategories,
-	ToolkitTags,
+DeployPlatforms,
+EcommerceBrandCategories,
+ProgamingLang,
+ToolkitCategories,
+ToolkitTags,
 } from "~/content/config.js"
 import { paginate } from "~/helpers/paginate.js"
 import MainLayout from "~/layouts/MainLayout.astro"
@@ -86,18 +86,18 @@ const tagFilter: FilterGroup = {
 	})),
 }
 
-const ecommercecategories = Array.from(EcommerceBrandCategories.keys())
+const ecommerceBrandcategories = Array.from(EcommerceBrandCategories.keys())
 
-const selectedEcommerceCategories = Astro.url.searchParams.getAll("ecommerce-categories[]")
+const selectedEcommerceBrandCategories = Astro.url.searchParams.getAll("ecommerce-categories[]")
 
 const ecommercecategoryFilter: FilterGroup = {
 	title: "Ecommerce Brand Categories",
-	options: ecommercecategories.map((c) => ({
+	options: ecommerceBrandcategories.map((c) => ({
 		id: c,
 		name: "ecommerce-categories[]",
 		value: c,
 		label: EcommerceBrandCategories.get(c)!,
-		selected: selectedEcommerceCategories.includes(c),
+		selected: selectedEcommerceBrandCategories.includes(c),
 	})),
 }
 // get a list of all supported tools, this is the same list used by the zod schema
@@ -162,10 +162,10 @@ function toolkitFilter(toolkit: CollectionEntry<"toolkits">) {
 			return false
 		}
 	}
-	if (selectedEcommerceCategories.length > 0) {
+	if (selectedEcommerceBrandCategories.length > 0) {
 		if (
 			!toolkit.data.ecommerceBrandCategories.some((c: string) =>
-				selectedEcommerceCategories.includes(c),
+				selectedEcommerceBrandCategories.includes(c),
 			)
 		) {
 			return false
@@ -212,6 +212,8 @@ const showRecentlyAdded =
 const recentlyAdded = showRecentlyAdded
 	? allToolkits.filter((entry) => entry.data.badge === "new")
 	: []
+console.log("recentlyAdded", recentlyAdded)
+
 const recentlyAddedSearch = new URLSearchParams(Astro.url.search)
 recentlyAddedSearch.append("categories[]", "recent")
 const recentlyAddedHref = `${Astro.url.pathname}?${recentlyAddedSearch.toString()}`
@@ -264,7 +266,7 @@ const recentlyAddedHref = `${Astro.url.pathname}?${recentlyAddedSearch.toString(
 						>
 							<CardGrid class="w-full max-w-screen-2xl sm:grid-cols-2 xl:grid-cols-3">
 								{recentlyAdded.slice(0, 3).map((toolkit) => (
-									<ToolkitCard toolkits={toolkit} />
+									<ToolkitCard toolkit={toolkit} />
 								))}
 							</CardGrid>
 						</CardGridGroup>

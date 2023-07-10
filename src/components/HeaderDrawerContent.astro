@@ -1,8 +1,8 @@
 ---
 import siteInfo from "~/data/site-info.js"
 import ChevronIcon from "~/icons/ChevronIcon.jsx"
+import LayersIcon from "~/icons/LayersIcon.jsx"
 import SocialLinks from "./SocialLinks.astro"
-
 const socialLinks = siteInfo.socialLinks.filter((link) => !link.footerOnly)
 ---
 
@@ -21,9 +21,9 @@ const socialLinks = siteInfo.socialLinks.filter((link) => !link.footerOnly)
 			<!-- <a href="/Showcase/" rel="prefetch" class="link flex items-center gap-4">
 				<PaletteIcon /> Showcase
 			</a> -->
-			<!-- <a href="/integrations/" rel="prefetch" class="link flex items-center gap-4">
-				<LayersIcon /> Integrations
-			</a> -->
+			<a href="/contact/" rel="prefetch" class="link flex items-center gap-4">
+				<LayersIcon /> contact
+			</a>
 			<!-- <a				href="/videos"				class="link flex items-center gap-4">
 				<LayersIcon class="h-4 w-4" />  Videos
 
