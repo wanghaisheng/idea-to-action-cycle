@@ -28,7 +28,7 @@ const items: Item[] = [
 		image: blogsImage,
 		cta: {
 			text: "Rss for social profile",
-			href: "/blogs/?categories%5B%5D=social",
+			href: "/toolkits?search=&tags%5B%5D=social-media",
 		},
 	},
 	{
@@ -38,7 +38,7 @@ const items: Item[] = [
 		image: marketingImage,
 		cta: {
 			text: "email collect",
-			href: "/blogs/?categories%5B%5D=email",
+			href: "/toolkits?search=&tags%5B%5D=email",
 		},
 	},
 	{
@@ -49,7 +49,7 @@ const items: Item[] = [
 		image: agenciesImage,
 		cta: {
 			text: "video schedule and publish",
-			href: "/blogs/?categories%5B%5D=content-management",
+			href: "/toolkits?search=&tags%5B%5D=content-management",
 		},
 	},
 	{
@@ -60,7 +60,7 @@ const items: Item[] = [
 		image: eCommerceImage,
 		cta: {
 			text: "AutoGPT-Social",
-			href: "/blogs/?categories%5B%5D=crm",
+			href: "/toolkits?search=&tags%5B%5D=crm",
 		},
 	},
 	{
@@ -71,7 +71,7 @@ const items: Item[] = [
 		image: portfolioImage,
 		cta: {
 			text: "autoshop pipeline",
-			href: "/blogs/?categories%5B%5D=workflow",
+			href: "/toolkits?search=&tags%5B%5D=workflow",
 		},
 	},
 ]
