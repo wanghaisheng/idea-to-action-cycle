@@ -1,0 +1,73 @@
+<div id="article-feedback_1-0" class="comp article-feedback mntl-article-feedback">
+	<div class="article-feedback__rating-section js-rating-section">
+		<div class="article-feedback__heading">Was this page helpful?</div>
+		<button
+			id="article-feedback__thumbs-up-button_1-0"
+			class="comp js-rating-button button--outlined-little-round article-feedback__rating-button article-feedback__thumbs-up-button mntl-button"
+			aria-label="Thumbs Up"
+			data-thumbs-signal="THUMBS_UP"
+		>
+			<svg class="icon icon-thumbs-up mntl-button__icon article-feedback__rating-icon">
+				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-thumbs-up"></use>
+			</svg>
+		</button><!-- end: comp js-rating-button button--outlined-little-round article-feedback__rating-button article-feedback__thumbs-up-button mntl-button -->
+		<button
+			id="article-feedback__thumbs-down-button_1-0"
+			class="comp js-submit-feedback-button button--outlined-little-round article-feedback__rating-button article-feedback__thumbs-down-button mntl-button"
+			aria-label="Thumbs Down"
+		>
+			<svg class="icon icon-thumbs-down mntl-button__icon article-feedback__rating-icon">
+				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-thumbs-down"></use>
+			</svg>
+		</button><!-- end: comp js-submit-feedback-button button--outlined-little-round article-feedback__rating-button article-feedback__thumbs-down-button mntl-button -->
+	</div>
+	<div class="article-feedback__success-section js-success-section is-hidden">
+		<div class="article-feedback__heading"></div>
+		<div class="loc success-section">
+			<div
+				id="article-feedback__success-message_1-0"
+				class="comp article-feedback__success-message message-banner--success message-banner message-banner--success"
+			>
+				<svg class="icon icon-check-circle message-banner__prefix-icon message-banner__icon">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check-circle"></use>
+				</svg>
+				<span class="message-banner__text type--cat-bold"> Thanks for your feedback!</span>
+				<button
+					class="message-banner__close-button js-message-banner-close"
+					aria-label="Close success Banner"
+				>
+					<svg class="icon icon-close message-banner__icon">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close"></use>
+					</svg>
+				</button>
+			</div><!-- end: comp article-feedback__success-message message-banner--success message-banner message-banner--success -->
+		</div>
+	</div>
+	<div class="article-feedback__feedback-section js-feedback-section is-hidden">
+		<div class="article-feedback__heading">Tell us why!</div>
+		<button
+			id="article-feedback__open-form-button_1-0"
+			class="comp article-feedback__feedback-button js-open-form-button article-feedback__open-form-button mntl-button"
+		>
+			Other
+		</button><!-- end: comp article-feedback__feedback-button js-open-form-button article-feedback__open-form-button mntl-button -->
+		<form
+			action="/ugc-feedback"
+			method="post"
+			class="article-feedback__feedback-form js-feedback-form is-hidden"
+		>
+			<textarea
+				class="article-feedback__feedback-text js-feedback-text"
+				placeholder="Tell us more..."
+				required="required"
+				maxlength="1500"></textarea>
+			<button
+				id="article-feedback__submit-button_1-0"
+				class="comp article-feedback__submit-button mntl-button"
+			>
+				Submit
+			</button><!-- end: comp article-feedback__submit-button mntl-button -->
+			<input type="hidden" name="doc-id" value="6382959" class="js-doc-id" />
+		</form>
+	</div>
+</div>

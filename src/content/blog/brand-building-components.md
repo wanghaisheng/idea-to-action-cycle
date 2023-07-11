@@ -6,6 +6,10 @@ authors:
   - fuzzy
 categories:
   - social media  
+tags:
+  - "twitter"
+  - "tiktok"
+  - "social-media"
 socialImage: "/src/content/blog/_images/community-awards/social-min.webp"
 lang: "en"
 ---

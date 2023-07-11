@@ -124,6 +124,19 @@ export const ToolkitTags = new Map<string, string>([
 	["website", "Website"],
 
 ])
+
+export const BlogTags = new Map<string, string>([
+	["social-media", "Social media"],
+	["other", "Other"],
+	["AI", "AI"],
+	["content-management", "Content management"],
+	["handsfree", "Hands free"],
+	["saas", "Saas"],
+	["twitter", "Twitter"],
+	["tiktok", "Tiktok"],
+	["website", "Website"],
+
+])
 export const BlogCategories = new Map<string, string>([
 	["featured", "Featured"],
 	["recent", "Recently Added"],
@@ -359,7 +372,7 @@ export const collections = {
 				.transform((val) => new Date(val)),
 			authors: z.array(z.string()),
 			categories: z.array(z.enum(Array.from(BlogCategories.keys()) as [string, ...string[]])),
-			tags: z.array(z.string()).optional(),
+			tags: z.array(z.enum(Array.from(BlogTags.keys()) as [string, ...string[]])).default([]),
 			socialImage: z.string().optional(),
 			coverImage: z.string().optional(),
 			lang: z.enum(["en"]).default("en"),

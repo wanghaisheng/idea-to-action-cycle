@@ -9,6 +9,7 @@ import Layout from "~/layouts/MainLayout.astro"
 import Badge from "./_components/Badge.astro"
 import { Breadcrumbs } from "astro-breadcrumbs"
 import "astro-breadcrumbs/breadcrumbs.css"
+import { BlogTags } from "~/content/config.js"
 
 export const prerender = true
 
@@ -40,6 +41,11 @@ const authors = await Promise.all(
 const categories = await Promise.all(
 	data.categories.map((category) => getEntryBySlug("categories", category)),
 ).then((categories) => categories.filter(Boolean) as CollectionEntry<"categories">[])
+
+// const tags = await Promise.all(data.tags.map((tag) => getEntryBySlug("tags", tag))).then(
+// 	(tags) => tags.filter(Boolean) as CollectionEntry<"tags">[],
+// )
+const tags = Array.from(BlogTags.keys())
 
 const gradients = [
 	"bg-red-pink-gradient",
@@ -100,29 +106,14 @@ const placeholderGradient = randomFromArray(gradients)
 							points="9 22 9 12 15 12 15 22"></polyline></svg
 					>
 				</span>
-				<span slot="separator" class="c-breadcrumbs__separator">/</span>
+				<span slot="separator" class="c-breadcrumbs__separator">></span>
 			</Breadcrumbs>
-			{
-				data.categories.map((category) => {
-					return (
-						<div class="category flex items-center gap-2">
-							<a
-								href={"/blogs/tags/" + category.trim().replace(" ", "-")}
-								class="link whitespace-nowrap"
-							>
-								<p>{category}</p>
-							</a>
-						</div>
-					)
-				})
-			}
+
 			<div class="noise"></div>
 
 			<header class="mx-auto w-full max-w-prose text-center">
 				<h1 class="heading-3 mb-4 mt-2 md:heading-2 sm:mb-5 sm:mt-3">{data.title}</h1>
-				<div
-					class="code flex flex-wrap items-center justify-center gap-4 text-astro-gray-200"
-				>
+				<div class="code flex flex-wrap items-center justify-center gap-4 text-astro-gray-200">
 					<span>By</span>
 					{
 						authors.map((author) => {
@@ -137,10 +128,7 @@ const placeholderGradient = randomFromArray(gradients)
 						})
 					}
 
-					<time
-						class="code text-astro-gray-200"
-						datetime={data.publishDate.toISOString()}
-					>
+					<time class="code text-astro-gray-200" datetime={data.publishDate.toISOString()}>
 						Updated on {format(data.publishDate, "MMMM d, yyyy")}
 					</time>
 				</div>
@@ -150,6 +138,21 @@ const placeholderGradient = randomFromArray(gradients)
 			<article class="prose">
 				<Content />
 			</article>
+
+			<small class="code text-astro-gray-200">Tags:</small>
+
+			{
+				data.tags.map((tag) => {
+					return (
+						<a
+							href={"/blog?search=&tags[]=" + tag.trim().replace(" ", "-")}
+							class="link whitespace-nowrap"
+						>
+							{BlogTags.get(tag)}
+						</a>
+					)
+				})
+			}
 		</div>
 	</div>
 </Layout>

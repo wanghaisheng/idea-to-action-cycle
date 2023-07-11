@@ -9,13 +9,40 @@ import sitemap from "@astrojs/sitemap"
 import solidJs from "@astrojs/solid-js"
 import tailwind from "@astrojs/tailwind"
 
+import { defaultLocaleSitemapFilter, i18n } from "astro-i18n-aut"
+
 /* https://docs.netlify.com/configure-builds/environment-variables/#read-only-variables */
 const NETLIFY_PREVIEW_SITE = process.env.CONTEXT !== "production" && process.env.DEPLOY_PRIME_URL
 
+const defaultLocale = "en"
+const locales = {
+	en: "en-US", // the `defaultLocale` value must present in `locales` keys
+	es: "es-ES",
+	fr: "fr-CA",
+}
+
 // https://astro.build/config
 export default defineConfig({
-	site: NETLIFY_PREVIEW_SITE || "https://astro.build",
+	experimental: {
+		redirects: true,
+	},
+	site: NETLIFY_PREVIEW_SITE || "https://shopconna.com",
+	// trailingSlash: "always",
+	build: {
+		format: "directory",
+	},
 	integrations: [
+		i18n({
+			locales,
+			defaultLocale,
+		}),
+		sitemap({
+			i18n: {
+				locales,
+				defaultLocale,
+			},
+			filter: defaultLocaleSitemapFilter({ defaultLocale }),
+		}),
 		image({
 			serviceEntryPoint: "@astrojs/image/sharp",
 		}),
@@ -26,7 +53,6 @@ export default defineConfig({
 		}),
 		solidJs(),
 		mdx(),
-		sitemap(),
 		prefetch(),
 	],
 	markdown: {

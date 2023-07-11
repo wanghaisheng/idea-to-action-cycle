@@ -1,13 +1,16 @@
 ---
 import { GetStaticPathsOptions, Page } from "astro"
+import { getLocale } from "astro-i18n-aut"
 import { CollectionEntry, getCollection } from "astro:content"
 import Pagination from "~/components/Pagination.astro"
+import { FilterGroup } from "~/components/SearchFilter.astro"
 import SidebarLayout from "~/components/SidebarLayout.astro"
 import SidebarPanel from "~/components/SidebarPanel.astro"
+import { BlogTags } from "~/content/config.js"
 import RSSIcon from "~/icons/RSSIcon.jsx"
 import Layout from "~/layouts/MainLayout.astro"
 import BlogPostPreview from "./_components/BlogPostPreview.astro"
-
+const locale = getLocale(Astro.url)
 export const prerender = true
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
@@ -31,16 +34,56 @@ const allPages = [...Array(page.lastPage).keys()].map((num) => {
 
 const allPosts = await getCollection("blog")
 
-const featuredPosts = [
-	"product-message",
-]
+const featuredPosts = ["product-message"]
 	.map((slug) => allPosts.find((post) => post.slug === slug))
 	.filter(Boolean) as CollectionEntry<"blog">[]
+const search = Astro.url.searchParams.get("search")
+
+const tags = Array.from(BlogTags.keys())
+
+// get a list of category filters applied to the request
+const selectedTags = Astro.url.searchParams.getAll("tags[]")
+
+// massage category data for the Filter components
+const tagFilter: FilterGroup = {
+	title: "Tags",
+	options: tags.map((c) => ({
+		id: c,
+		name: "tags[]",
+		value: c,
+		label: BlogTags.get(c)!,
+		selected: selectedTags.includes(c),
+	})),
+}
+
+let title: string
+switch (locale) {
+	case "es":
+		title = "The ShopConna Blog"
+		break
+	case "fr":
+		title = "The ShopConna Blog"
+		break
+	default:
+		title = "The ShopConna Blog"
+}
+
+let description: string
+switch (locale) {
+	case "es":
+		description = "Get all the latest news from the ShopConna."
+		break
+	case "fr":
+		description = "Get all the latest news from the ShopConna."
+		break
+	default:
+		description = "Get all the latest news from the ShopConna."
+}
 ---
 
 <Layout
-	title="The ShopConna Blog"
-	description="Get all the latest news from the ShopConna."
+	title={title}
+	description={description}
 	image={{ src: "/og/blog.jpg", alt: "What’s new in the ShopConna ecosystem" }}
 >
 	<div class="lg:py-18 grid-container relative py-12 sm:py-14 md:py-16 xl:py-20">
@@ -63,7 +106,7 @@ const featuredPosts = [
 						featuredPosts.map((post) => (
 							<li>
 								<a
-									class="body link-underline border-astro-pink-light text-lg text-astro-pink-light"
+									class="body link-underline border-astro-pink-light text-astro-pink-light text-lg"
 									href={`/blog/${post.slug}/`}
 									rel="prefetch"
 								>
@@ -84,6 +127,13 @@ const featuredPosts = [
 					<span class="code">RSS</span>
 				</a>
 			</SidebarPanel>
+
+			<!-- <SearchFilter
+				indexRoute="/blog"
+				groups={[tagFilter]}
+				search={search}
+				searchPlaceholder="Search for a blog"
+			/> -->
 		</Fragment>
 
 		<div class="flex flex-col items-center gap-20 py-8 lg:p-12 xl:p-20">

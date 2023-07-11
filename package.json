@@ -35,6 +35,7 @@
     "astro": "^2.0.16",
     "astro-breadcrumbs": "^1.6.0",
     "astro-google-analytics": "^1.0.3",
+    "astro-i18n-aut": "^0.1.6",
     "astro-og-canvas": "^0.1.8",
     "chart.js": "4.2.1",
     "clsx": "^1.2.1",
