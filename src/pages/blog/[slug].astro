@@ -144,10 +144,7 @@ const placeholderGradient = randomFromArray(gradients)
 			{
 				data.tags.map((tag) => {
 					return (
-						<a
-							href={"/blog?search=&tags[]=" + tag.trim().replace(" ", "-")}
-							class="link whitespace-nowrap"
-						>
+						<a href={"/blog?search=&tags[]=" + tag} class="link whitespace-nowrap">
 							{BlogTags.get(tag)}
 						</a>
 					)
