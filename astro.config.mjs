@@ -23,14 +23,7 @@ const locales = {
 
 // https://astro.build/config
 export default defineConfig({
-	experimental: {
-		redirects: true,
-	},
 	site: NETLIFY_PREVIEW_SITE || "https://shopconna.com",
-	// trailingSlash: "always",
-	build: {
-		format: "directory",
-	},
 	integrations: [
 		i18n({
 			locales,
