@@ -33,7 +33,7 @@
     "@astrojs/tailwind": "^3.0.1",
     "@fontsource/inter": "^4.5.15",
     "@hw-hmscore/analytics-web": "^6.9.9-301",
-    "astro": "^2.0.16",
+    "astro": "^2.8.0",
     "astro-breadcrumbs": "^1.6.0",
     "astro-google-analytics": "^1.0.3",
     "astro-i18n-aut": "^0.1.6",
