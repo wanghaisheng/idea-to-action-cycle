@@ -1,0 +1,24 @@
+---
+import type { CollectionEntry } from "astro:content"
+
+export type Props = {
+	toolkit: CollectionEntry<"toolkits">
+}
+
+const { toolkit } = Astro.props
+---
+
+<div class="flex items-center gap-2">
+	<img
+		class="h-6 w-6 rounded-full"
+		src={toolkit.data.author.avatar}
+		alt=""
+		width="48"
+		height="48"
+		loading="lazy"
+		decoding="async"
+	/>
+	<span class="overflow-hidden text-ellipsis">
+		{toolkit.data.author.name}
+	</span>
+</div>

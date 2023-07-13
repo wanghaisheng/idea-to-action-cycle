@@ -1,0 +1,18 @@
+---
+import CatalogSubmitCallout, {
+type Props as CalloutProps,
+} from "~/components/CatalogSubmitCallout.astro"
+
+export type Props = Omit<CalloutProps, "slot" | "title" | "cta">
+
+const { ...attrs } = Astro.props
+---
+
+<CatalogSubmitCallout
+	title="Submit a toolkit"
+	cta={{ href: "/toolkits/submit", text: "Submit toolkit" }}
+	{...attrs}
+>
+	Anyone can submit a toolkit to shopconna. If you have questions about building your own tool, join our
+	community on <a class="link link-underline" href="/chat">Discord</a>!
+</CatalogSubmitCallout>

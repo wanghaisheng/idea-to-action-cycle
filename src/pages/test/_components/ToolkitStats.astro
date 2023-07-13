@@ -1,0 +1,85 @@
+---
+import type { HTMLAttributes } from "astro/types"
+import type { CollectionEntry } from "astro:content"
+import { DeployPlatforms, ProgamingLang, ToolkitTags } from "~/content/config.js"
+import Avatar from "./Avatar.astro"
+import Badge from "./Badge.astro"
+
+export type Props = HTMLAttributes<"div"> & {
+	toolkit: CollectionEntry<"toolkits">
+}
+
+const { toolkit, class: className, ...attrs } = Astro.props
+
+const netlifyUrl =
+	toolkit.data.repoUrl &&
+	typeof toolkit.data.stars !== "undefined" &&
+	`https://app.netlify.com/start/deploy?repository=${toolkit.data.repoUrl}`
+---
+
+<div class:list={["flex flex-col gap-4", className]} {...attrs}>
+	<div class="flex items-center justify-between">
+		<small class="code text-astro-gray-200">Cost</small>
+		<Badge toolkit={toolkit.data.paid ? "primary" : "secondary"}>
+			{toolkit.data.paid ? "Paid" : "Free"}
+		</Badge>
+	</div>
+	<hr class="border-astro-gray-500" />
+	<div class="flex items-center justify-between">
+		<small class="code text-astro-gray-200">Created by</small>
+		<a href={toolkit.data.author.url} target="_blank" class="link">
+			<Avatar toolkit={toolkit} />
+		</a>
+	</div>
+	<div class="flex items-center justify-between">
+		<small class="code text-astro-gray-200">Technology built with</small>
+		{
+			toolkit.data.tools.map((tool) => (
+				<a href={"/toolkits?search=&technology%5B%5D=" + tool} target="_blank" class="link">
+					{ProgamingLang.get(tool)}
+				</a>
+			))
+		}
+	</div>
+	<hr class="border-astro-gray-500" />
+	<div class="flex items-center justify-between">
+		<small class="code text-astro-gray-200">Runs on</small>
+		{
+			toolkit.data.deployPlatforms.map((platform) => (
+				<a
+					href={"/toolkits?search=&platforms%5B%5D=" + platform}
+					target="_blank"
+					class="link"
+				>
+					{DeployPlatforms.get(platform)}
+				</a>
+			))
+		}
+	</div>
+	<div class="flex items-center justify-between">
+		<small class="code text-astro-gray-200">Tags</small>
+		{
+			toolkit.data.tags.map((tag) => (
+				<a href={"/toolkits?search=&tags%5B%5D=" + tag} target="_blank" class="link">
+					{ToolkitTags.get(tag)}
+				</a>
+			))
+		}
+	</div>
+	{
+		netlifyUrl && (
+			<>
+				<hr class="border-astro-gray-500" />
+				<a href={netlifyUrl} class="link flex flex-row items-center gap-2" target="_blank">
+					<img
+						src="/assets/integrations/netlify-dark.svg"
+						width="28"
+						height="28"
+						alt="Netlify logo"
+					/>
+					Deploy to Netlify
+				</a>
+			</>
+		)
+	}
+</div>
