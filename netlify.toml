@@ -10,4 +10,4 @@ publish = "public/"
 
 
 [functions]
-node_bundler = none
+node_bundler = "none"
