@@ -1,8 +1,10 @@
 import { defineConfig } from "astro/config"
 import fs from "node:fs"
+
 import image from "@astrojs/image"
 import mdx from "@astrojs/mdx"
-import vercel from "@astrojs/vercel/static"
+import vercel from "@astrojs/vercel/serverless"
+
 import prefetch from "@astrojs/prefetch"
 import sitemap from "@astrojs/sitemap"
 import solidJs from "@astrojs/solid-js"
@@ -30,11 +32,7 @@ export default defineConfig({
 	],
 	markdown: {
 		shikiConfig: {
-			theme: JSON.parse(
-				fs.readFileSync("./houston.theme.json", {
-					encoding: "utf-8",
-				}),
-			),
+			theme: JSON.parse(fs.readFileSync("./houston.theme.json", { encoding: "utf-8" })),
 		},
 	},
 	vite: {

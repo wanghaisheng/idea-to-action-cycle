@@ -21,5 +21,5 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
-
+.vercel
 astro_tmp_pages_*
