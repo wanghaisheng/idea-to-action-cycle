@@ -1,0 +1,507 @@
+
+> @example/minimal@0.0.1 build
+> astro build
+
+10:10:27 [astro] Invalid file extension for Pages: .1
+10:10:30 [content] Types generated 3.31s
+10:10:30 [build] output target: server
+10:10:30 [build] deploy adapter: @astrojs/netlify/functions
+10:10:30 [build] Collecting build info...
+10:10:30 [build] Completed in 4.06s.
+10:10:31 [build] Building server entrypoints...
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/interaction-tools/index.astro?astro&type=style&lang.css
+Setting up new context...
+JIT TOTAL: 204.321ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/interaction-tools/[slug].astro?astro&type=style&lang.css
+JIT TOTAL: 42.319ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/showcase/[...page].astro?astro&type=style&lang.css
+JIT TOTAL: 53.893ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/resources/index.astro?astro&type=style&lang.css
+JIT TOTAL: 45.925ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/toolkits/details/[slug].astro?astro&type=style&lang.css
+JIT TOTAL: 40.629ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/careers/[slug].astro?astro&type=style&lang.css
+JIT TOTAL: 39.426ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/themes/details/[slug].astro?astro&type=style&lang.css
+JIT TOTAL: 44.925ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/careers/index.astro?astro&type=style&lang.css
+JIT TOTAL: 40.066ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/blog/[...page].astro?astro&type=style&lang.css
+JIT TOTAL: 37.24ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/about/index.astro?astro&type=style&lang.css
+JIT TOTAL: 38.672ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/layouts/MainLayout.astro?astro&type=style&lang.css
+JIT TOTAL: 38.235ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/_components/GetStarted.astro?astro&type=style&lang.css
+JIT TOTAL: 24.969ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/_components/Hero.astro?astro&type=style&lang.css
+JIT TOTAL: 19.786ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/_components/SellingPoints.astro?astro&type=style&lang.css
+JIT TOTAL: 19.893ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/integrations/_components/IntegrationCard.astro?astro&type=style&lang.css
+JIT TOTAL: 32.787ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/toolkits/_components/ToolkitCard.astro?astro&type=style&lang.css
+JIT TOTAL: 25.105ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/themes/_components/ThemeCard.astro?astro&type=style&lang.css
+JIT TOTAL: 25.954ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/components/Pagination.astro?astro&type=style&lang.css
+JIT TOTAL: 25.489ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/components/CardGrid.astro?astro&type=style&lang.css
+JIT TOTAL: 21.639ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/interaction-tools/index.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 20.814ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/interaction-tools/[slug].astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 20.116ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/themes/details/[slug].astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 18.907ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/careers/index.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 19.971ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/careers/[slug].astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 20.227ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/showcase/[...page].astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 21.711ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/toolkits/details/[slug].astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 19.535ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/blog/[...page].astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 18.851ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/components/form/RichTextEditor.astro?astro&type=style&lang.css
+JIT TOTAL: 30.262ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/components/form/RichTextEditor.astro?astro&type=style&lang.css
+JIT TOTAL: 23.012ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/interaction-tools/_components/FeaturesList.astro?astro&type=style&lang.css
+JIT TOTAL: 23.61ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/careers/_components/FeaturesList.astro?astro&type=style&lang.css
+JIT TOTAL: 20.701ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/_components/SellingPoints.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 20.543ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/about/index.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 19.374ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/components/ImageGallery.astro?astro&type=style&lang.css
+JIT TOTAL: 25.093ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/resources/index.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 21.035ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/_components/GetStarted.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 21.77ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/layouts/MainLayout.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 19.956ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/_components/Hero.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 18.76ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/components/TwoUp.astro?astro&type=style&lang.css
+JIT TOTAL: 21.229ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/components/CardGrid.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 20.57ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/themes/_components/ThemeCard.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 19.709ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/components/Pagination.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 21.642ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/integrations/_components/IntegrationCard.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 20.843ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/toolkits/_components/ToolkitCard.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 20.358ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/components/SkipLink.astro?astro&type=style&lang.css
+JIT TOTAL: 19.833ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/components/form/RichTextEditor.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 17.857ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/components/form/RichTextEditor.astro?astro&type=style&index=1&lang.css
+JIT TOTAL: 18.881ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/node_modules/astro-breadcrumbs/src/breadcrumbs.css
+JIT TOTAL: 19.139ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/themes/_components/Badge.astro?astro&type=style&lang.css
+JIT TOTAL: 21.274ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/components/Checkbox.astro?astro&type=style&lang.css
+JIT TOTAL: 27.497ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/components/TextInput.astro?astro&type=style&lang.css
+JIT TOTAL: 27.082ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/toolkits/_components/Badge.astro?astro&type=style&lang.css
+JIT TOTAL: 22.301ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/careers/_components/FeaturesList.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 19.319ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/components/form/FieldLabel.astro?astro&type=style&lang.css
+JIT TOTAL: 20.145ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/components/form/FormRadio.astro?astro&type=style&lang.css
+JIT TOTAL: 19.329ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/interaction-tools/_components/FeaturesList.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 21.061ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/styles/tailwind.css
+Setting up new context...
+Finding changed files: 70.263ms
+Reading changed files: 310.992ms
+Sorting candidates: 22.22ms
+Generate rules: 335.979ms
+Build stylesheet: 7.275ms
+Potential classes:  25053
+Active contexts:  2
+JIT TOTAL: 907.025ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/components/ImageGallery.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 20.884ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/node_modules/quill/dist/quill.snow.css
+JIT TOTAL: 26.713ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/components/TwoUp.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 19.105ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/themes/_components/Badge.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 19.934ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/components/SkipLink.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 19.864ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/components/Checkbox.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 19.822ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/components/TextInput.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 20.077ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/styles/fonts.css
+JIT TOTAL: 19.989ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/pages/toolkits/_components/Badge.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 20.174ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/components/form/FormRadio.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 20.248ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/src/components/form/FieldLabel.astro?astro&type=style&index=0&lang.css
+JIT TOTAL: 19.413ms
+
+
+
+
+Source path: D:/Download/audio-visual/saas/tiktoka/idea-to-action-cycle/node_modules/@fontsource/inter/variable.css
+JIT TOTAL: 22.903ms
+
+
+10:11:01 [build] Completed in 30.38s.
+
+ building client 
+Completed in 26.92s.
+
+
+ prerendering static routes 
+▶ src/pages/index.astro
+[astro-icon] No sprites found while rendering "/"
+  └─ /index.html (+1.13s)
+▶ src/pages/interaction-tools/index.astro
+  └─ /interaction-tools/index.html (+73ms)
+▶ src/pages/interaction-tools/[slug].astro
+  └─ /interaction-tools/senior-software-engineer-open-source/index.html (+88ms)
+▶ src/pages/wallpapers/index.astro
+  └─ /wallpapers/index.html (+59ms)
+▶ src/pages/resources/index.astro
+  └─ /resources/index.html (+67ms)
+▶ src/pages/showcase/[...page].astro
+  └─ /showcase/index.html (+65ms)
+▶ src/pages/toolkits/details/[slug].astro
+  ├─ /toolkits/details/brand-social-influence-analyze/index.html (+89ms)
+  ├─ /toolkits/details/brand-social-media-account-creation/index.html (+150ms)
+  ├─ /toolkits/details/brand-tweets-monitor/index.html (+218ms)
+  ├─ /toolkits/details/dump-brand-website-to-local/index.html (+282ms)
+  ├─ /toolkits/details/grabstoreurls/index.html (+342ms)
+  ├─ /toolkits/details/longtail-keywords-expand-tools-gui/index.html (+402ms)
+  ├─ /toolkits/details/shopifystoredatabase/index.html (+471ms)
+  └─ /toolkits/details/submit-url-to-search-engine/index.html (+530ms)
+▶ src/pages/careers/index.astro
+  └─ /careers/index.html (+46ms)
+▶ src/pages/careers/[slug].astro
+  └─ /careers/senior-software-engineer-open-source/index.html (+55ms)
+▶ src/pages/themes/details/[slug].astro
+  └─ /themes/details/tiny-rocket/index.html (+63ms)
+▶ src/pages/videos/index.astro
+  └─ /videos/index.html (+53ms)
+▶ src/pages/about/index.astro
+  └─ /about/index.html (+53ms)
+▶ src/pages/blog/[slug].astro
+  ├─ /blog/brand-building-components/index.html (+71ms)
+  ├─ /blog/brand-monitor-task/index.html (+124ms)
+  ├─ /blog/chatgpt-generated-slogn/index.html (+172ms)
+  ├─ /blog/email-collecting-tool-for-brand/index.html (+311ms)
+  ├─ /blog/how-can-chatgpt-aid-brand-monitoring/index.html (+367ms)
+  ├─ /blog/how-to-use-google-tag-manager/index.html (+415ms)
+  └─ /blog/product-message/index.html (+468ms)
+▶ src/pages/blog/[...page].astro
+  └─ /blog/index.html (+44ms)
+▶ src/pages/404.astro
+  └─ /404.html (+37ms)
+λ src/pages/api/showcase.json.ts
+  └─ /api/showcase.json (+4ms)
+▶ src/pages/on/[platform].astro
+  ├─ /on/github/index.html (+5ms)
+  ├─ /on/discord/index.html (+9ms)
+  ├─ /on/twitter/index.html (+12ms)
+  ├─ /on/tiktok/index.html (+15ms)
+  ├─ /on/youtube/index.html (+17ms)
+  └─ /on/mastodon/index.html (+20ms)
+▶ src/pages/[slug].astro
+  ├─ /privacy/index.html (+51ms)
+  └─ /terms/index.html (+93ms)
+Completed in 3.12s.
+
+
+ finalizing server assets 
+
+10:11:32 [build] Rearranging server assets...
+[32m@astrojs/sitemap:[0m `sitemap-index.xml` is created.
+
+10:11:38 [build] Server built in 72.52s
+10:11:38 [build] Complete!

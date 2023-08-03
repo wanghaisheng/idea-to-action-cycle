@@ -1,6 +1,11 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content"
-import { FilterGroup } from "~/components/SearchFilter.astro"
+import CardGrid from "~/components/CardGrid.astro"
+import CardGridGroup from "~/components/CardGridGroup.astro"
+import Pagination from "~/components/Pagination.astro"
+import SearchFilter, { FilterGroup } from "~/components/SearchFilter.astro"
+import SidebarLayout from "~/components/SidebarLayout.astro"
+import SidebarPanel from "~/components/SidebarPanel.astro"
 import {
 	DeployPlatforms,
 	EcommerceBrandCategories,
@@ -10,7 +15,9 @@ import {
 } from "~/content/config.js"
 import { paginate } from "~/helpers/paginate.js"
 import MainLayout from "~/layouts/MainLayout.astro"
-
+import SubmitToolkit from "./_components/SubmitToolkits.astro"
+import ToolkitCard from "./_components/ToolkitCard.astro"
+export const prerender = true
 // Sorting priority: featured first, then compare downloads, then sort alphabetically
 function sortToolkits(a: CollectionEntry<"toolkits">, b: CollectionEntry<"toolkits">) {
 	if (a.data.featured && b.data.featured) {
@@ -223,4 +230,74 @@ const recentlyAddedHref = `${Astro.url.pathname}?${recentlyAddedSearch.toString(
 			</h1>
 		</div>
 	</div>
+
+	<SidebarLayout>
+		<Fragment slot="sidebar">
+			<SidebarPanel>
+				<SearchFilter
+					indexRoute="/toolkits"
+					groups={[
+						categoryFilter,
+						ecommercecategoryFilter,
+						toolFilter,
+						deployPlatformsFilter,
+						tagFilter,
+					]}
+					search={search}
+					searchPlaceholder="Search for a tool"
+				/>
+			</SidebarPanel>
+			<SubmitToolkit class="hidden lg:block" />
+		</Fragment>
+
+		{
+			toolkits.length > 0 ? (
+				<div class="flex flex-col items-center gap-8 pb-10 pt-8 sm:px-4 sm:pb-12 md:gap-10 md:pb-16 lg:gap-12 lg:px-8 lg:pb-20 lg:pt-10 xl:px-10">
+					<h2 class="sr-only">Toolkits</h2>
+
+					{showRecentlyAdded && recentlyAdded.length > 0 && (
+						<CardGridGroup
+							title="Recently Added"
+							cta={
+								recentlyAdded.length > 3
+									? { href: recentlyAddedHref, text: "View all new tools" }
+									: undefined
+							}
+						>
+							<CardGrid class="w-full max-w-screen-2xl sm:grid-cols-2 xl:grid-cols-3">
+								{recentlyAdded.slice(0, 3).map((toolkit) => (
+									<ToolkitCard toolkit={toolkit} />
+								))}
+							</CardGrid>
+						</CardGridGroup>
+					)}
+
+					<CardGridGroup
+						title={showRecentlyAdded && recentlyAdded.length > 0 ? "All Tools" : undefined}
+					>
+						<CardGrid class="w-full max-w-screen-2xl sm:grid-cols-2 xl:grid-cols-3">
+							{toolkits.map((toolkit) => (
+								<ToolkitCard toolkit={toolkit} />
+							))}
+						</CardGrid>
+					</CardGridGroup>
+
+					{allPages.length > 1 && (
+						<Pagination restRoute page={page} allPages={allPages} class="mx-auto" />
+					)}
+				</div>
+			) : (
+				<div class="flex flex-col items-center gap-12 pt-8 text-center sm:px-4 md:px-8 lg:px-10 lg:pt-10">
+					<p>
+						<strong>0</strong> results found for toolkit matching <strong>"{search}"</strong>
+					</p>
+					<a href="/toolkits/" rel="prefetch" class="button button-primary">
+						Clear filters
+					</a>
+				</div>
+			)
+		}
+
+		<SubmitToolkit class="lg:hidden" />
+	</SidebarLayout>
 </MainLayout>
