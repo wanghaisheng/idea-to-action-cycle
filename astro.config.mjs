@@ -3,7 +3,7 @@ import fs from "node:fs"
 
 import image from "@astrojs/image"
 import mdx from "@astrojs/mdx"
-import vercel from "@astrojs/vercel/serverless"
+import vercel from "@astrojs/vercel/edge"
 
 import prefetch from "@astrojs/prefetch"
 import sitemap from "@astrojs/sitemap"
