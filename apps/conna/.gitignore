@@ -1,9 +1,7 @@
 # build output
 dist/
-.output/
-
-# IDEs
-.vscode/
+# generated types
+.astro/
 
 # dependencies
 node_modules/
@@ -14,13 +12,14 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# caches
-.turbo
-.astro
-.vercel
+# environment variables
+.env
+.env.production
 
 # macOS-specific files
 .DS_Store
 
-# test
-coverage/
+# Local Netlify folder
+.netlify
+.vercel
+astro_tmp_pages_*

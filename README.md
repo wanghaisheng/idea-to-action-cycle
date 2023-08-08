@@ -1,47 +1,49 @@
+# Welcome to [Turbo Hybrid Astro on Vercel](https://turbo-hybrid-astro-on-vercel.vercel.app/)
 
-https://github.com/wanghaisheng/blog-shopconna.com/tree/main
+Demo site: https://turbo-hybrid-astro-on-vercel.vercel.app/
 
+This is an Astro 2.0 template project that implements an optimal way to use SSG and SSR together in one Astro project using Astro 2.0's hybrid output. It is configured to deploy to Vercel for hosting, SSR and API microservices (serverless and edge, as you wish). Turborepo is used for the monorepo management and follows the `turbo` best practices for `eslint`, `prettier`, `tsconfig`, code sharing and build caching (local and remote).
 
+## Project layout
 
-# [shopconna.com](https://shopconna.com)
+This project deploys on [Vercel](https://vercel.com/). You can clone this repo and deploy it on Vercel.
+Make sure to set the root directory to: `apps/server` as this is the primary Astro project we deploy!
 
-The source code for [shopconna.com](https://shopconna.com), built with [Astro](https://github.com/withastro/astro).
+<img src="vercel-root-dir.png" />
 
+You can find the Vercel configuration in `apps/server/vercel.json`. It makes sure that `turbo` is used.
+I've also decided to activate [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching).
 
-## create logo svg
+### App
 
-replace     idea-to-action-cycle/src/components/AstroLogo.astro
+You can have many apps in parallel that could re-use code from the packages. They are always located in the `apps` folder. By default, one `server` app is created and serves are the primarily deploy target for Vercel.
 
+- `apps/server`: An Astro 2.0 hybrid rendering-enabled project. Implements the application logic, all the pages, application data, API microservice endpoints etc. pp.
 
+The project is also pre-configured with `@vercel/analytics`, `preact`, `astrojs-service-worker`, `@astrojs/image`, `astro-robots-txt`, `astro-sitemap`, `astro-webmanifest`, `eslint`, `browserslist`, `dotenv`, `prettier`, `tsconfig` custom base config. 
 
-## Updating Themes
+### Image optimization
 
-The [themes catalog](https://astro.build/themes) is based on the [themes content collection](/src/content/themes/). Optimized images should be saved to the collection's [\_images directory](/src/content/themes/_images/), ideally as format with a `{image}.webp` file at 800px wide and `{image}@2x.webp` at 1600px wide.
+This project comes with the `sharp` package for local image optimization pre-configured.
+Make sure to run in case that you're running into issues like: 'Something went wrong installing the "sharp" module':
 
-Theme data is updated weekly by a [GitHub Action](/.github/workflows/weekly.yaml). This action mainly updates the star count in public GitHub repos (used for sorting), but may be updated in the future to update additional theme details.
+`brew uninstall vips` (in case it is already installed via brew)
 
-> TODO: A future PR will migrate to `astro:assets` for image optimization and get away from the manual image optimization shenanigans.
+`npm install --ignore-scripts=false --foreground-scripts --verbose sharp`
 
-## Updating the Showcase
+### Shared packages
 
-The [showcase](https://astro.build/showcase) doesn't depend on any data from GitHub or NPM. All showcase data is pulled from the [content collection](/src/content/showcase/). Similar to themes, optimized images should be saved to the collection's [\_images directory](/src/content/showcase/_images/), ideally as format with a `{image}.webp` file at 800px wide and `{image}@2x.webp` at 1600px wide.
+Shared packages are located in `packages/*`, such as:
 
-A weekly [GitHub workflow](/.github/workflows/weekly.yaml) pulls URLs posted in [a dedicated GitHub discussion](https://github.com/withastro/roadmap/discussions/521) and opens a PR to add data and screenshots for these sites to the repo. You can also run this script locally and commit the results manually:
+- `packages/astro-components`: Astro components to be used by all Apps and packages
+- `packages/layouts`: Astro layout components to be used all Apps and packages
+- `packages/preact-components`: Preact components to be used by all Apps and packages
+- `packages/tsconfig`: A unified tsconfig that is used in all packages and apps
+- `packages/format`: Prettier configuration for all packages and apps
+- `packages/eslint-config-custom`: Eslint configuration for all packages and apps
 
-```sh
-pnpm update:showcase
-```
+## Performance stats
 
-> TODO: A future PR will migrate to `astro:assets` for image optimization and get away from the manual image optimization shenanigans.
-
-## Updating Integrations
-
-The [integrations catalog](https://atsro.build/integrations) also used a content collection to track known Astro integrations.
-
-Integration data is updated weekly by a [GitHub Action](/.github/workflows/weekly.yaml). This action searches NPM and updates existing integrations, adds newly published integrations, and removes deprecated packages. A [JSON config file](/scripts/integrations.json) is used to allow for manual overrides of data published in NPM, most often this is used for adding icons and tweaking description text.
-
-## Blog Posts
-
-The [blog collection](/src/content/blog/) is setup to support MDX blog posts with all images being pulled from the collection's [\_images directory](/src/content/blog/_images/). Images should be a `webp` format of a reasonable width, something in the 800-1600px range is ideal.
-
-Blog post cover and social images are set as frontmatter properties and should point reference the `_images` directory, ex: `coverImage: "/src/content/blog/_images/post-1/cover.webp"`.
+- No cache (Vercel, remote in CI/CD): Builds in 40s
+- With cache (Vercel, remote in CI/CD): FULL TURBO: 6s, one package or app affected: 34s (of which 24s is `yarn install`...)
+- Locally, full build: 3.79s (on a Apple M1 Max machine/2021)

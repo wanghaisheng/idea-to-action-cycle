@@ -1,1 +1,18 @@
-"@astrojs/site-kit/prettier"
+{
+  "printWidth": 100,
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false,
+  "overrides": [
+    {
+      "files": [
+        "**/*.astro"
+      ],
+      "options": {
+        "parser": "astro"
+      }
+    }
+  ]
+}

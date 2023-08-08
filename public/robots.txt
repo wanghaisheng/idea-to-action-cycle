@@ -1,6 +1,2 @@
-# I, for one, welcome our new robotic overlords
-
-User-agent: *
+User-Agent: *
 Allow: /
-
-Sitemap: https://shopconna.com/sitemap-index.xml

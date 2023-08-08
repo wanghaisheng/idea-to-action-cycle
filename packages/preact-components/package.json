@@ -1,0 +1,31 @@
+{
+  "name": "preact-components",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "This package contains a Preact components to use in Astro apps.",
+  "main": "index.ts",
+  "types": "index.ts",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint",
+    "format": "format"
+  },
+  "author": {
+    "name": "Aron Homberg",
+    "url": "https://github.com/kyr0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kyr0/astro-turborepo-hybrid-setup-ssr-server-and-ssg-static-output-mode-on-vercel.git",
+    "directory": "packages/client-components"
+  },
+  "devDependencies": {
+    "eslint-config-custom": "*",
+    "tsconfig": "*",
+    "format": "*"
+  },
+  "exports": {
+    ".": "./index.ts"
+  }
+}
