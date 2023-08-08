@@ -25,14 +25,18 @@
     "update:toolkits": "node -r dotenv/config ./scripts/update-toolkits.mjs"
   },
   "dependencies": {
-    "@astrojs/image": "^0.15.1",
+    // "@astrojs/vercel": "^3.7.5",    
+    // "@astrojs/image": "^0.15.1",
+    "@astrojs/vercel": "^3.0.0",
+    "@astrojs/image": "^0.13.0",
+    "@vercel/node": "^2.8.16",    
     "@astrojs/mdx": "^0.17.0",
     "@astrojs/netlify": "^2.1.3",
     "@astrojs/prefetch": "^0.2.0",
     "@astrojs/sitemap": "^1.1.0",
     "@astrojs/solid-js": "^2.0.1",
     "@astrojs/tailwind": "^3.0.1",
-    "@astrojs/vercel": "^3.7.5",
+
     "@fontsource/inter": "^4.5.15",
     "@hw-hmscore/analytics-web": "^6.9.9-301",
     "astro": "^2.9.7",
