@@ -7,16 +7,17 @@ import SearchFilter, { FilterGroup } from "~/components/SearchFilter.astro"
 import SidebarLayout from "~/components/SidebarLayout.astro"
 import SidebarPanel from "~/components/SidebarPanel.astro"
 import {
-	DeployPlatforms,
-	EcommerceBrandCategories,
-	ProgamingLang,
-	ToolkitCategories,
-	ToolkitTags,
+DeployPlatforms,
+EcommerceBrandCategories,
+ProgamingLang,
+ToolkitCategories,
+ToolkitTags,
 } from "~/content/config.js"
 import { paginate } from "~/helpers/paginate.js"
 import MainLayout from "~/layouts/MainLayout.astro"
 import SubmitToolkit from "./_components/SubmitToolkits.astro"
 import ToolkitCard from "./_components/ToolkitCard.astro"
+
 // Sorting priority: featured first, then compare downloads, then sort alphabetically
 function sortToolkits(a: CollectionEntry<"toolkits">, b: CollectionEntry<"toolkits">) {
 	if (a.data.featured && b.data.featured) {
