@@ -133,6 +133,8 @@ const placeholderGradient = randomFromArray(gradients)
 					</time>
 				</div>
 			</header>
+			<br />
+			<br />
 
 			<small class="code text-astro-gray-200">Tags:</small>
 
@@ -140,13 +142,13 @@ const placeholderGradient = randomFromArray(gradients)
 				data.tags.map((tag) => {
 					return (
 						<>
+							&nbsp;&nbsp;&nbsp;&nbsp;
 							<a
 								href={"/blog?search=&tags[]=" + tag.trim().replace(" ", "-")}
 								class="link whitespace-nowrap"
 							>
 								{BlogTags.get(tag)}
 							</a>
-							&nbsp;&nbsp;&nbsp;&nbsp;
 						</>
 					)
 				})
