@@ -1,7 +1,6 @@
 import image from "@astrojs/image"
 import mdx from "@astrojs/mdx"
 import vercel from "@astrojs/vercel/serverless"
-import { defaultLocaleSitemapFilter, i18n } from "astro-i18n-aut"
 import { defineConfig } from "astro/config"
 import fs from "node:fs"
 
@@ -18,26 +17,23 @@ export default defineConfig({
 	// site: NETLIFY_PREVIEW_SITE || "https://shopconna.com",
 	// integrations: [
 	// 	sitemap(),
-	experimental: {
-		redirects: true,
-	},
 	site: NETLIFY_PREVIEW_SITE || "https://shopconna.com",
 	// trailingSlash: "always",
 	build: {
 		format: "directory",
 	},
 	integrations: [
-		i18n({
-			locales,
-			defaultLocale,
-		}),
+		// i18n({
+		// 	locales,
+		// 	defaultLocale,
+		// }),
 		sitemap({
-			i18n: {
-				locales,
-				defaultLocale,
-			},
-			filter: defaultLocaleSitemapFilter({ defaultLocale }),
-		}),	
+			// i18n: {
+			// 	locales,
+			// 	defaultLocale,
+			// },
+			// filter: defaultLocaleSitemapFilter({ defaultLocale }),
+		}),
 		image({
 			serviceEntryPoint: "@astrojs/image/sharp",
 		}),

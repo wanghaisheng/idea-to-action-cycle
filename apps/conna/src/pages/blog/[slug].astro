@@ -133,26 +133,29 @@ const placeholderGradient = randomFromArray(gradients)
 					</time>
 				</div>
 			</header>
-			<hr class="-mx-16 my-16 border-astro-gray-500" />
-
-			<article class="prose">
-				<Content />
-			</article>
 
 			<small class="code text-astro-gray-200">Tags:</small>
 
 			{
 				data.tags.map((tag) => {
 					return (
-						<a
-							href={"/blog?search=&tags[]=" + tag.trim().replace(" ", "-")}
-							class="link whitespace-nowrap"
-						>
-							{BlogTags.get(tag)}
-						</a>
+						<>
+							<a
+								href={"/blog?search=&tags[]=" + tag.trim().replace(" ", "-")}
+								class="link whitespace-nowrap"
+							>
+								{BlogTags.get(tag)}
+							</a>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+						</>
 					)
 				})
 			}
+			<hr class="-mx-16 my-16 border-astro-gray-500" />
+
+			<article class="prose">
+				<Content />
+			</article>
 		</div>
 	</div>
 </Layout>
